@@ -1,0 +1,1 @@
+﻿var MODULE = (function (my) {    my.say = function () {		$.writeln ('hello module 1');	};	return my;}(MODULE || {}) );var MODULE_DEUX = (function (my, module_un) {    my.hello_module_deux = function () {		module_un.say();	};	return my;}(MODULE, MODULE_DEUX || {}) );MODULE_DEUX.hello_module_deux();
