@@ -68,8 +68,8 @@ JSDOC.DocTag.prototype.toString = function() {
 /*t:
 	plan(1, "testing JSDOC.DocTag#toString");
 	
-	var tag = new JSDOC.DocTag("param {object} date A valid date.");
-	is(""+tag, "A valid date.", "stringifying a tag returns the desc.");
+	var tag = new JSDOC.DocTag("param {object} date.jsx A valid date.jsx.");
+	is(""+tag, "A valid date.jsx.", "stringifying a tag returns the desc.");
  */
 
 /**
@@ -246,10 +246,10 @@ JSDOC.DocTag.prototype.nibbleName = function(src) {
   	is(tag.name, "foo", "param name is found when desc is missing.");
  	is(tag.desc, "", "param desc is empty when missing.");
  	
- 	tag = new JSDOC.DocTag("param {object} date A valid date.");
- 	is(tag.name, "date", "param name is found with a type.");
+ 	tag = new JSDOC.DocTag("param {object} date.jsx A valid date.jsx.");
+ 	is(tag.name, "date.jsx", "param name is found with a type.");
  	is(tag.type, "object", "param type is found.");
- 	is(tag.desc, "A valid date.", "param desc is found with a type.");
+ 	is(tag.desc, "A valid date.jsx.", "param desc is found with a type.");
  	
   	tag = new JSDOC.DocTag("param aName a description goes\n    here.");
 	is(tag.name, "aName", "param name is found without a type.");
