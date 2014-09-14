@@ -1,1 +1,0 @@
-﻿Lib.Constants = function(my) {        var MY_CONSTANT = {         'MY_CONST': 'hello constante',         'ANOTHER_CONST': '2'     };        my.get = function(name) {        return MY_CONSTANT[name];    }    return my;}(Lib || {} );
