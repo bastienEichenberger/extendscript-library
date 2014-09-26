@@ -64,7 +64,7 @@
       <file leaf-file-name="test_document.jsx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/grunt-extendscript/test/fixtures/photoshop/document/test_document.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+            <state line="7" column="4" selection-start="149" selection-end="312" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -82,7 +82,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="3" selection-start="316" selection-end="316" vertical-scroll-proportion="0.30456853" vertical-offset="0" max-vertical-offset="591">
+            <state line="25" column="44" selection-start="777" selection-end="777" vertical-scroll-proportion="0.3401015" vertical-offset="174" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
@@ -724,14 +724,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/grunt-extendscript/test/fixtures/photoshop/document/test_document.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="85" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+        <state line="7" column="4" selection-start="149" selection-end="312" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="3" selection-start="316" selection-end="316" vertical-scroll-proportion="0.30456853" vertical-offset="0" max-vertical-offset="591">
+        <state line="25" column="44" selection-start="777" selection-end="777" vertical-scroll-proportion="0.3401015" vertical-offset="174" max-vertical-offset="765">
           <folding />
         </state>
       </provider>
