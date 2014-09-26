@@ -8,9 +8,9 @@ www.extendscript-library.org
 ##Architecture:
 ###packages
 1. lib
-  1 common (modules with functionality that could be use in other apps)
-  2 indesign (modules for indesign including the common packages)
-  3 photoshop (modules for photoshop including the common packages)
+  * common (modules with functionality that could be use in other apps)
+  * indesign (modules for indesign including the common packages)
+  * photoshop (modules for photoshop including the common packages)
 
 ##Samples
 ###Include the library
