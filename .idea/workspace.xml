@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6465f43f-15b7-4c07-85d9-7ee2cd01f83b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test/results/test.psd" afterPath="$PROJECT_DIR$/tests/test/results/test.psd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test/results/test.tif" afterPath="$PROJECT_DIR$/tests/test/results/test.tif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/Lib.Config.html" afterPath="$PROJECT_DIR$/out/Lib.Config.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/Lib.Globals.html" afterPath="$PROJECT_DIR$/out/Lib.Globals.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PS.Application.html" afterPath="$PROJECT_DIR$/out/PS.Application.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PS.Document.html" afterPath="$PROJECT_DIR$/out/PS.Document.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/PS.Resize.html" afterPath="$PROJECT_DIR$/out/PS.Resize.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/application_application.jsx.html" afterPath="$PROJECT_DIR$/out/application_application.jsx.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/config_config.jsx.html" afterPath="$PROJECT_DIR$/out/config_config.jsx.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/config_constants.jsx.html" afterPath="$PROJECT_DIR$/out/config_constants.jsx.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/config_globals.jsx.html" afterPath="$PROJECT_DIR$/out/config_globals.jsx.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/document_document.jsx.html" afterPath="$PROJECT_DIR$/out/document_document.jsx.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/document_resize.jsx.html" afterPath="$PROJECT_DIR$/out/document_resize.jsx.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/global.html" afterPath="$PROJECT_DIR$/out/global.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/index.html" afterPath="$PROJECT_DIR$/out/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test/log/log.log" afterPath="$PROJECT_DIR$/tests/test/log/log.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/photoshop-lib.jsx.html" afterPath="$PROJECT_DIR$/out/photoshop-lib.jsx.html" />
     </list>
     <ignored path="extendscript-library.org.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +44,7 @@
       <file leaf-file-name="document.jsx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/photoshop/document/document.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="9" selection-start="1750" selection-end="1750" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
+            <state line="43" column="9" selection-start="1750" selection-end="1750" vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="975">
               <folding />
             </state>
           </provider>
@@ -37,7 +53,7 @@
       <file leaf-file-name="resize.jsx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/photoshop/document/resize.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="44" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+            <state line="19" column="44" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
@@ -55,25 +71,7 @@
       <file leaf-file-name="application.jsx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/photoshop/application/application.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="31" selection-start="735" selection-end="744" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_document.jsx" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/grunt-extendscript/test/fixtures/photoshop/document/test_document.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="4" selection-start="149" selection-end="312" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_photoshop-lib.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/grunt-extendscript/test/test_photoshop-lib.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="28" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200">
+            <state line="28" column="31" selection-start="735" selection-end="744" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
@@ -82,16 +80,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="44" selection-start="777" selection-end="777" vertical-scroll-proportion="0.3401015" vertical-offset="174" max-vertical-offset="765">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_application.jsx" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/grunt-extendscript/test/fixtures/photoshop/document/test_application.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+            <state line="42" column="44" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.41530946" vertical-offset="375" max-vertical-offset="1245">
               <folding />
             </state>
           </provider>
@@ -100,7 +89,7 @@
       <file leaf-file-name="xml.jsx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/common/xml/xml.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="8" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+            <state line="8" column="8" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
@@ -109,10 +98,8 @@
       <file leaf-file-name="all_common_modules.jsx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/common/config/all_common_modules.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="27" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="11" column="27" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="255">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -365,6 +352,14 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -375,23 +370,15 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -445,11 +432,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298351" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -466,9 +453,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940805" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -488,14 +475,53 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jsdoc-toolkit/app/frame/Link.js">
+    <entry file="file://$PROJECT_DIR$/lib/photoshop/document/document.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2670" />
+        <state line="43" column="9" selection-start="1750" selection-end="1750" vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="975">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jsdoc-toolkit/templates/jsdoc/publish.js">
+    <entry file="file://$PROJECT_DIR$/lib/photoshop/document/resize.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="60" selection-start="388" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="1185" max-vertical-offset="3105" />
+        <state line="19" column="44" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/utils/gateway.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="54" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0" vertical-offset="419" max-vertical-offset="1035">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/photoshop/application/application.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="31" selection-start="735" selection-end="744" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="44" selection-start="785" selection-end="785" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/xml/xml.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="8" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/config/all_common_modules.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="27" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="255">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/photoshop/config/config.jsx">
@@ -516,21 +542,6 @@
     <entry file="file://$PROJECT_DIR$/lib/indesign/document/document.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="0" selection-start="2176" selection-end="2176" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="1200" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsdoc-toolkit/app/lib/JSDOC.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.683706" vertical-offset="1054" max-vertical-offset="1680" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsdoc-toolkit/app/frame/Link.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2670" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsdoc-toolkit/templates/jsdoc/publish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="60" selection-start="388" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="1185" max-vertical-offset="3105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/common/utils/date.jsx">
@@ -608,75 +619,35 @@
         <state line="7" column="0" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/grunt-extendscript/tasks/extendscript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="29" selection-start="975" selection-end="975" vertical-scroll-proportion="0.0" vertical-offset="569" max-vertical-offset="1185">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/grunt-extendscript/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="19" selection-start="2081" selection-end="2081" vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="1200">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/common/helper-lib.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <folding />
-        </state>
+        <state line="8" column="13" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/common/config/globals.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.3409091" vertical-offset="0" max-vertical-offset="616">
-          <folding />
-        </state>
+        <state line="14" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.3409091" vertical-offset="0" max-vertical-offset="616" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/photoshop/config/config.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="27" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
+        <state line="7" column="27" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/common/config/config.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/license.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="603">
-          <folding />
-        </state>
+        <state line="14" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/common/logging/log.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="0" selection-start="4883" selection-end="4914" vertical-scroll-proportion="0.0" vertical-offset="1917" max-vertical-offset="2520">
-          <folding />
-        </state>
+        <state line="161" column="0" selection-start="4883" selection-end="4914" vertical-scroll-proportion="0.0" vertical-offset="1917" max-vertical-offset="2520" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/common/xml/xml.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="8" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/common/config/all_common_modules.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="27" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -708,30 +679,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/grunt-extendscript/test/fixtures/photoshop/document/test_application.jsx">
+    <entry file="file://$PROJECT_DIR$/lib/common/config/all_common_modules.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="616">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/grunt-extendscript/test/test_photoshop-lib.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="28" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="1200">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/grunt-extendscript/test/fixtures/photoshop/document/test_document.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="4" selection-start="149" selection-end="312" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+        <state line="11" column="27" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="44" selection-start="777" selection-end="777" vertical-scroll-proportion="0.3401015" vertical-offset="174" max-vertical-offset="765">
+        <state line="42" column="44" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.41530946" vertical-offset="375" max-vertical-offset="1245">
           <folding />
         </state>
       </provider>

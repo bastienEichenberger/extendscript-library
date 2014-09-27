@@ -1,3 +1,4 @@
-/.idea/*
-/private-doc
-/private-scripts
+/.idea
+/node_modules
+/out
+/tests/node_modules
