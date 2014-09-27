@@ -51,6 +51,8 @@ PS.Application.create_doc(100, 100, 72, 'document_to_test', NewDocumentMode.RGB)
 
 ##Generate the documentation
 Use jsdoc-toolkit to generate the documentation
+Open the file nodes/modules/jsdoc/conf.json.EXAMPLE
+Edit the source include pattern to jsx
 
 ```
 cd your_extendscript-library.org_directory
