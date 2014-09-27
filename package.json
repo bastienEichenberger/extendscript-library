@@ -1,0 +1,29 @@
+{
+    "name": "extendscript-library",
+    "description": "ExtendScript-library is a JavaScript library. This library has been created in order to support people who'd like write automation scripts for Adobe Creative Suite",
+    "version": "0.1.0",
+    "homepage": "https://github.com/bastienEichenberger/extendscript-library.org",
+    "author": {
+        "name": "Bastien Eichenberger",
+        "email": "bastien.eichenberger@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bastienEichenberger/extendscript-library.git"
+    },
+    "bugs": {
+        "url": "https://github.com/bastienEichenberger/extendscript-library/issues"
+    },
+    "licenses": [
+        {
+            "type": "BSD",
+            "url": "https://github.com/bastienEichenberger/extendscript-library/license.txt"
+        }
+    ],
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "dependencies": {
+        "jsdoc": "git+https://github.com/jsdoc3/jsdoc.git"
+    }
+}

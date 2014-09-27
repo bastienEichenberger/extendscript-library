@@ -1,0 +1,467 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/Applications/MAMP/htdocs/extendscript-library.org/tests',
+5 verbose install   [ 'xml2js',
+5 verbose install     'grunt-contrib-jshint',
+5 verbose install     'grunt-contrib-clean',
+5 verbose install     'grunt-contrib-nodeunit',
+5 verbose install     'grunt' ] ]
+6 info preinstall grunt-extendscript@0.1.0
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'grunt-contrib-jshint@~0.1.1', null ]
+9 verbose cache add name=undefined spec="grunt-contrib-jshint@~0.1.1" args=["grunt-contrib-jshint@~0.1.1",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'grunt-contrib-jshint@~0.1.1',
+10 verbose parsed url   path: 'grunt-contrib-jshint@~0.1.1',
+10 verbose parsed url   href: 'grunt-contrib-jshint@~0.1.1' }
+11 verbose cache add [ 'grunt-contrib-clean@~0.4.0', null ]
+12 verbose cache add name=undefined spec="grunt-contrib-clean@~0.4.0" args=["grunt-contrib-clean@~0.4.0",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'grunt-contrib-clean@~0.4.0',
+13 verbose parsed url   path: 'grunt-contrib-clean@~0.4.0',
+13 verbose parsed url   href: 'grunt-contrib-clean@~0.4.0' }
+14 verbose cache add [ 'grunt-contrib-nodeunit@~0.1.2', null ]
+15 verbose cache add name=undefined spec="grunt-contrib-nodeunit@~0.1.2" args=["grunt-contrib-nodeunit@~0.1.2",null]
+16 verbose parsed url { protocol: null,
+16 verbose parsed url   slashes: null,
+16 verbose parsed url   auth: null,
+16 verbose parsed url   host: null,
+16 verbose parsed url   port: null,
+16 verbose parsed url   hostname: null,
+16 verbose parsed url   hash: null,
+16 verbose parsed url   search: null,
+16 verbose parsed url   query: null,
+16 verbose parsed url   pathname: 'grunt-contrib-nodeunit@~0.1.2',
+16 verbose parsed url   path: 'grunt-contrib-nodeunit@~0.1.2',
+16 verbose parsed url   href: 'grunt-contrib-nodeunit@~0.1.2' }
+17 verbose cache add name="grunt-contrib-jshint" spec="~0.1.1" args=["grunt-contrib-jshint","~0.1.1"]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: '~0.1.1',
+18 verbose parsed url   path: '~0.1.1',
+18 verbose parsed url   href: '~0.1.1' }
+19 verbose addNamed [ 'grunt-contrib-jshint', '~0.1.1' ]
+20 verbose addNamed [ null, '>=0.1.1-0 <0.2.0-0' ]
+21 verbose cache add name="grunt-contrib-clean" spec="~0.4.0" args=["grunt-contrib-clean","~0.4.0"]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: '~0.4.0',
+22 verbose parsed url   path: '~0.4.0',
+22 verbose parsed url   href: '~0.4.0' }
+23 verbose addNamed [ 'grunt-contrib-clean', '~0.4.0' ]
+24 verbose addNamed [ null, '>=0.4.0-0 <0.5.0-0' ]
+25 verbose cache add [ 'grunt@~0.4.0', null ]
+26 verbose cache add name=undefined spec="grunt@~0.4.0" args=["grunt@~0.4.0",null]
+27 verbose parsed url { protocol: null,
+27 verbose parsed url   slashes: null,
+27 verbose parsed url   auth: null,
+27 verbose parsed url   host: null,
+27 verbose parsed url   port: null,
+27 verbose parsed url   hostname: null,
+27 verbose parsed url   hash: null,
+27 verbose parsed url   search: null,
+27 verbose parsed url   query: null,
+27 verbose parsed url   pathname: 'grunt@~0.4.0',
+27 verbose parsed url   path: 'grunt@~0.4.0',
+27 verbose parsed url   href: 'grunt@~0.4.0' }
+28 verbose cache add name="grunt-contrib-nodeunit" spec="~0.1.2" args=["grunt-contrib-nodeunit","~0.1.2"]
+29 verbose parsed url { protocol: null,
+29 verbose parsed url   slashes: null,
+29 verbose parsed url   auth: null,
+29 verbose parsed url   host: null,
+29 verbose parsed url   port: null,
+29 verbose parsed url   hostname: null,
+29 verbose parsed url   hash: null,
+29 verbose parsed url   search: null,
+29 verbose parsed url   query: null,
+29 verbose parsed url   pathname: '~0.1.2',
+29 verbose parsed url   path: '~0.1.2',
+29 verbose parsed url   href: '~0.1.2' }
+30 verbose addNamed [ 'grunt-contrib-nodeunit', '~0.1.2' ]
+31 verbose addNamed [ null, '>=0.1.2-0 <0.2.0-0' ]
+32 silly lockFile b7545c6e-grunt-contrib-jshint-0-1-1 grunt-contrib-jshint@~0.1.1
+33 verbose lock grunt-contrib-jshint@~0.1.1 /Users/bastieneichenberger/.npm/b7545c6e-grunt-contrib-jshint-0-1-1.lock
+34 silly lockFile 9d1c9db7-grunt-contrib-clean-0-4-0 grunt-contrib-clean@~0.4.0
+35 verbose lock grunt-contrib-clean@~0.4.0 /Users/bastieneichenberger/.npm/9d1c9db7-grunt-contrib-clean-0-4-0.lock
+36 silly lockFile 44cefd21-grunt-contrib-nodeunit-0-1-2 grunt-contrib-nodeunit@~0.1.2
+37 verbose lock grunt-contrib-nodeunit@~0.1.2 /Users/bastieneichenberger/.npm/44cefd21-grunt-contrib-nodeunit-0-1-2.lock
+38 verbose cache add [ 'xml2js@https://github.com/Leonidas-from-XIV/node-xml2js.git',
+38 verbose cache add   null ]
+39 verbose cache add name=undefined spec="xml2js@https://github.com/Leonidas-from-XIV/node-xml2js.git" args=["xml2js@https://github.com/Leonidas-from-XIV/node-xml2js.git",null]
+40 verbose parsed url { protocol: null,
+40 verbose parsed url   slashes: null,
+40 verbose parsed url   auth: null,
+40 verbose parsed url   host: null,
+40 verbose parsed url   port: null,
+40 verbose parsed url   hostname: null,
+40 verbose parsed url   hash: null,
+40 verbose parsed url   search: null,
+40 verbose parsed url   query: null,
+40 verbose parsed url   pathname: 'xml2js@https://github.com/Leonidas-from-XIV/node-xml2js.git',
+40 verbose parsed url   path: 'xml2js@https://github.com/Leonidas-from-XIV/node-xml2js.git',
+40 verbose parsed url   href: 'xml2js@https://github.com/Leonidas-from-XIV/node-xml2js.git' }
+41 verbose cache add name="grunt" spec="~0.4.0" args=["grunt","~0.4.0"]
+42 verbose parsed url { protocol: null,
+42 verbose parsed url   slashes: null,
+42 verbose parsed url   auth: null,
+42 verbose parsed url   host: null,
+42 verbose parsed url   port: null,
+42 verbose parsed url   hostname: null,
+42 verbose parsed url   hash: null,
+42 verbose parsed url   search: null,
+42 verbose parsed url   query: null,
+42 verbose parsed url   pathname: '~0.4.0',
+42 verbose parsed url   path: '~0.4.0',
+42 verbose parsed url   href: '~0.4.0' }
+43 verbose addNamed [ 'grunt', '~0.4.0' ]
+44 verbose addNamed [ null, '>=0.4.0-0 <0.5.0-0' ]
+45 silly lockFile cba964e3-grunt-0-4-0 grunt@~0.4.0
+46 verbose lock grunt@~0.4.0 /Users/bastieneichenberger/.npm/cba964e3-grunt-0-4-0.lock
+47 verbose cache add name="xml2js" spec="https://github.com/Leonidas-from-XIV/node-xml2js.git" args=["xml2js","https://github.com/Leonidas-from-XIV/node-xml2js.git"]
+48 verbose parsed url { protocol: 'https:',
+48 verbose parsed url   slashes: true,
+48 verbose parsed url   auth: null,
+48 verbose parsed url   host: 'github.com',
+48 verbose parsed url   port: null,
+48 verbose parsed url   hostname: 'github.com',
+48 verbose parsed url   hash: null,
+48 verbose parsed url   search: null,
+48 verbose parsed url   query: null,
+48 verbose parsed url   pathname: '/Leonidas-from-XIV/node-xml2js.git',
+48 verbose parsed url   path: '/Leonidas-from-XIV/node-xml2js.git',
+48 verbose parsed url   href: 'https://github.com/Leonidas-from-XIV/node-xml2js.git' }
+49 silly lockFile f3284dda-eonidas-from-XIV-node-xml2js-git https://github.com/Leonidas-from-XIV/node-xml2js.git
+50 verbose lock https://github.com/Leonidas-from-XIV/node-xml2js.git /Users/bastieneichenberger/.npm/f3284dda-eonidas-from-XIV-node-xml2js-git.lock
+51 silly addNameRange { name: 'grunt-contrib-jshint',
+51 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+51 silly addNameRange   hasData: false }
+52 silly addNameRange { name: 'grunt-contrib-clean',
+52 silly addNameRange   range: '>=0.4.0-0 <0.5.0-0',
+52 silly addNameRange   hasData: false }
+53 silly addNameRange { name: 'grunt-contrib-nodeunit',
+53 silly addNameRange   range: '>=0.1.2-0 <0.2.0-0',
+53 silly addNameRange   hasData: false }
+54 silly addNameRange { name: 'grunt', range: '>=0.4.0-0 <0.5.0-0', hasData: false }
+55 verbose addRemoteTarball [ 'https://github.com/Leonidas-from-XIV/node-xml2js.git', null ]
+56 verbose request where is /grunt-contrib-jshint
+57 verbose request registry https://registry.npmjs.org/
+58 verbose request id 74b020a0dcf51b19
+59 verbose url raw /grunt-contrib-jshint
+60 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-jshint' ]
+61 verbose url resolved https://registry.npmjs.org/grunt-contrib-jshint
+62 verbose request where is https://registry.npmjs.org/grunt-contrib-jshint
+63 info trying registry request attempt 1 at 10:04:32
+64 verbose etag "5ANXDP1YY0A9NH9HM6CSX71O7"
+65 http GET https://registry.npmjs.org/grunt-contrib-jshint
+66 verbose request where is /grunt-contrib-clean
+67 verbose request registry https://registry.npmjs.org/
+68 verbose url raw /grunt-contrib-clean
+69 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-clean' ]
+70 verbose url resolved https://registry.npmjs.org/grunt-contrib-clean
+71 verbose request where is https://registry.npmjs.org/grunt-contrib-clean
+72 info trying registry request attempt 1 at 10:04:32
+73 verbose etag "63BIO3Y366CTKBQE3FK7DIFJ9"
+74 http GET https://registry.npmjs.org/grunt-contrib-clean
+75 verbose request where is /grunt-contrib-nodeunit
+76 verbose request registry https://registry.npmjs.org/
+77 verbose url raw /grunt-contrib-nodeunit
+78 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-nodeunit' ]
+79 verbose url resolved https://registry.npmjs.org/grunt-contrib-nodeunit
+80 verbose request where is https://registry.npmjs.org/grunt-contrib-nodeunit
+81 info trying registry request attempt 1 at 10:04:32
+82 verbose etag "1OLDNQEGLC9C3O190UVFQSB4B"
+83 http GET https://registry.npmjs.org/grunt-contrib-nodeunit
+84 verbose request where is /grunt
+85 verbose request registry https://registry.npmjs.org/
+86 verbose url raw /grunt
+87 verbose url resolving [ 'https://registry.npmjs.org/', './grunt' ]
+88 verbose url resolved https://registry.npmjs.org/grunt
+89 verbose request where is https://registry.npmjs.org/grunt
+90 info trying registry request attempt 1 at 10:04:32
+91 verbose etag "EPFVYT57NTZTHQJAVA6XFZH8U"
+92 http GET https://registry.npmjs.org/grunt
+93 info retry fetch attempt 1 at 10:04:33
+94 verbose fetch to= /tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git
+95 http GET https://github.com/Leonidas-from-XIV/node-xml2js.git
+96 http 304 https://registry.npmjs.org/grunt-contrib-nodeunit
+97 silly registry.get cb [ 304,
+97 silly registry.get   { date: 'Sat, 27 Sep 2014 08:04:33 GMT',
+97 silly registry.get     server: 'Apache',
+97 silly registry.get     via: '1.1 varnish',
+97 silly registry.get     'last-modified': 'Sat, 27 Sep 2014 08:04:33 GMT',
+97 silly registry.get     'cache-control': 'max-age=60',
+97 silly registry.get     etag: '"1OLDNQEGLC9C3O190UVFQSB4B"',
+97 silly registry.get     'x-served-by': 'cache-ams4127-AMS',
+97 silly registry.get     'x-cache': 'HIT',
+97 silly registry.get     'x-cache-hits': '1',
+97 silly registry.get     'x-timer': 'S1411805073.444791,VS0,VE168',
+97 silly registry.get     vary: 'Accept',
+97 silly registry.get     'content-length': '0',
+97 silly registry.get     'keep-alive': 'timeout=10, max=50',
+97 silly registry.get     connection: 'Keep-Alive' } ]
+98 verbose etag https://registry.npmjs.org/grunt-contrib-nodeunit from cache
+99 silly addNameRange number 2 { name: 'grunt-contrib-nodeunit',
+99 silly addNameRange   range: '>=0.1.2-0 <0.2.0-0',
+99 silly addNameRange   hasData: true }
+100 silly addNameRange versions [ 'grunt-contrib-nodeunit',
+100 silly addNameRange   [ '0.1.0',
+100 silly addNameRange     '0.1.1',
+100 silly addNameRange     '0.1.2',
+100 silly addNameRange     '0.2.0',
+100 silly addNameRange     '0.2.1',
+100 silly addNameRange     '0.2.2',
+100 silly addNameRange     '0.3.0',
+100 silly addNameRange     '0.1.2-rc5',
+100 silly addNameRange     '0.1.2-rc6',
+100 silly addNameRange     '0.3.1',
+100 silly addNameRange     '0.3.2',
+100 silly addNameRange     '0.3.3',
+100 silly addNameRange     '0.4.0',
+100 silly addNameRange     '0.4.1' ] ]
+101 verbose addNamed [ 'grunt-contrib-nodeunit', '0.1.2' ]
+102 verbose addNamed [ '0.1.2', '0.1.2' ]
+103 silly lockFile 214c62f1-grunt-contrib-nodeunit-0-1-2 grunt-contrib-nodeunit@0.1.2
+104 verbose lock grunt-contrib-nodeunit@0.1.2 /Users/bastieneichenberger/.npm/214c62f1-grunt-contrib-nodeunit-0-1-2.lock
+105 silly lockFile 214c62f1-grunt-contrib-nodeunit-0-1-2 grunt-contrib-nodeunit@0.1.2
+106 silly lockFile 214c62f1-grunt-contrib-nodeunit-0-1-2 grunt-contrib-nodeunit@0.1.2
+107 silly lockFile 44cefd21-grunt-contrib-nodeunit-0-1-2 grunt-contrib-nodeunit@~0.1.2
+108 silly lockFile 44cefd21-grunt-contrib-nodeunit-0-1-2 grunt-contrib-nodeunit@~0.1.2
+109 http 304 https://registry.npmjs.org/grunt
+110 silly registry.get cb [ 304,
+110 silly registry.get   { date: 'Sat, 27 Sep 2014 08:04:33 GMT',
+110 silly registry.get     server: 'Apache',
+110 silly registry.get     via: '1.1 varnish',
+110 silly registry.get     'last-modified': 'Sat, 27 Sep 2014 08:04:34 GMT',
+110 silly registry.get     'cache-control': 'max-age=60',
+110 silly registry.get     etag: '"EPFVYT57NTZTHQJAVA6XFZH8U"',
+110 silly registry.get     'x-served-by': 'cache-ams4121-AMS',
+110 silly registry.get     'x-cache': 'HIT',
+110 silly registry.get     'x-cache-hits': '1',
+110 silly registry.get     'x-timer': 'S1411805073.419196,VS0,VE673',
+110 silly registry.get     vary: 'Accept',
+110 silly registry.get     'content-length': '0',
+110 silly registry.get     'keep-alive': 'timeout=10, max=50',
+110 silly registry.get     connection: 'Keep-Alive' } ]
+111 verbose etag https://registry.npmjs.org/grunt from cache
+112 silly addNameRange number 2 { name: 'grunt', range: '>=0.4.0-0 <0.5.0-0', hasData: true }
+113 silly addNameRange versions [ 'grunt',
+113 silly addNameRange   [ '0.1.0',
+113 silly addNameRange     '0.1.1',
+113 silly addNameRange     '0.1.2',
+113 silly addNameRange     '0.2.0',
+113 silly addNameRange     '0.2.1',
+113 silly addNameRange     '0.2.2',
+113 silly addNameRange     '0.2.3',
+113 silly addNameRange     '0.2.4',
+113 silly addNameRange     '0.2.5',
+113 silly addNameRange     '0.2.6',
+113 silly addNameRange     '0.2.7',
+113 silly addNameRange     '0.2.8',
+113 silly addNameRange     '0.2.9',
+113 silly addNameRange     '0.2.10',
+113 silly addNameRange     '0.2.11',
+113 silly addNameRange     '0.2.12',
+113 silly addNameRange     '0.2.13',
+113 silly addNameRange     '0.2.14',
+113 silly addNameRange     '0.2.15',
+113 silly addNameRange     '0.3.0',
+113 silly addNameRange     '0.3.1',
+113 silly addNameRange     '0.3.2',
+113 silly addNameRange     '0.3.3',
+113 silly addNameRange     '0.3.4',
+113 silly addNameRange     '0.3.5',
+113 silly addNameRange     '0.3.6',
+113 silly addNameRange     '0.3.7',
+113 silly addNameRange     '0.3.8',
+113 silly addNameRange     '0.3.9',
+113 silly addNameRange     '0.3.10',
+113 silly addNameRange     '0.3.11',
+113 silly addNameRange     '0.3.12',
+113 silly addNameRange     '0.3.13',
+113 silly addNameRange     '0.3.14',
+113 silly addNameRange     '0.3.15',
+113 silly addNameRange     '0.3.16',
+113 silly addNameRange     '0.3.17',
+113 silly addNameRange     '0.4.0',
+113 silly addNameRange     '0.4.1',
+113 silly addNameRange     '0.4.2',
+113 silly addNameRange     '0.4.3',
+113 silly addNameRange     '0.4.4',
+113 silly addNameRange     '0.4.5',
+113 silly addNameRange     '0.3.13-a',
+113 silly addNameRange     '0.4.0-a',
+113 silly addNameRange     '0.4.0-rc1',
+113 silly addNameRange     '0.4.0-rc2',
+113 silly addNameRange     '0.4.0-rc3',
+113 silly addNameRange     '0.4.0-rc4',
+113 silly addNameRange     '0.4.0-rc5',
+113 silly addNameRange     '0.4.0-rc6',
+113 silly addNameRange     '0.4.0-rc7',
+113 silly addNameRange     '0.4.0-rc8' ] ]
+114 verbose addNamed [ 'grunt', '0.4.5' ]
+115 verbose addNamed [ '0.4.5', '0.4.5' ]
+116 silly lockFile 81abf7ad-grunt-0-4-5 grunt@0.4.5
+117 verbose lock grunt@0.4.5 /Users/bastieneichenberger/.npm/81abf7ad-grunt-0-4-5.lock
+118 silly lockFile 81abf7ad-grunt-0-4-5 grunt@0.4.5
+119 silly lockFile 81abf7ad-grunt-0-4-5 grunt@0.4.5
+120 silly lockFile cba964e3-grunt-0-4-0 grunt@~0.4.0
+121 silly lockFile cba964e3-grunt-0-4-0 grunt@~0.4.0
+122 http 304 https://registry.npmjs.org/grunt-contrib-jshint
+123 silly registry.get cb [ 304,
+123 silly registry.get   { date: 'Sat, 27 Sep 2014 08:04:33 GMT',
+123 silly registry.get     server: 'Apache',
+123 silly registry.get     via: '1.1 varnish',
+123 silly registry.get     'last-modified': 'Sat, 27 Sep 2014 08:04:34 GMT',
+123 silly registry.get     'cache-control': 'max-age=60',
+123 silly registry.get     etag: '"5ANXDP1YY0A9NH9HM6CSX71O7"',
+123 silly registry.get     'x-served-by': 'cache-ams4132-AMS',
+123 silly registry.get     'x-cache': 'HIT',
+123 silly registry.get     'x-cache-hits': '1',
+123 silly registry.get     'x-timer': 'S1411805073.434375,VS0,VE675',
+123 silly registry.get     vary: 'Accept',
+123 silly registry.get     'content-length': '0',
+123 silly registry.get     'keep-alive': 'timeout=10, max=50',
+123 silly registry.get     connection: 'Keep-Alive' } ]
+124 verbose etag https://registry.npmjs.org/grunt-contrib-jshint from cache
+125 http 304 https://registry.npmjs.org/grunt-contrib-clean
+126 silly registry.get cb [ 304,
+126 silly registry.get   { date: 'Sat, 27 Sep 2014 08:04:33 GMT',
+126 silly registry.get     server: 'Apache',
+126 silly registry.get     via: '1.1 varnish',
+126 silly registry.get     'last-modified': 'Sat, 27 Sep 2014 08:04:34 GMT',
+126 silly registry.get     'cache-control': 'max-age=60',
+126 silly registry.get     etag: '"63BIO3Y366CTKBQE3FK7DIFJ9"',
+126 silly registry.get     'x-served-by': 'cache-ams4124-AMS',
+126 silly registry.get     'x-cache': 'HIT',
+126 silly registry.get     'x-cache-hits': '1',
+126 silly registry.get     'x-timer': 'S1411805073.432333,VS0,VE679',
+126 silly registry.get     vary: 'Accept',
+126 silly registry.get     'content-length': '0',
+126 silly registry.get     'keep-alive': 'timeout=10, max=50',
+126 silly registry.get     connection: 'Keep-Alive' } ]
+127 verbose etag https://registry.npmjs.org/grunt-contrib-clean from cache
+128 silly addNameRange number 2 { name: 'grunt-contrib-jshint',
+128 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+128 silly addNameRange   hasData: true }
+129 silly addNameRange versions [ 'grunt-contrib-jshint',
+129 silly addNameRange   [ '0.1.0',
+129 silly addNameRange     '0.1.1',
+129 silly addNameRange     '0.2.0',
+129 silly addNameRange     '0.3.0',
+129 silly addNameRange     '0.4.0',
+129 silly addNameRange     '0.4.1',
+129 silly addNameRange     '0.4.2',
+129 silly addNameRange     '0.4.3',
+129 silly addNameRange     '0.5.0',
+129 silly addNameRange     '0.5.1',
+129 silly addNameRange     '0.5.2',
+129 silly addNameRange     '0.5.3',
+129 silly addNameRange     '0.5.4',
+129 silly addNameRange     '0.6.0',
+129 silly addNameRange     '0.6.1',
+129 silly addNameRange     '0.6.2',
+129 silly addNameRange     '0.6.3',
+129 silly addNameRange     '0.6.4',
+129 silly addNameRange     '0.6.5',
+129 silly addNameRange     '0.7.0',
+129 silly addNameRange     '0.7.1',
+129 silly addNameRange     '0.7.2',
+129 silly addNameRange     '0.8.0',
+129 silly addNameRange     '0.9.0',
+129 silly addNameRange     '0.9.1',
+129 silly addNameRange     '0.9.2',
+129 silly addNameRange     '0.10.0',
+129 silly addNameRange     '0.1.1-rc5',
+129 silly addNameRange     '0.1.1-rc6' ] ]
+130 verbose addNamed [ 'grunt-contrib-jshint', '0.1.1' ]
+131 verbose addNamed [ '0.1.1', '0.1.1' ]
+132 silly lockFile 551e0755-grunt-contrib-jshint-0-1-1 grunt-contrib-jshint@0.1.1
+133 verbose lock grunt-contrib-jshint@0.1.1 /Users/bastieneichenberger/.npm/551e0755-grunt-contrib-jshint-0-1-1.lock
+134 silly addNameRange number 2 { name: 'grunt-contrib-clean',
+134 silly addNameRange   range: '>=0.4.0-0 <0.5.0-0',
+134 silly addNameRange   hasData: true }
+135 silly addNameRange versions [ 'grunt-contrib-clean',
+135 silly addNameRange   [ '0.1.0',
+135 silly addNameRange     '0.2.0',
+135 silly addNameRange     '0.3.0',
+135 silly addNameRange     '0.3.1',
+135 silly addNameRange     '0.3.2',
+135 silly addNameRange     '0.4.0',
+135 silly addNameRange     '0.4.1',
+135 silly addNameRange     '0.5.0',
+135 silly addNameRange     '0.6.0',
+135 silly addNameRange     '0.4.0-a',
+135 silly addNameRange     '0.4.0-rc5',
+135 silly addNameRange     '0.4.0-rc6' ] ]
+136 verbose addNamed [ 'grunt-contrib-clean', '0.4.1' ]
+137 verbose addNamed [ '0.4.1', '0.4.1' ]
+138 silly lockFile d4970290-grunt-contrib-clean-0-4-1 grunt-contrib-clean@0.4.1
+139 verbose lock grunt-contrib-clean@0.4.1 /Users/bastieneichenberger/.npm/d4970290-grunt-contrib-clean-0-4-1.lock
+140 silly lockFile 551e0755-grunt-contrib-jshint-0-1-1 grunt-contrib-jshint@0.1.1
+141 silly lockFile 551e0755-grunt-contrib-jshint-0-1-1 grunt-contrib-jshint@0.1.1
+142 silly lockFile b7545c6e-grunt-contrib-jshint-0-1-1 grunt-contrib-jshint@~0.1.1
+143 silly lockFile b7545c6e-grunt-contrib-jshint-0-1-1 grunt-contrib-jshint@~0.1.1
+144 silly lockFile d4970290-grunt-contrib-clean-0-4-1 grunt-contrib-clean@0.4.1
+145 silly lockFile d4970290-grunt-contrib-clean-0-4-1 grunt-contrib-clean@0.4.1
+146 silly lockFile 9d1c9db7-grunt-contrib-clean-0-4-0 grunt-contrib-clean@~0.4.0
+147 silly lockFile 9d1c9db7-grunt-contrib-clean-0-4-0 grunt-contrib-clean@~0.4.0
+148 http 200 https://github.com/Leonidas-from-XIV/node-xml2js.git
+149 verbose tar unpack /tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git
+150 silly lockFile 1d9b4ba7--from-XIV-node-xml2js-git-unpack tar:///tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git-unpack
+151 verbose lock tar:///tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git-unpack /Users/bastieneichenberger/.npm/1d9b4ba7--from-XIV-node-xml2js-git-unpack.lock
+152 silly lockFile 5f2841f7-eonidas-from-XIV-node-xml2js-git tar:///tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git
+153 verbose lock tar:///tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git /Users/bastieneichenberger/.npm/5f2841f7-eonidas-from-XIV-node-xml2js-git.lock
+154 silly gunzTarPerm modes [ '755', '644' ]
+155 error not a package /tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git
+156 silly lockFile 1d9b4ba7--from-XIV-node-xml2js-git-unpack tar:///tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git-unpack
+157 silly lockFile 1d9b4ba7--from-XIV-node-xml2js-git-unpack tar:///tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git-unpack
+158 silly lockFile 5f2841f7-eonidas-from-XIV-node-xml2js-git tar:///tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git
+159 silly lockFile 5f2841f7-eonidas-from-XIV-node-xml2js-git tar:///tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git
+160 silly lockFile f3284dda-eonidas-from-XIV-node-xml2js-git https://github.com/Leonidas-from-XIV/node-xml2js.git
+161 silly lockFile f3284dda-eonidas-from-XIV-node-xml2js-git https://github.com/Leonidas-from-XIV/node-xml2js.git
+162 error Error: ENOENT, open '/tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git-unpack/package.json'
+163 error If you need help, you may report this *entire* log,
+163 error including the npm and node versions, at:
+163 error     <http://github.com/npm/npm/issues>
+164 error System Darwin 13.4.0
+165 error command "node" "/usr/local/bin/npm" "install"
+166 error cwd /Applications/MAMP/htdocs/extendscript-library.org/tests
+167 error node -v v0.10.32
+168 error npm -v 1.4.28
+169 error path /tmp/npm-942-kM6Ary4j/github.com/Leonidas-from-XIV/node-xml2js.git-unpack/package.json
+170 error code ENOENT
+171 error errno 34
+172 verbose exit [ 34, true ]
