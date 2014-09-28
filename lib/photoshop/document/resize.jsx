@@ -1,7 +1,8 @@
 /**
- * @name PS.Resize
- * @class <b>PS.Resize</b> a module with Photoshop functions to resize and crop documents</br>
- * These functions can be used from InDesign with the {@link module:../../common/utils/gateway.jsx} module
+ * Module with Photoshop functions to resize
+ * These functions can be used from InDesign with the {@link H.Utils.Gateway} module
+ * @namespace Resize
+ * @memberOf PS.Document
  * @author Bastien Eichenberger
  */
 PS.Document.Resize = (function (my) {
@@ -9,8 +10,8 @@ PS.Document.Resize = (function (my) {
 
     /**
      * Function to resize an image in photoshop
-     * @name PS.Document.Resize#resampling
-     * @function
+     * @function resampling
+     * @memberOf PS.Document.Resize
      * @param
      * {{
      *      file_path : string,

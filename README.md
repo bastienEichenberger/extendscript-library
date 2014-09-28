@@ -56,7 +56,7 @@ Edit the source include pattern to jsx
 
 ```
 cd your_extendscript-library.org_directory
-./node_modules/.bin/jsdoc --recurse ./lib/*
+./node_modules/.bin/jsdoc --recurse -p ./lib/*
 ```
 
 
@@ -75,5 +75,5 @@ grunt --verbose
 
 ##IDE
 If you don't like to use the ExtendScript Toolkit to write your scripts, you can use the excellent WebStorm IDE.
-If you will participe in this project you can write to me an email to receive the free open-source licence.
+If you will participate in this project you can write to me an email to receive the free open-source licence.
 
