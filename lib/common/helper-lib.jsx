@@ -1,1 +1,1 @@
-﻿/** * The helper-lib object * @namespace * @type {{}} */var H = {};//@include "config/all_common_modules.jsx"H.Config.init();
+﻿/** * The helper-lib object * @type {{}} */var H = {};//@include "config/all_common_modules.jsx"H.Config.init();
