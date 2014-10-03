@@ -1,6 +1,7 @@
 /**
- * @name Lib.Globals
- * @class <b>Lib.Globals</b> a module with the globals variables
+ * Module with globals variables
+ * @namespace Globals
+ * @memberOf PS
  * @author Bastien Eichenberger
  */
 PS.Globals = (function(my) {

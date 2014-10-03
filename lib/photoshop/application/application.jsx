@@ -1,24 +1,42 @@
 /**
- * @name PS.Application
- * @class <b>PS.Application</b> a module with Photoshop function</br>
+ * Module with photoshop application functions
+ * @namespace Application
+ * @memberOf PS
  * @author Bastien Eichenberger
  */
 PS.Application = (function (my) {
 
+    /**
+     * Function to init the Application module
+     * @function init
+     * @memberOf PS.Application
+     */
     my.init = function () {
         app.preferences.rulerUnits = Units.MM;
     }
 
+    /**
+     * Function to not block the script during execution (no dialog box)
+     * @function silent
+     * @memberOf PS.Application
+     */
     my.silent = function () {
         app.displayDialogs = DialogModes.NO;
     }
 
+    /**
+     * Function to restore the preferences when the script is finished
+     * @function restore
+     * @memberOf PS.Application
+     */
     my.restore = function () {
         app.displayDialogs = DialogModes.ALL;
     }
 
     /**
      * Function to create a new photoshop document
+     * @function create_doc
+     * @memberOf PS.Application
      * @param {Number} width
      * @param {Number} height
      * @param {Number} resolution
@@ -31,12 +49,12 @@ PS.Application = (function (my) {
 
     /**
      * Function to open a file with Photoshop
-     * @name PS.Application#open_image
-     * @function
-     * @param {{file_path: string}} obj a JSON object
+     * @function open_image
+     * @memberOf PS.Application
+     * @param {String} file_path the file_path of the file
      */
-    my.open_image = function (obj) {
-        var file_path = decodeURI(obj.file_path);
+    my.open_image = function (file_path) {
+        var file_path = decodeURI(file_path);
         var img_file = new File(file_path);
         var ps_doc = app.open(img_file);
         return ps_doc;
