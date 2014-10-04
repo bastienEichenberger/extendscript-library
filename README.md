@@ -82,9 +82,10 @@ grunt --verbose
 ###Write tests
 In the directory test/fixtures create a jsx file like the example fixtures/photoshop/document/test_document.jsx.
 The tests work by this way:
-  * run all extendscript tests -> put the result in the results folder
-    (if its a file store the file in the results folder, if it's a value write it in the tests.xml file)
-  * check the results with node-unit
+  * run all extendscript tests -> put the result in the results folder <br>
+    (if it's a file store the file in the results folder, if it's a value write it in the tests.xml file)
+
+  * check the results with node-unit <br>
     (you can write tests in the test_photoshop-lib.js file)
 
 ##IDE
