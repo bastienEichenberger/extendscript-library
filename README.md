@@ -50,9 +50,7 @@ PS.Application.create_doc(100, 100, 72, 'document_to_test', NewDocumentMode.RGB)
 
 
 ##Generate the documentation
-Use jsdoc-toolkit to generate the documentation
-Open the file nodes/modules/jsdoc/conf.json.EXAMPLE
-Edit the source include pattern to jsx
+Use jsdoc3 to generate the documentation
 
 ```
 cd your_extendscript-library.org_directory
@@ -61,8 +59,19 @@ cd your_extendscript-library.org_directory
 
 
 ##Tests
-Use grunt to run the unit tests.
-
+Use grunt to run the unit tests. Make sure that you have the Creative Suite CC installed.
+Otherwise you can change the version to test in the grunt.js file:
+```
+extendscript: {
+            test_document: {
+                options: {
+                    app: 'Adobe Photoshop CC 2014', // Adobe Photoshop CS6
+                    args: [path.resolve('test/results/tests.xml'), path.resolve('test/results'), path.resolve('test/log')]
+                },
+                src: 'test/fixtures/photoshop/document/test_document.jsx'
+            }
+        }
+```
 
 ###Run the tests
 ```
@@ -71,7 +80,12 @@ grunt --verbose
 ```
 
 ###Write tests
-
+In the directory test/fixtures create a jsx file like the example fixtures/photoshop/document/test_document.jsx.
+The tests work by this way:
+  * run all extendscript tests -> put the result in the results folder
+    (if its a file store the file in the results folder, if it's a value write it in the tests.xml file)
+  * check the results with node-unit
+    (you can write tests in the test_photoshop-lib.js file)
 
 ##IDE
 If you don't like to use the ExtendScript Toolkit to write your scripts, you can use the excellent WebStorm IDE.
