@@ -1,12 +1,13 @@
 /**
- * @name Lib.Globals
- * @class <b>Lib.Globals</b> a module with the globals variables
+ * Module with indesign globals variables
+ * @namespace Globals
+ * @memberOf IN
  * @author Bastien Eichenberger
  */
-Lib.Globals = (function(my) {
+IN.Globals = (function(my) {
 
 
 
 
     return my;
-})(Lib || {} );
+})(IN.Globals || {} );

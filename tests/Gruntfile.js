@@ -35,7 +35,7 @@ module.exports = function (grunt) {
         extendscript: {
             test_document: {
                 options: {
-                    app: 'Adobe Photoshop CS6',
+                    app: 'Adobe Photoshop CC 2014',
                     args: [path.resolve('test/results/tests.xml'), path.resolve('test/results'), path.resolve('test/log')]
                 },
                 src: 'test/fixtures/photoshop/document/test_document.jsx'

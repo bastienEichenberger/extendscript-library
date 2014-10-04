@@ -1,0 +1,29 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "includePattern": ".+\\.jsx(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [],
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": true,
+        "systemName": "ExtendScript-library.org",
+        "footer": "The extendscript-library is organised in 3 different namespace: H (helper library), IN (indesign library), PS (photoshop library)",
+        "copyright": "© www.extendscript-library.org 2014",
+        "navType": "vertical",
+        "theme": "spacelab",
+        "linenums": true,
+        "collapseSymbols": true,
+        "inverseNav": false
+    },
+    "opts": {
+        "template": "../ink-docstrap/template",
+        "encoding": "utf8",
+        "destination": "docs",
+        "recurse": true,
+        "private": true
+    }
+}

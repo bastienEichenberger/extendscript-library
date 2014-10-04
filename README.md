@@ -56,7 +56,7 @@ Edit the source include pattern to jsx
 
 ```
 cd your_extendscript-library.org_directory
-./node_modules/.bin/jsdoc --recurse -p ./lib/*
+./node_modules/.bin/jsdoc lib/* -c conf.json
 ```
 
 

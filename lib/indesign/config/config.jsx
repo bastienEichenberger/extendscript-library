@@ -1,12 +1,10 @@
 ﻿/**
- * @name Lib.Config
- * @class <b>Lib.Config</b> a module with the config
+ * Module with the config of the indesign library
+ * @namespace Config
+ * @memberOf IN
  * @author Bastien Eichenberger
  */
-Lib.Config = (function (my) {
-
-
-
+IN.Config = (function (my) {
 
     return my;
-})(Lib || {});
+})(IN.Config || {});

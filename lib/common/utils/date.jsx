@@ -1,8 +1,10 @@
 /**
+ * @class Date
+ */
+
+/**
  * Function to format a date
- * @name Date.year_month_day
- * @function
- * @return {string} the date as string in this format yyyy-mm-dd
+ * @return {String} the date as string in this format yyyy-mm-dd
  */
 Date.prototype.year_month_day = function() {
     var _year = this.getFullYear();
@@ -16,9 +18,7 @@ Date.prototype.year_month_day = function() {
 
 /**
  * Function to format time
- * @name Date.hours_minutes_seconds
- * @function
- * @return {string} the date as string in this format hh-mm-ss
+ * @return {String} the date as string in this format hh-mm-ss
  */
 Date.prototype.hours_minutes_seconds = function() {
     var _hours = this.getHours();

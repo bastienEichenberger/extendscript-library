@@ -24,6 +24,7 @@
         "node": ">= 0.8.0"
     },
     "dependencies": {
-        "jsdoc": "git+https://github.com/jsdoc3/jsdoc.git"
+        "jsdoc": "git+https://github.com/jsdoc3/jsdoc.git",
+        "docstrap": "git+https://github.com/terryweiss/docstrap.git"
     }
 }

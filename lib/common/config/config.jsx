@@ -1,15 +1,16 @@
 ﻿/**
- * @name Lib.Config
- * @class <b>Lib.Config</b> a module with the config
+ * Module with the config of the helper library
+ * @namespace Config
+ * @memberOf H
  * @author Bastien Eichenberger
  */
 H.Config = (function (my) {
 
 
     /**
-     * Function to init the library
-     * @name Lib.Config.init
-     * @function
+     * Function to init the helper library
+     * @function init
+     * @memberOf H.Config
      */
     my.init = function () {
 
