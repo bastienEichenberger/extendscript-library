@@ -66,6 +66,11 @@ exports.extendscript = {
         res = parseInt(res, 10);
         test.equal(res, 72);
         test.done();
+    },
+    open_image: function (test) {
+        var res = get_node_value_by_id(xml, 'open_image');
+        test.equal(res, 'test.psd');
+        test.done();
     }
 
 };

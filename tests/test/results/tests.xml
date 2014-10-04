@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tests>
   <unit-test id="resolution">72</unit-test>
+  <unit-test id="open_image">test.psd</unit-test>
 </tests>

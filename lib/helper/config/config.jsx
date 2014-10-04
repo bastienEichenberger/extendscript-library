@@ -13,7 +13,6 @@ H.Config = (function (my) {
      * @memberOf H.Config
      */
     my.init = function () {
-
     }
 
     return my;

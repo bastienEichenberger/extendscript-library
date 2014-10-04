@@ -1,4 +1,4 @@
-//@include "../common/helper-lib.jsx"
+//@include "../helper/helper-lib.jsx"
 
 /**
  * The indesign-lib object
