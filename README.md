@@ -40,10 +40,10 @@ PS.Application.create_doc(100, 100, 72, 'document_to_test', NewDocumentMode.RGB)
   * install node js (http://nodejs.org/download/)
   * install node modules:
   ```
-  cd your_extendscript-library.org_directory
+  cd your_extendscript-library.org_directory //install node modules for the documentation
   sudo npm install
 
-  cd your_extendscript-library.org_directory/tests
+  cd your_extendscript-library.org_directory/tests // isntall node modules for the tests
   sudo npm install
 
   ```
@@ -59,18 +59,19 @@ cd your_extendscript-library.org_directory
 
 
 ##Tests
-Use grunt to run the unit tests. Make sure that you have the Creative Suite CC installed.
-Otherwise you can change the version to test in the grunt.js file:
+Create a config.js file under your_extendscript-library.org_directory/tests/config.js.
+You can use the exemple.config.js file, just change the name to config.js.
+Use grunt to run units tests. Make sure that you have the Creative Suite CC installed.
+Otherwise you can change the config file:
 ```
-extendscript: {
-            test_document: {
-                options: {
-                    app: 'Adobe Photoshop CC 2014', // Adobe Photoshop CS6
-                    args: [path.resolve('test/results/tests.xml'), path.resolve('test/results'), path.resolve('test/log')]
-                },
-                src: 'test/fixtures/photoshop/document/test_document.jsx'
-            }
-        }
+var config = {};
+config.app = {};
+
+config.app.photoshop = 'Adobe Photoshop CS6'; // Adobe Photoshop CC 2014’
+config.app.indesign = 'Adobe InDesign CS6'; // Adobe InDesign CC 2014’
+config.app.illustrator = 'Adobe Illustrator CS6'; // Adobe Illustrator CC 2014’
+
+module.exports = config;
 ```
 
 ###Run the tests
@@ -83,10 +84,10 @@ grunt --verbose
 In the directory test/fixtures create a jsx file like the example fixtures/photoshop/document/test_document.jsx.
 The tests work by this way:
   * run all extendscript tests -> put the result in the results folder <br>
-    (if it's a file store the file in the results folder, if it's a value write it in the tests.xml file)
+    (if it's a file store the file in the tests/test/results folder, if it's a value write it in the tests/test/results/tests.xml file)
 
   * check the results with node-unit <br>
-    (you can write tests in the test_photoshop-lib.js file)
+    (you can write tests in the tests/test/tests.js file)
 
 ##IDE
 If you don't like to use the ExtendScript Toolkit to write your scripts, you can use the excellent WebStorm IDE.
