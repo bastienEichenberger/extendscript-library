@@ -4,13 +4,19 @@
         //@include "../../../../../lib/helper/helper-lib.jsx"
 
         // call an other app and return a string "name of the app who called the function + hello + world"
+        // wait some seconds to be sure that everything would be ok if we process a long function
         var photoshop_hello = H.Gateway.call_app (
             'photoshop',
             function(app_name, a, b) {
+                var counter = 100;
+                while (counter) {
+                    $.sleep(10);
+                    counter--;
+                }
                 return app_name + ' return ' + a + ' ' + b;
             },
             [app.name, 'hello', 'world'],
-            10
+            100
         );
 
 

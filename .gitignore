@@ -1,6 +1,6 @@
 /.idea
 /node_modules
-/out
 /tests/node_modules
 /tests/test/log
 /tests/test/results
+/tests/config.js
