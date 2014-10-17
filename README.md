@@ -43,7 +43,7 @@ PS.Application.create_doc(100, 100, 72, 'document_to_test', NewDocumentMode.RGB)
   cd your_extendscript-library.org_directory //install node modules for the documentation
   sudo npm install
 
-  cd your_extendscript-library.org_directory/tests // isntall node modules for the tests
+  cd your_extendscript-library.org_directory/tests // install node modules for the tests
   sudo npm install
 
   ```
