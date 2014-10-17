@@ -1,16 +1,8 @@
-#extendscript-library.org
-
-This library is under active development.
-
-For more information go to our website
-[extendscript-library.org!](http://www.extendscript-library.org)
-
 ##Architecture:
-###packages
-1. lib
-  * common (modules with functionality that could be use in other apps)
-  * indesign (modules for indesign including the common packages)
-  * photoshop (modules for photoshop including the common packages)
+###Namespace
+  * H (modules with functionality that could be use in other apps)
+  * IN (modules for indesign including the common packages)
+  * PS (modules for photoshop including the common packages)
 
 ##Use the library
 ###Include the library
@@ -54,7 +46,7 @@ Use jsdoc3 to generate the documentation
 
 ```
 cd your_extendscript-library.org_directory
-./node_modules/.bin/jsdoc lib/* -c conf.json doc.md
+./node_modules/.bin/jsdoc lib/* -c conf.json readme.md
 ```
 
 

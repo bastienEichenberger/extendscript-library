@@ -14,6 +14,7 @@ module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
+
         jshint: {
             all: [
                 'Gruntfile.js',
@@ -30,28 +31,68 @@ module.exports = function (grunt) {
             test: ['test/results', 'test/log']
         },
 
-
-        // Configuration to be run (and then tested).
-        extendscript: {
-            test_document: {
+        // -------------------- tasks for photoshop, indesign, illustrator --------------------
+        photoshop: {
+            test_document_application: {
                 options: {
-                    app: 'Adobe Photoshop CS6',
-                    args: [path.resolve('test/results/tests.xml'), path.resolve('test/results'), path.resolve('test/log')]
+                    args: [path.resolve('test/results/tests.xml'), path.resolve('test/results')]
                 },
-                src: 'test/fixtures/photoshop/document/test_document.jsx'
+                src: ['test/fixtures/photoshop/document/test_document.jsx', 'test/fixtures/photoshop/application/test_application.jsx']
             },
-            test_application: {
+            test_log: {
                 options: {
-                    app: 'Adobe Photoshop CS6',
-                    args: [path.resolve('test/results/tests.xml'), path.resolve('test/results'), path.resolve('test/log')]
+                    args: [path.resolve('test/log')]
                 },
-                src: 'test/fixtures/photoshop/document/test_application.jsx'
+                src: 'test/fixtures/helper/log/test_log.jsx'
+            },
+            test_gateway_utils: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml')]
+                },
+                src: ['test/fixtures/helper/gateway/test_gateway.jsx', 'test/fixtures/helper/utils/test_utils.jsx']
             }
         },
 
-        // Unit tests.
+        indesign: {
+            test_link: {
+                options: {
+                    args: []
+                },
+                src: 'test/fixtures/indesign/link/test_link.jsx'
+            },
+            test_log: {
+                options: {
+                    args: [path.resolve('test/log')]
+                },
+                src: 'test/fixtures/helper/log/test_log.jsx'
+            },
+            test_gateway: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml')]
+                },
+                src: 'test/fixtures/helper/gateway/test_gateway.jsx'
+            }
+        },
+
+        illustrator: {
+            test_log: {
+                options: {
+                    args: [path.resolve('test/log')]
+                },
+                src: 'test/fixtures/helper/log/test_log.jsx'
+            },
+            test_gateway: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml')]
+                },
+                src: 'test/fixtures/helper/gateway/test_gateway.jsx'
+            }
+        },
+        // -------------------- end tasks for photoshop, indesign, illustrator --------------------
+
+        // Units tests.
         nodeunit: {
-            tests: ['test/test_photoshop-lib.js']
+            tests: ['test/tests.js']
         }
 
     });
@@ -63,10 +104,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-nodeunit');
-
-    // Whenever the "test" task is run, first clean the "tmp" dir, then run this
-    // plugin's task(s), then test the result.
-    grunt.registerTask('test', ['clean', 'create', 'extendscript', 'nodeunit']);
 
     // then create a new results and log folder, create a xml file with root
     grunt.registerTask('create', 'Create results and log directories', function () {
@@ -80,6 +117,8 @@ module.exports = function (grunt) {
         );
     });
 
+    // Whenever the "test" task is run, first clean results and logs, create xml file, runs tasks, test them
+    grunt.registerTask('test', ['clean', 'create', 'photoshop', 'indesign', 'illustrator', 'nodeunit']);
 
     // By default, lint and run all tests.
     grunt.registerTask('default', ['jshint', 'test']);

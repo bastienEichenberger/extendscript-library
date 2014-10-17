@@ -1,12 +1,8 @@
-(function (xml_file_path, results_folder, log_folder) {
+(function (xml_file_path, results_folder) {
 
     try {
 
-        //@target "photoshop"
         //@include "../../../../../lib/photoshop/photoshop-lib.jsx"
-
-        // run the tests
-        H.Log.init(log_folder, 0);
 
         // create a new document
         PS.Application.create_doc(100, 100, 72, 'document_to_test', NewDocumentMode.RGB);

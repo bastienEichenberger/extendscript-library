@@ -1,7 +1,6 @@
-(function (xml_file_path, results_folder, log_folder) {
+(function (xml_file_path, results_folder) {
 
     try {
-        //@target "photoshop"
         //@include "../../../../../lib/photoshop/photoshop-lib.jsx"
 
         // open a document

@@ -2,4 +2,10 @@
 <tests>
   <unit-test id="resolution">72</unit-test>
   <unit-test id="open_image">test.psd</unit-test>
+  <unit-test id="gateway_adobe_photoshop">Adobe Photoshop return hello world</unit-test>
+  <unit-test id="is_in_array">2</unit-test>
+  <unit-test id="min">-2</unit-test>
+  <unit-test id="max">7</unit-test>
+  <unit-test id="gateway_adobe_indesign">Adobe InDesign return hello world</unit-test>
+  <unit-test id="gateway_adobe_illustrator">Adobe Illustrator return hello world</unit-test>
 </tests>

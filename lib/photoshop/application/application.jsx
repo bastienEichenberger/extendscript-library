@@ -28,6 +28,7 @@ PS.Application = (function (my) {
      * Function to restore the preferences when the script is finished
      * @function restore
      * @memberOf PS.Application
+     * @todo restore all parameters
      */
     my.restore = function () {
         app.displayDialogs = DialogModes.ALL;
