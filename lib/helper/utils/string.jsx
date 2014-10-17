@@ -4,11 +4,11 @@
 
 /**
  * Function to check if a string contains a char
- * @param {Character} my_string the char to check
- * @returns {boolean} true if the string contains the char passed as parameter
+ * @param {String} string the string to check
+ * @returns {Boolean} true if the string contains the char passed as parameter
  */
-String.prototype.contains = function (search_string) {
-    return this.indexOf(search_string) != -1
+String.prototype.contains = function (string) {
+    return this.indexOf(string) != -1
 }
 
 /**

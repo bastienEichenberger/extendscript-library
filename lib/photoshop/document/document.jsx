@@ -39,7 +39,7 @@ PS.Document = (function (my) {
      * Function to close the active photoshop document
      * @function close
      * @memberOf PS.Document
-     * @param {SaveOptions} save_options SaveOptions.SAVECHANGES, SaveOptions.DONOTSAVECHANGES, SaveOptions.PROMPTTOSAVECHANGES
+     * @param {SaveOptions} save_options SAVECHANGES, DONOTSAVECHANGES, PROMPTTOSAVECHANGES
      */
     my.close = function (save_options) {
         if (save_options !== SaveOptions.SAVECHANGES && save_options !== SaveOptions.DONOTSAVECHANGES  && save_options !== SaveOptions.PROMPTTOSAVECHANGES) {
