@@ -34,10 +34,11 @@ function get_node_value_by_id(value) {
     return node.val;
 }
 
+
+// use console.log to debug
 exports.tests = {
 
     setUp: function (done) {
-
         done();
     },
 
@@ -84,12 +85,14 @@ exports.tests = {
     logs_from_photoshop_indesign_illustrator: function (test) {
         var actual_lines;
         var expected_lines;
+
         // check if the number of lines in the expected log file is equal than in the result log file
         var actual = grunt.file.read('test/log/log.log');
-        actual_lines = actual.toString().split('\n').length;
+        actual_lines = actual.toString().split(/\r\n|\r|\n/).length;
 
         var expected = grunt.file.read('test/expected/log.log');
-        expected_lines = expected.toString().split('\n').length;
+        expected_lines = expected.toString().split(/\r\n|\r|\n/).length;
+
         test.equal(actual_lines, expected_lines);
         test.done();
     },

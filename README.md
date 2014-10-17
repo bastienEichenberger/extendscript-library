@@ -40,10 +40,12 @@ PS.Application.create_doc(100, 100, 72, 'document_to_test', NewDocumentMode.RGB)
   * install node js (http://nodejs.org/download/)
   * install node modules:
   ```
-  cd your_extendscript-library.org_directory //install node modules for the documentation
+  // install node modules for the documentation
+  cd your_extendscript-library.org_directory
   sudo npm install
 
-  cd your_extendscript-library.org_directory/tests // install node modules for the tests
+  // install node modules for the tests
+  cd your_extendscript-library.org_directory/tests
   sudo npm install
 
   ```
@@ -67,9 +69,9 @@ Otherwise you can change the config file:
 var config = {};
 config.app = {};
 
-config.app.photoshop = 'Adobe Photoshop CS6'; // Adobe Photoshop CC 2014’
-config.app.indesign = 'Adobe InDesign CS6'; // Adobe InDesign CC 2014’
-config.app.illustrator = 'Adobe Illustrator CS6'; // Adobe Illustrator CC 2014’
+config.app.photoshop = 'Adobe Photoshop CS6'; // Adobe Photoshop CC 2014
+config.app.indesign = 'Adobe InDesign CS6'; // Adobe InDesign CC 2014
+config.app.illustrator = 'Adobe Illustrator CS6'; // Adobe Illustrator CC 2014
 
 module.exports = config;
 ```
