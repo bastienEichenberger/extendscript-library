@@ -38,5 +38,5 @@ The tests work by this way:
     (you can write tests in the tests/test/tests.js file)
     
 ## Author
-Taro Hanamura
-Bastien Eichenberger (add some modifications)
+  * Taro Hanamura
+  * Bastien Eichenberger (add some modifications)
