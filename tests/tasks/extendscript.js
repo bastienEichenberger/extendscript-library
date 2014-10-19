@@ -1,13 +1,19 @@
-/*
+/**
+ * Node module to execute a jsx file with AppleScript
+ *
+ * @supported Work only with Mac OS X
+ * @todo add support for windows (use other scripting language than AppleScript)
+ *
+ * This module is inspired by:
  * grunt-extendscript
  * https://github.com/hanamura/grunt-extendscript
- *
  * Copyright (c) 2013 Taro Hanamura
  * Licensed under the MIT license.
+ * @author Taro Hanamura
+ * @author Bastien Eichenberger (add some modifications)
  */
 
 'use strict';
-
 
 
 module.exports = function (grunt) {
@@ -17,7 +23,13 @@ module.exports = function (grunt) {
     var exec = require('child_process').exec,
         path = require('path');
 
-
+    /**
+     * Function to execute all jsx file of a task
+     * For more information see the Gruntfile.js file
+     * @param srcs the jsx file to execute
+     * @param options an object with the arguments
+     * @param done function to execute, force task into async mode with this.async()
+     */
     var step = function (srcs, options, done) {
         if (srcs.length) {
             var src,
@@ -76,21 +88,52 @@ module.exports = function (grunt) {
         }
     };
 
-
+    // run jsx file in illustrator
     grunt.registerMultiTask('illustrator', 'Execute ExtendScript in illustrator', function () {
-        step(this.filesSrc, this.options({ app: config.app.illustrator, args: [] }), this.async() );
+        step(this.filesSrc, this.options({ app: config.apps.illustrator, args: [] }), this.async());
     });
-
+    // run jsx file in photohsop
     grunt.registerMultiTask('photoshop', 'Execute ExtendScript in photoshop', function () {
-        step(this.filesSrc, this.options({ app: config.app.photoshop, args: [] }), this.async() );
+        step(this.filesSrc, this.options({ app: config.apps.photoshop, args: [] }), this.async());
+    });
+    // run jsx file in indesign
+    grunt.registerMultiTask('indesign', 'Execute ExtendScript in indesign', function () {
+        step(this.filesSrc, this.options({ app: config.apps.indesign, args: [] }), this.async());
     });
 
-    grunt.registerMultiTask('indesign', 'Execute ExtendScript in indesign', function () {
-        step(this.filesSrc, this.options({ app: config.app.indesign, args: [] }), this.async() );
+    //run a jsx file in all application in the all_apps array
+    grunt.registerMultiTask('all_apps', function () {
+        var all_apps = ['photoshop', 'illustrator', 'indesign'];
+        var args = this.options().args;
+        var src = this.filesSrc;
+        /**
+         * run all task with the same parameters
+         * grunt.config.set('photoshop.options.args', args);
+         * grunt.config.set('photoshop.src', src);
+         * grunt.task.run('photoshop');
+         */
+        for(var i = 0; i < all_apps.length; i++) {
+            grunt.config.set(all_apps[i] + '.options.args', args);
+            grunt.config.set(all_apps[i] + '.src', src);
+            grunt.task.run(all_apps[i]);
+        }
     });
+
 
 };
 
+
+/**
+ * Function to build a string
+ * @author Jason Trill
+ * {@link https://gist.github.com/jjt/850046#file-string-prototype-printf-js | jjt/String.prototype.printf.js}
+ * @param {String} obj the list of string to replace or an object or an array
+ * @returns {String} the new string
+ * @example
+ * "%s %s great".printf('This', 'is') -> This is great
+ * "{bar} or {foo}".printf({foo:'A',bar,'B'}) -> B or A
+ * "{}, {}, {}!".printf([1,2,3]) -> 1, 2, 3!
+ */
 String.prototype.printf = function (obj) {
     var useArguments = false;
     var _arguments = arguments;

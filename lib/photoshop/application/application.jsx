@@ -7,11 +7,18 @@
 PS.Application = (function (my) {
 
     /**
+     * A collection of preferences objects.
+     * @type {*}
+     */
+    var user_preferences;
+
+    /**
      * Function to init the Application module
      * @function init
      * @memberOf PS.Application
      */
     my.init = function () {
+        user_preferences = app.preferences;
         app.preferences.rulerUnits = Units.MM;
     }
 
@@ -28,10 +35,10 @@ PS.Application = (function (my) {
      * Function to restore the preferences when the script is finished
      * @function restore
      * @memberOf PS.Application
-     * @todo restore all parameters
      */
     my.restore = function () {
-        app.displayDialogs = DialogModes.ALL;
+        app.preferences = user_preferences;
+
     }
 
     /**

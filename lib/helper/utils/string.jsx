@@ -20,3 +20,45 @@ String.prototype.contains = function (string) {
 String.prototype.replace_all = function(find, replace) {
     return this.replace(new RegExp(find, 'g'), replace);
 }
+
+/**
+ * Function to build a string
+ * @author Jason Trill
+ * {@link https://gist.github.com/jjt/850046#file-string-prototype-printf-js | jjt/String.prototype.printf.js}
+ * @param {String} obj the list of string to replace or an object or an array
+ * @returns {String} the new string
+ * @example
+ * "%s %s great".printf('This', 'is') -> This is great
+ * "{bar} or {foo}".printf({foo:'A',bar,'B'}) -> B or A
+ * "{}, {}, {}!".printf([1,2,3]) -> 1, 2, 3!
+ */
+String.prototype.printf = function (obj) {
+    var useArguments = false;
+    var _arguments = arguments;
+    var i = -1;
+    if (typeof _arguments[0] === "string") {
+        useArguments = true;
+    }
+    if (obj instanceof Array || useArguments) {
+        return this.replace(/\%s/g,
+            function (a, b) {
+                i++;
+                if (useArguments) {
+                    if (typeof _arguments[i] === 'string') {
+                        return _arguments[i];
+                    }
+                    else {
+                        throw new Error("Arguments element is an invalid type");
+                    }
+                }
+                return obj[i];
+            });
+    }
+    else {
+        return this.replace(/\{([^{}]*)\}/g,
+            function (a, b) {
+                var r = obj[b];
+                return typeof r === 'string' || typeof r === 'number' ? r : a;
+            });
+    }
+};
