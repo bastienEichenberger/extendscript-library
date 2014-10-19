@@ -39,3 +39,4 @@ The tests work by this way:
     
 ## Author
 Taro Hanamura
+Bastien Eichenberger (add some modifications)
