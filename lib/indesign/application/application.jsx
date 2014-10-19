@@ -15,7 +15,7 @@ IN.Application = (function (my) {
     /**
      * Function to init the Application module
      * @function init
-     * @memberOf PS.Application
+     * @memberOf IN.Application
      */
     my.init = function () {
         user_preferences = app.preferences;
@@ -24,16 +24,16 @@ IN.Application = (function (my) {
     /**
      * Function to not block the script during execution (no dialog box)
      * @function silent
-     * @memberOf PS.Application
+     * @memberOf IN.Application
      */
     my.silent = function () {
-        app.displayDialogs = DialogModes.NO;
+        app.scriptPreferences.userInteractionLevel = UserInteractionLevels.NEVER_INTERACT;
     }
 
     /**
      * Function to restore the preferences when the script is finished
      * @function restore
-     * @memberOf PS.Application
+     * @memberOf IN.Application
      */
     my.restore = function () {
         app.preferences = user_preferences;
@@ -42,4 +42,4 @@ IN.Application = (function (my) {
 
 
     return my;
-})(PS.Application || {});
+})(IN.Application || {});

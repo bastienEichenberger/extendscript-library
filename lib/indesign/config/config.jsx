@@ -12,6 +12,8 @@ IN.Config = (function (my) {
      * @memberOf IN.Config
      */
     my.init = function () {
+        IN.Application.silent();
+        IN.Application.init();
     }
 
     return my;

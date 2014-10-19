@@ -7,7 +7,8 @@
 PS.Application = (function (my) {
 
     /**
-     * A collection of preferences objects.
+     * A collection of preferences objects
+     * @private
      * @type {*}
      */
     var user_preferences;
