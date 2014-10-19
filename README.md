@@ -80,19 +80,15 @@ module.exports = config;
 ```
 
 #### Run the tests
+Create a config.js file under your_extendscript-library.org_directory/tests/config.js.
+You can use the exemple.config.js file, just change the name to config.js.
 ```
 cd your_extendscript-library.org_directory/tests
 grunt --verbose
 ```
 
 #### Write tests
-In the directory test/fixtures create a jsx file like the example fixtures/photoshop/document/test_document.jsx.
-The tests work by this way:
-  * run all extendscript tests -> put the result in the results folder <br>
-    (if it's a file store the file in the tests/test/results folder, if it's a value write it in the tests/test/results/tests.xml file)
-
-  * check the results with node-unit <br>
-    (you can write tests in the tests/test/tests.js file)
+To write your own tests follow this [section](https://github.com/bastienEichenberger/extendscript-library.org/tree/master/tests)
 
 ### IDE
 If you don't like to use the ExtendScript Toolkit to write your scripts, you can use the excellent WebStorm IDE.

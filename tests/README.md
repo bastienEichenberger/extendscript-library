@@ -1,71 +1,41 @@
 # grunt-extendscript
 
-> Execute ExtendScript (.jsx) files.
+Node module to run extendScript file in photoshop, indesign and illustrator.
+The original module can be found [here](https://github.com/hanamura/grunt-extendscript)
 
-## Getting Started
-This plugin requires Grunt `~0.4.0`
+## Install
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
-
-```shell
-npm install grunt-extendscript --save-dev
+### Install nodes modules
+```
+sudo npm install
 ```
 
-One the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+### Create a config.js file
+Create a config.js file under your_extendscript-library.org_directory/tests/config.js.
+You can use the exemple.config.js file, just change the name to config.js.
+Use grunt to run units tests. Make sure that you have the same version of the Creative Suite that the version in the config.js file.
+Otherwise you can change the config file:
 
-```js
-grunt.loadNpmTasks('grunt-extendscript');
+```
+config.apps.photoshop = 'Adobe Photoshop CC 2014';     // Adobe Photoshop CS6
+config.apps.indesign = 'Adobe InDesign CC 2014';       // Adobe InDesign CS6
+config.apps.illustrator = 'Adobe Illustrator CC 2014'; // Adobe Illustrator CS6
+
 ```
 
-## The "extendscript" task
-
-### Overview
-In your project's Gruntfile, add a section named `extendscript` to the data object passed into `grunt.initConfig()`.
-
-```js
-grunt.initConfig({
-  extendscript: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
-})
+## Run tests
+```
+grunt --verbose
 ```
 
-### Options
+## Write tests
+In the directory test/fixtures create a jsx file like the example fixtures/photoshop/document/test_document.jsx.
+The tests work by this way:
+  * run all extendscript tests -> put the result in the results folder <br>
+    (if it's a file store the file in the tests/test/results folder, if it's a value write it in the tests/test/results/tests.xml file)
 
-#### options.app
-Type: `String`
-Default value: `Adobe Photoshop CS6`
-
-Application name.
-
-#### options.args
-Type: `Array`
-Default value: `[]`
-
-Arguments passed to script.
-
-### Usage Examples
-
-```js
-var path = require('path');
-grunt.initConfig({
-  extendscript: {
-    options: {
-      app: 'Adobe Photoshop CS6',
-      args: [path.resolve('img')]
-    },
-    src: ['resize.jsx', 'sharpen.jsx'],
-  },
-})
-```
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
+  * check the results with node-unit <br>
+    (you can write tests in the tests/test/tests.js file)
+    
+## Author
+Taro Hanamura
