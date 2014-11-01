@@ -2,6 +2,7 @@
 
     try {
         //@include "../../../../../lib/indesign/indesign-lib.jsx"
+        IN.Config.init();
 
         // code
     }

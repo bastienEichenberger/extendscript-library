@@ -93,10 +93,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
-    // create a new results and log folder, create a xml file with root
+    // create a new results and create a xml file with root
     grunt.registerTask('create', 'Create results and log directories', function () {
         grunt.file.mkdir('test/results');
-        grunt.file.mkdir('test/log');
 
         grunt.file.write('test/results/tests.xml',
             '<?xml version="1.0" encoding="UTF-8"?>' +

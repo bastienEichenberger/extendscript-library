@@ -1,5 +1,5 @@
 /**
- * Created by bastieneichenberger on 17.10.14.
+ * @author Bastien Eichenberger
  */
 
 
@@ -7,16 +7,13 @@
 
     try {
         //@include "../../../../../lib/helper/helper-lib.jsx"
+        H.Config.init();
+
         var my_array = [-1, -2, 3, 3, 4, 5, 6, 7];
-        var my_string_array = ['extendscript', 'is', 'cool'];
 
         var is_in_array = my_array.is_in_array(3);
         var min = my_array.min();
         var max = my_array.max();
-
-        my_string_array.forEach(function (element, index) {
-            this[index] = element.toUpperCase();
-        }, my_string_array);
 
         // read the xml file
         var content = H.XML.read(xml_file_path);
@@ -33,11 +30,10 @@
         var unit_test_is_in_array = <unit-test id={ 'is_in_array_' + app_name }>{is_in_array}</unit-test>;
         var unit_test_min = <unit-test id={ 'min_' + app_name }>{min}</unit-test>;
         var unit_test_max = <unit-test id={ 'max_' + app_name }>{max}</unit-test>;
-        var unit_test_forEach= <unit-test id={ 'forEach_' + app_name }>{my_string_array}</unit-test>;
+
         root.appendChild(unit_test_is_in_array);
         root.appendChild(unit_test_min);
         root.appendChild(unit_test_max);
-        root.appendChild(unit_test_forEach);
 
         // update xml file
         H.XML.write(xml_file_path, root);

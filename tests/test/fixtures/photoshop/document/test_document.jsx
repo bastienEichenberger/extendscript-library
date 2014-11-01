@@ -3,9 +3,10 @@
     try {
 
         //@include "../../../../../lib/photoshop/photoshop-lib.jsx"
+        PS.Config.init();
 
         // create a new document
-        PS.Application.create_doc(100, 100, 72, 'document_to_test', NewDocumentMode.RGB);
+        PS.Application.create(100, 100, 72, 'document_to_test', NewDocumentMode.RGB);
 
         // get the resolution
         var resolution = PS.Document.get_resolution();

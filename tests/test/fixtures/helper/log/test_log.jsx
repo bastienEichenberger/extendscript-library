@@ -3,8 +3,10 @@
     try {
 
         //@include "../../../../../lib/helper/helper-lib.jsx"
+        H.Config.init();
+        var LOG_FOLDER = new Folder(log_folder);
 
-        H.Log.init(log_folder, 0);
+        H.Log.init(LOG_FOLDER, 0);
 
         H.Log.warn('my warn message');
         H.Log.info('my info message')

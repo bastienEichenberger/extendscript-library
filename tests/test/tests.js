@@ -169,20 +169,5 @@ exports.helper_lib = {
         test.equal(res, 7);
         test.done();
     },
-    forEach_from_photoshop: function (test) {
-        var res = get_node_value_by_id('forEach_adobe_photoshop');
-        test.equal(res, 'EXTENDSCRIPT,IS,COOL');
-        test.done();
-    },
-    forEach_from_indesign: function (test) {
-        var res = get_node_value_by_id('forEach_adobe_indesign');
-        test.equal(res, 'EXTENDSCRIPT,IS,COOL');
-        test.done();
-    },
-    forEach_from_illustrator: function (test) {
-        var res = get_node_value_by_id('forEach_adobe_illustrator');
-        test.equal(res, 'EXTENDSCRIPT,IS,COOL');
-        test.done();
-    }
 
 };

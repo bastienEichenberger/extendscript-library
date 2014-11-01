@@ -2,6 +2,7 @@
 
 Node module to run extendScript file in photoshop, indesign and illustrator.
 The original module can be found [here](https://github.com/hanamura/grunt-extendscript)
+This module works only in Max OS X for the moment.
 
 ## Install
 

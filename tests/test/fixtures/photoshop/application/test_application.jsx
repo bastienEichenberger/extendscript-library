@@ -2,9 +2,10 @@
 
     try {
         //@include "../../../../../lib/photoshop/photoshop-lib.jsx"
+        PS.Config.init();
 
         // open a document
-        PS.Application.open_image(results_folder + '/test.psd');
+        PS.Application.open(results_folder + '/test.psd');
 
         // get the name
         var name_of_document = app.activeDocument.name;

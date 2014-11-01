@@ -2,6 +2,7 @@
 
     try {
         //@include "../../../../../lib/helper/helper-lib.jsx"
+        H.Config.init();
 
         // call an other app and return a string "name of the app who called the function + hello + world"
         // wait some seconds to be sure that everything would be ok if we process a long function
