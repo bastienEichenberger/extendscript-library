@@ -1,0 +1,35 @@
+    var myFile = File.openDialog("Choose a tab delimitted txt file:");  
+    if (!myFile){  
+    exit();  
+    }       
+      
+    var myArray = []   
+    myFile.open('r');  
+    while (myFile.eof==false){  
+        var line=myFile.readln().split(",");  
+        myArray.push(line[0]);  
+        }  
+      
+    var myDoc = app.activeDocument;  
+    var myPstyles = app.activeDocument.allParagraphStyles;  
+      
+    Array.prototype.contains = function(obj) {  
+        var i = this.length;  
+        while (i--) {  
+            if (this[i] === obj) {  
+                return true;  
+            }  
+        }  
+        return false;  
+    }  
+      
+    var myMissingStyle =[];  
+    for(i=2; i<myPstyles.length; i++){  
+        var myS =myPstyles[i].name;  
+        if(myArray.contains(myS) !=true){  
+            myMissingStyle.push(myS);  
+            }  
+        }  
+      
+    //I showed only missing styles names, If you want a report file, please you have generate it.  
+    alert(myMissingStyle.join("\n"));  
