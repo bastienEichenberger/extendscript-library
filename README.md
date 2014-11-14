@@ -21,7 +21,6 @@ For more information go to our website
 //you can use the @include syntax to use extendscript in an other IDE without error
 
 //@target "photoshop"
-//@include "../../../../../../lib/helper/helper-lib.jsx"
 //@include "../../../../../../lib/photoshop/photoshop-lib.jsx"
 
 // For common modules use the namespace H
