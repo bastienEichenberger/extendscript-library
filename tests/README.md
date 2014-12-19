@@ -38,7 +38,7 @@ The tests work by this way:
   * check the results with node-unit <br>
     (you can write tests in the tests/test/tests.js file)
 
-![Alt text](/documentation/images/tests.jpg "Tests architecture")
+![Alt text](https://github.com/bastienEichenberger/extendscript-library.org/blob/master/tests/documentation/images/test.jpg "Tests architecture")
 
 ## Author
   * Taro Hanamura
