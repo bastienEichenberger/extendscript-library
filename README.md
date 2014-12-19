@@ -58,7 +58,7 @@ Use jsdoc3 to generate the documentation
 
 ```
 cd your_extendscript-library.org_directory
-./node_modules/.bin/jsdoc lib/* -c conf.json doc.md
+./node_modules/.bin/jsdoc lib/* -c conf.json documentation/doc.md -d documentation/html_doc
 ```
 
 

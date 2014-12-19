@@ -2,7 +2,7 @@
 
 Node module to run extendScript file in photoshop, indesign and illustrator.
 The original module can be found [here](https://github.com/hanamura/grunt-extendscript)
-This module works only in Max OS X for the moment.
+This module works on Mac OS X and on Windows.
 
 ## Install
 
@@ -37,7 +37,9 @@ The tests work by this way:
 
   * check the results with node-unit <br>
     (you can write tests in the tests/test/tests.js file)
-    
+
+![Alt text](/documentation/images/tests.jpg "Tests architecture")
+
 ## Author
   * Taro Hanamura
   * Bastien Eichenberger (add some modifications)
