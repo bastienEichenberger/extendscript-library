@@ -2,7 +2,7 @@
  * Node module to run extendscript file in photoshop, indesign and illustrator
  *
  * @supported Work only with Mac OS X
- * @todo add support for windows (use other scripting language than AppleScript)
+ * @supported Windows
  *
  * This module is inspired by:
  * grunt-extendscript
@@ -32,9 +32,9 @@ module.exports = function (grunt) {
             }
         },
 
-        // Before generating any new files, remove the results folder and the log folder
+        // Before generating any new files, remove folders(results, log and temp files (on windows only with vbs)
         clean: {
-            test: ['test/results', 'test/log']
+            test: ['test/results', 'test/log', 'test/temp']
         },
 
         photoshop: {
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
             }
         },
 
-        // illustrator: {},
+        // illustrator tests
 
         all_apps: {
             test_log: {
@@ -94,9 +94,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
     // create a new results and create a xml file with root
-    grunt.registerTask('create', 'Create results and log directories', function () {
+    grunt.registerTask('create', 'Create results and temp directories', function () {
         grunt.file.mkdir('test/results');
-
+		grunt.file.mkdir('test/temp');
         grunt.file.write('test/results/tests.xml',
             '<?xml version="1.0" encoding="UTF-8"?>' +
             '<tests>' +
