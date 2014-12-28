@@ -68,6 +68,11 @@ exports.photoshop_lib = {
         test.ok(is_save_to_tif);
         test.done();
     },
+    save_as_web_JPG: function (test) {
+        var is_save_to_web_JPG = grunt.file.exists('test/results/test_web_jpg.jpg');
+        test.ok(is_save_to_web_JPG);
+        test.done();
+    },
     get_resolution: function (test) {
         // check the tests.xml file contains the value 72 dpi
         var res = get_node_value_by_id('resolution');
@@ -168,6 +173,18 @@ exports.helper_lib = {
         var res = get_node_value_by_id('max_adobe_illustrator');
         test.equal(res, 7);
         test.done();
-    },
+    }
 
 };
+
+exports.indesign_lib = {
+    setUp: function (done) {
+        done();
+    },
+    export_as_PDF: function (test) {
+        var is_export_as_pdf = grunt.file.exists('test/results/test.pdf');
+        test.ok(is_export_as_pdf);
+        test.done();
+    }
+};
+

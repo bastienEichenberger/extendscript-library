@@ -38,6 +38,24 @@ module.exports = function (grunt) {
         },
 
         photoshop: {
+            test_log: {
+                options: {
+                    args: [path.resolve('test/log')]
+                },
+                src: 'test/fixtures/helper/log/test_log.jsx'
+            },
+            test_gateway: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml')]
+                },
+                src: 'test/fixtures/helper/gateway/test_gateway.jsx'
+            },
+            test_array: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml')]
+                },
+                src: ['test/fixtures/helper/utils/test_array.jsx']
+            },
             test_document_application: {
                 options: {
                     args: [path.resolve('test/results/tests.xml'), path.resolve('test/results')]
@@ -47,17 +65,39 @@ module.exports = function (grunt) {
         },
 
         indesign: {
+            test_log: {
+                options: {
+                    args: [path.resolve('test/log')]
+                },
+                src: 'test/fixtures/helper/log/test_log.jsx'
+            },
+            test_gateway: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml')]
+                },
+                src: 'test/fixtures/helper/gateway/test_gateway.jsx'
+            },
+            test_array: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml')]
+                },
+                src: ['test/fixtures/helper/utils/test_array.jsx']
+            },
             test_link: {
                 options: {
                     args: []
                 },
                 src: 'test/fixtures/indesign/link/test_link.jsx'
+            },
+            test_document: {
+                options: {
+                    args: [path.resolve('test/results')]
+                },
+                src: 'test/fixtures/indesign/document/test_document.jsx'
             }
         },
 
-        // illustrator tests
-
-        all_apps: {
+        illustrator: {
             test_log: {
                 options: {
                     args: [path.resolve('test/log')]
@@ -77,6 +117,29 @@ module.exports = function (grunt) {
                 src: ['test/fixtures/helper/utils/test_array.jsx']
             }
         },
+
+        /**
+         * @todo it would be better to write a function to execute a jsx file in all apps
+        all_apps: {
+            test_log: {
+                options: {
+                    args: [path.resolve('test/log')]
+                },
+                src: 'test/fixtures/helper/log/test_log.jsx'
+            },
+            test_gateway: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml')]
+                },
+                src: 'test/fixtures/helper/gateway/test_gateway.jsx'
+            },
+            test_array: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml')]
+                },
+                src: ['test/fixtures/helper/utils/test_array.jsx']
+            }
+        },*/
 
         // Units tests.
         nodeunit: {
@@ -106,7 +169,7 @@ module.exports = function (grunt) {
 
 
     // Whenever the "test" task is run, first clean results and logs, create xml file, runs tasks, test them
-    grunt.registerTask('test', ['clean', 'create', 'photoshop', 'indesign', 'all_apps', 'nodeunit']);
+    grunt.registerTask('test', ['clean', 'create', 'illustrator', 'photoshop', 'indesign', 'nodeunit']);
 
     // By default, lint and run all tests.
     grunt.registerTask('default', ['jshint', 'test']);
