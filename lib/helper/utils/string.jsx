@@ -17,7 +17,7 @@ String.prototype.contains = function (string) {
  * @param {string} replace the new value of string
  * @returns {string} the new edited string
  */
-String.prototype.replace_all = function(find, replace) {
+String.prototype.replace_all = function (find, replace) {
     return this.replace(new RegExp(find, 'g'), replace);
 }
 
@@ -25,8 +25,8 @@ String.prototype.replace_all = function(find, replace) {
  * Function to build a string
  * @author Jason Trill
  * {@link https://gist.github.com/jjt/850046#file-string-prototype-printf-js | jjt/String.prototype.printf.js}
- * @param {String} obj the list of string to replace or an object or an array
- * @returns {String} the new string
+ * @param {string} obj the list of string to replace or an object or an array
+ * @returns {string} the new string
  * @example
  * "%s %s great".printf('This', 'is') -> This is great
  * "{bar} or {foo}".printf({foo:'A',bar,'B'}) -> B or A
