@@ -12,6 +12,7 @@ IN.Application = (function (my) {
      */
     var user_preferences;
 
+
     /**
      * Function to init the Application module
      * @function init

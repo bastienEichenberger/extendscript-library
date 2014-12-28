@@ -42,33 +42,7 @@ PS.Application = (function (my) {
 
     }
 
-    /**
-     * Function to create a new photoshop document
-     * @function create
-     * @memberOf PS.Application
-     * @param {Number} width
-     * @param {Number} height
-     * @param {Number} resolution
-     * @param {String} name
-     * @param {NewDocumentMode} mode
-     */
-    my.create = function (width, height, resolution, name, mode) {
-        var doc = app.documents.add(width, height, resolution, name, mode);
-    }
 
-    /**
-     * Function to open a file with Photoshop
-     * @function open
-     * @memberOf PS.Application
-     * @param {String} file_path the file_path of the file
-     * @todo the filePath have to be in this format Macintosh/ instead of Macintosh:user so use encodeURI
-     */
-    my.open = function (file_path) {
-        var file_path = (file_path);
-        var img_file = new File(file_path);
-        var ps_doc = app.open(img_file);
-        return ps_doc;
-    }
 
     return my;
 })(PS.Application || {});
