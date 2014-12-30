@@ -3,6 +3,7 @@
  * @namespace XML
  * @memberOf H
  * @author Bastien Eichenberger
+ * @todo complete this part and read the documentation JavaScript Tool Guide page 240
  */
 H.XML = (function (my) {
 
@@ -10,10 +11,10 @@ H.XML = (function (my) {
      * Function to read an XML file
      * @function read
      * @memberOf H.XML
-     * @param {String} xml_file_path the file
+     * @param {string} xml_file_path the file
      * @returns {XML} xml an xml file
      */
-    my.read = function(xml_file_path) {
+    my.read = function (xml_file_path) {
 
         var file = new File(xml_file_path);
         if (!file.exists) {
@@ -32,13 +33,13 @@ H.XML = (function (my) {
 
     /**
      * Function to write into an XML file
-     * @function
+     * @function write
      * @memberOf H.XML
-     * @param {String} xml_file_path
+     * @param {string} xml_file_path
      * @param {XML} xml the xml file to edit
      * @returns {File} file
      */
-    my.write = function(xml_file_path, xml) {
+    my.write = function (xml_file_path, xml) {
 
         if (!(xml instanceof XML)) {
             throw new Error('bad xml');
@@ -53,7 +54,7 @@ H.XML = (function (my) {
         var rc = file.open('w', 'TEXT', '????');
 
         if (!rc) {
-            throw new Error('the xml file cannot be run');
+            throw new Error('the xml file cannot be read');
         }
 
         file.lineFeed = 'unix';
@@ -62,6 +63,14 @@ H.XML = (function (my) {
         rc = file.close();
         return file;
     };
+
+
+
+    my.append_child = function (child, root) {
+        root.appendChild(child);
+        return root;
+    }
+
 
     return my;
 })(H.XML || {});
