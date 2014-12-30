@@ -7,7 +7,9 @@
         IN.Document.create(100, 200);
 
         IN.Document.export_as_PDF(results_folder + '/test.pdf', 'PDFX-ready_X1a_3mm');
-        
+
+        IN.Document.export_as_JPG(results_folder + '/test_jpg_indesign.jpg', JPEGOptionsQuality.MEDIUM, 72);
+
         IN.Document.close(SaveOptions.NO);
 
     }

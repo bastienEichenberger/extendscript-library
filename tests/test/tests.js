@@ -51,6 +51,23 @@ function get_node_value_by_id (value) {
 }
 
 
+exports.indesign_lib = {
+    setUp: function (done) {
+        done();
+    },
+    export_as_PDF: function (test) {
+        var is_export_as_pdf = grunt.file.exists('test/results/test.pdf');
+        test.ok(is_export_as_pdf);
+        test.done();
+    },
+    export_as_JPG: function (test) {
+        var is_export_as_jpg = grunt.file.exists('test/results/test_jpg_indesign.jpg');
+        test.ok(is_export_as_jpg);
+        test.done();
+    }
+};
+
+
 exports.photoshop_lib = {
 
     setUp: function (done) {
@@ -176,15 +193,3 @@ exports.helper_lib = {
     }
 
 };
-
-exports.indesign_lib = {
-    setUp: function (done) {
-        done();
-    },
-    export_as_PDF: function (test) {
-        var is_export_as_pdf = grunt.file.exists('test/results/test.pdf');
-        test.ok(is_export_as_pdf);
-        test.done();
-    }
-};
-

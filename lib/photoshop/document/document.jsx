@@ -43,12 +43,14 @@ PS.Document = (function (my) {
      * Function to save a document as JPG for WEB
      * Every documents are converted to s'RGB.
      * The color profile is by default embedded
+     * @function save_for_web_JPG
+     * @memberOf PS.Document
      * @param {string} file_path the document path
      * @param {number} quality the quality of the JPG between 0-100
      * @param {boolean} [is_color_profile_embedded] false to not include ICC profile, by default true
      * @param {Photoshop Document} [document] the document to save, by default the activeDocument is used
      */
-    my.save_for_web_JPG= function (file_path, quality, is_color_profile_embedded, document) {
+    my.save_for_web_JPG = function (file_path, quality, is_color_profile_embedded, document) {
         if (quality < 0 || quality > 100) {
             throw {
                 name: 'InvalidArgumentError',
@@ -64,7 +66,7 @@ PS.Document = (function (my) {
             var document = app.activeDocument;
         }
         // we have to convert the file in s'RGB before because other color mode than RGB do not embedded the ICC profile
-        if (document.mode !== DocumentMode.RGB ) {
+        if (document.mode !== DocumentMode.RGB) {
             document.convertProfile("sRGB IEC61966-2.1", Intent.RELATIVECOLORIMETRIC);
         }
 

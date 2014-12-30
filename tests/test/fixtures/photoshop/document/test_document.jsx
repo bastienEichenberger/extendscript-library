@@ -44,10 +44,12 @@
         // add the node
         var root = new XML(content);
 
-        var unit_test_open_image = <unit-test id='open_image'>{name_of_document}</unit-test>;
+
+        var unit_test_open_image = new XML("<unit-test id='open_image'>" + name_of_document + "</unit-test>");
         root.appendChild(unit_test_open_image);
 
-        var unit_test_resolution = <unit-test id='resolution'>{resolution}</unit-test>;
+
+        var unit_test_resolution = <unit-test id ='resolution'>{resolution}</unit-test>;
         root.appendChild(unit_test_resolution);
 
         // update xml file
