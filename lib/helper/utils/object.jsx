@@ -13,12 +13,14 @@ Object.prototype.merge = function (obj) {
             name: 'InvalidArgumentError',
             message: 'you must enter a valid value for the param obj',
             fileName: $.fileName,
-            lineNumber: $.line
+            line: $.line
         };
     }
 
-    for (var name in obj) {
-        this[name] = obj[name];
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) { // do not check in the prototype chain
+            this[key] = obj[key];
+        }
     }
     return this;
 }
