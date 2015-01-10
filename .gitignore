@@ -6,3 +6,5 @@
 /tests/config.js
 /tests/npm-debug.log
 /tests/.npmignore
+
+[Ll]ogs/
