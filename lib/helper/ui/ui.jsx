@@ -38,15 +38,15 @@ function GroupContainer (panel, title, bounds, properties) {
             };
         }
         return element;
-    };
+    }
 
     /**
      * Function to add an element to a group. This function return the current object himself.
      * So you can make chain: group.control('button', 'title').control('edittext', 'title2');
      * @param {string} type the element type [button, checkbox, radiobutton, statictext, edittext]
-     * @param {sting} title the title of the element
-     * @param { object | array} [events] array with event object { name : 'eventName', fn : function}
-     * @param {object) [properties] object with properties key : value
+     * @param {string} title the title of the element
+     * @param {Object|array} [events] array with event object { name : 'eventName', fn : function}
+     * @param {Object) [properties] object with properties key : value
      * @param {array} [bounds] array of coordinates [x, y, width, height]
      * @return {GroupContainer}
      */
