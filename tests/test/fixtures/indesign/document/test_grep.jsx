@@ -1,16 +1,13 @@
-(function (results_folder) {
+(function (xml_file_path, results_folder) {
 
     try {
         //@include "../../../../../lib/indesign/indesign-lib.jsx"
         IN.Config.init();
+        /**
+         * @todo test the grep_document.indd file then compare with expectedd file
+         */
 
-        IN.Document.create(100, 200);
 
-        IN.Document.export_as_PDF(results_folder + '/test.pdf', '[PDF/X-4:2008]', '1-1');
-
-        IN.Document.export_as_JPG(results_folder + '/test_jpg_indesign.jpg', JPEGOptionsQuality.MEDIUM, 72);
-
-        IN.Document.close(SaveOptions.NO);
 
     }
     catch (ex) {
