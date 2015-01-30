@@ -64,6 +64,16 @@ exports.indesign_lib = {
         var is_export_as_jpg = grunt.file.exists('test/results/test_jpg_indesign.jpg');
         test.ok(is_export_as_jpg);
         test.done();
+    },
+    save_indesign_document: function (test) {
+        var is_export_as_indd = grunt.file.exists('test/results/document_result.indd');
+        test.ok(is_export_as_indd);
+        test.done();
+    },
+    zip_with_shell: function (test) {
+        var is_zip_shell = grunt.file.exists('test/results/output.zip');
+        test.ok(is_zip_shell);
+        test.done();
     }
 };
 

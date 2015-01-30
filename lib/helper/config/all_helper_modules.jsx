@@ -6,6 +6,8 @@
 
 //@include "../log/log.jsx"
 
+//@include "../shell/shell.jsx"
+
 //@include "../ui/ui.jsx"
 
 //@include "../utils/array.jsx"

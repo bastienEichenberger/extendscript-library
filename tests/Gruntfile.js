@@ -94,6 +94,18 @@ module.exports = function (grunt) {
                     args: [path.resolve('test/results')]
                 },
                 src: 'test/fixtures/indesign/document/test_document.jsx'
+            },
+            test_grep: {
+                options: {
+                    args: [path.resolve('test/results')]
+                },
+                src: 'test/fixtures/indesign/document/test_grep.jsx'
+            },
+            test_shell: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml'), path.resolve('test/results')]
+                },
+                src: ['test/fixtures/helper/shell/test_shell.jsx']
             }
         },
 
@@ -117,29 +129,6 @@ module.exports = function (grunt) {
                 src: ['test/fixtures/helper/utils/test_array.jsx']
             }
         },
-
-        /**
-         * @todo it would be better to write a function to execute a jsx file in all apps
-        all_apps: {
-            test_log: {
-                options: {
-                    args: [path.resolve('test/log')]
-                },
-                src: 'test/fixtures/helper/log/test_log.jsx'
-            },
-            test_gateway: {
-                options: {
-                    args: [path.resolve('test/results/tests.xml')]
-                },
-                src: 'test/fixtures/helper/gateway/test_gateway.jsx'
-            },
-            test_array: {
-                options: {
-                    args: [path.resolve('test/results/tests.xml')]
-                },
-                src: ['test/fixtures/helper/utils/test_array.jsx']
-            }
-        },*/
 
         // Units tests.
         nodeunit: {
