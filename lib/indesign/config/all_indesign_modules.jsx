@@ -9,5 +9,6 @@
 //@include "../application/application.jsx"
 
 //@include "../document/document.jsx"
+//@include "../document/grep.jsx"
 
 //@include "../link/link.jsx"

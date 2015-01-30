@@ -6,11 +6,13 @@
 
         IN.Document.create(100, 200);
 
+        var source = IN.Document.save(results_folder + '/document_result.indd');
+
         IN.Document.export_as_PDF(results_folder + '/test.pdf', '[PDF/X-4:2008]', '1-1');
 
         IN.Document.export_as_JPG(results_folder + '/test_jpg_indesign.jpg', JPEGOptionsQuality.MEDIUM, 72);
 
-        IN.Document.close(SaveOptions.NO);
+        IN.Document.close(SaveOptions.NO, source);
 
     }
     catch (ex) {

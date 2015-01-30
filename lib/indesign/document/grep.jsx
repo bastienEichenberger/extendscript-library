@@ -3,6 +3,8 @@
  * @namespace Document.Grep
  * @memberOf IN
  * @author Bastien Eichenberger
+ * @todo add function to build grep and regex
+ * @todo improve the function clear_grep
  */
 IN.Document.Grep = (function (my) {
 
@@ -11,7 +13,7 @@ IN.Document.Grep = (function (my) {
     };
 
     var UNICODE_HEXA = {
-        NORMAL_SPACE: 0020,
+        NORMAL_SPACE: '0020',
         NONBREAKABLE_SPACE: '00A0',
         NONBREAKABLE_SPACE_FIXED_WITH: '202F',
         PUNCTUATION_SPACE: '2008',
@@ -23,7 +25,7 @@ IN.Document.Grep = (function (my) {
         SIXTH_SPACE: '2006',
         THIRD_SPACE: '2004',
         EN_SPACE: '2002',
-        EM_SPACE: '2003',
+        EM_SPACE: '2003'
     };
 
     var NON_PRINTABLE_CHAR = {
@@ -31,6 +33,11 @@ IN.Document.Grep = (function (my) {
         LINE_BREAK: '\n',
         ALL_OTHER_BREAK: '\r'
     };
+
+    function clear_grep () {
+        app.findGrepPreferences = NothingEnum.nothing;
+        app.changeGrepPreferences = NothingEnum.nothing;
+    }
 
     /**
      * Function to find a regular expression in a document
@@ -50,27 +57,37 @@ IN.Document.Grep = (function (my) {
         return doc.findGrep();
     }
 
-    my.find_and_change = function (find, replace, find_grep_preferences, doc) {
+    /**
+     * @todo add find_grep_preferences
+     * @param find
+     * @param replace
+     * @param find_grep_preferences
+     * @param doc
+     * @returns {*}
+     */
+    my.find_and_change = function (find, replace, doc) {
 
         if (doc === undefined) {
             var doc = app.activeDocument;
         }
 
-        app.findGrepPreferences = NothingEnum.nothing;
+        clear_grep();
+
         app.findGrepPreferences.findWhat = find;
         app.changeGrepPreferences.changeTo = replace;
 
-        return doc.changeGrep();
+        doc.changeGrep();
+
+        clear_grep();
     }
 
-    my.delete_double_standard_spaces = function (string, doc) {
-
+    my.delete_double_standard_spaces = function (doc) {
         if (doc === undefined) {
             var doc = app.activeDocument;
         }
-        var pattern = '\x{' + UNICODE_HEXA.NORMAL_SPACE + '}{2,}';
-        return my.find_and_change(pattern, UNICODE_HEXA.NORMAL_SPACE, doc);
+        my.find_and_change('\\x{0020}{2,}', '\\x{0020}', doc);
     }
+
 
     my.get = function (name) {
         return REGEX[name];
