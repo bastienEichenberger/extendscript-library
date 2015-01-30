@@ -8,7 +8,7 @@
  * @returns {Boolean} true if the string contains the char passed as parameter
  */
 String.prototype.contains = function (string) {
-    return this.indexOf(string) != -1
+    return this.indexOf(string) !== -1;
 }
 
 /**
