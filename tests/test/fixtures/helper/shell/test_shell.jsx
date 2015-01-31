@@ -5,7 +5,7 @@
         H.Config.init();
 
         // shell string to build a ZIP zip -r output.zip source
-        var shell_string = 'zip -r %s %s';
+        var shell_string = 'zip -r -j --junk-paths %s %s';
         shell_string = shell_string.printf(results_folder + '/output.zip', results_folder);
 
         H.Shell.execute(shell_string);

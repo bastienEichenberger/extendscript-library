@@ -17,7 +17,7 @@ H.Shell = (function (my) {
     my.execute = function (shell_function) {
         var result, apple_script;
 
-        if ($.os.contains('Windows')) {
+        if ($.os.toLowerCase().contains('windows')) {
             throw {
                 name: 'UnimplementedMethodError',
                 message: 'this function do not work on Windows',
@@ -26,7 +26,7 @@ H.Shell = (function (my) {
             };
         }
 
-        if (app.name.indexOf('InDesign') > -1) {
+        if (app.name.toLowerCase().contains('indesign')) {
             apple_script = 'do shell script "' + shell_function + '"';
             try {
                 result = app.doScript(apple_script, ScriptLanguage.applescriptLanguage);
