@@ -8,6 +8,6 @@
   "description": "ExtendScript-library is a JavaScript library. This library has been created in order to support people who'd like write automation scripts for Adobe Creative Suite",
   "license": "BSD",
   "ignore": [
-    "./!(lib)"
+    "**/.*"
   ]
 }
