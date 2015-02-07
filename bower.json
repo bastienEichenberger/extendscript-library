@@ -9,6 +9,6 @@
   "license": "BSD",
   "ignore": [
     "*",
-    "!lib"
+    "!lib/*"
   ]
 }
