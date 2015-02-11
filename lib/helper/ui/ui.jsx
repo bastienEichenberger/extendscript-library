@@ -50,7 +50,7 @@ function GroupContainer (panel, title, bounds, properties) {
      * @param {array} [bounds] array of coordinates [x, y, width, height]
      * @return {GroupContainer}
      */
-    this.control = function (type, title, properties, events, bounds) {
+    this.control = function (type, title, events, properties, bounds) {
         // check if the optionals parameters are corrects
         var properties = properties || {};
         var bounds = bounds || undefined;
