@@ -151,6 +151,10 @@ function UI (title, bounds, properties) {
         return new PanelContainer(that.window, title, bounds, properties);
     }
 
+    this.group = function (title, properties, bounds) {
+        return new GroupContainer(that.window, title, bounds, properties);
+    }
+
     /**
      * Function to display the user interface
      */
