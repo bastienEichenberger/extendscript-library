@@ -13,30 +13,15 @@
 
         IN.Document.Grep.delete_double_standard_spaces();
 
+        var doc = app.activeDocument;
+        var txt_file = new File(results_folder + '/grep.txt');
 
-        /*
-        for(myCounter = 0; myCounter < app.activeDocument.stories.length; myCounter++){
-            myStory = app.activeDocument.stories.item(myCounter);
-            myID = myStory.id;
-            switch(myExportFormat){
-                case 0:
-                    myFormat = ExportFormat.textType;
-                    myExtension = ".txt"
-                    break;
-                case 1:
-                    myFormat = ExportFormat.RTF;
-                    myExtension = ".rtf"
-                    break;
-                case 2:
-                    myFormat = ExportFormat.taggedText;
-                    myExtension = ".txt"
-                    break;
-            }
-            myFileName = "StoryID" + myID + myExtension;
-            myFilePath = myFolder + "/" + myFileName;
-            myFile = new File(myFilePath);
-            myStory.exportFile(myFormat, myFile);
-        }*/
+        for(var index = 0; index < doc.stories.length; index++){
+
+            current_story = doc.stories.item(index);
+            current_story.exportFile(ExportFormat.taggedText, txt_file);
+
+        }
 
         IN.Document.close(SaveOptions.NO, source);
 

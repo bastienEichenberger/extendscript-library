@@ -1,0 +1,6 @@
+<ASCII-MAC>
+<Version:10.1><FeatureSet:InDesign-Roman><ColorTable:=<Black:COLOR:CMYK:Process:0,0,0,1>>
+<DefineParaStyle:NormalParagraphStyle=<Nextstyle:NormalParagraphStyle>>
+<ParaStyle:NormalParagraphStyle><cFont:Times New Roman>double espaces double espace 
+<cFont:><ParaStyle:NormalParagraphStyle><cFont:Times New Roman>espace fine<0x2009><0x2009><0x2009><0x2009><0x2009>:
+<cFont:>

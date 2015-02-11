@@ -48,7 +48,12 @@ String.prototype.printf = function (obj) {
                         return _arguments[i];
                     }
                     else {
-                        throw new Error("Arguments element is an invalid type");
+                        throw {
+                            name: 'InvalidArgumentError',
+                            message: 'Arguments element: ' + _arguments[i] + ' is an invalid type',
+                            fileName: $.fileName,
+                            line: $.line
+                        };
                     }
                 }
                 return obj[i];

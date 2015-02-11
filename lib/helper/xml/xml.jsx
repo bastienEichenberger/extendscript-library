@@ -3,6 +3,7 @@
  * @namespace XML
  * @memberOf H
  * @author Bastien Eichenberger
+ * @requires {@File H}
  * @todo complete this part and read the documentation JavaScript Tool Guide page 240
  */
 H.XML = (function (my) {
@@ -15,19 +16,8 @@ H.XML = (function (my) {
      * @returns {XML} xml an xml file
      */
     my.read = function (xml_file_path) {
-
         var file = new File(xml_file_path);
-        if (!file.exists) {
-            throw new Error('the xml file cannot be found');
-        }
-        file.encoding = 'UTF8';
-        file.lineFeed = 'unix';
-        var rc = file.open('r', 'TEXT', '????');
-        if (!rc) {
-            throw new Error('the xml file cannot be read');
-        }
-        var str = file.read();
-        rc = file.close();
+        var str = file.read()
         return new XML(str);
     };
 
@@ -64,13 +54,6 @@ H.XML = (function (my) {
         return file;
     };
 
-
-
-    my.append_child = function (child, root) {
-        root.appendChild(child);
-        return root;
-    }
-
-
     return my;
+
 })(H.XML || {});

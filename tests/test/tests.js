@@ -74,6 +74,14 @@ exports.indesign_lib = {
         var is_zip_shell = grunt.file.exists('test/results/output.zip');
         test.ok(is_zip_shell);
         test.done();
+    },
+    grep: function (test) {
+
+        var expected = grunt.file.read('test/expected/grep.txt');
+        var result = grunt.file.read('test/results/grep.txt');
+
+        test.equal(result.toString(), expected.toString());
+        test.done();
     }
 };
 

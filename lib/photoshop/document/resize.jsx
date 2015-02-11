@@ -12,6 +12,7 @@ PS.Document.Resize = (function (my) {
      * Function to resize an image in photoshop
      * @function resampling
      * @memberOf PS.Document.Resize
+     * @param {Photoshop Document} ps_doc
      * @param {String} file_path
      * @param {Number} horizontal_scale
      * @param {Number} vertical_scale

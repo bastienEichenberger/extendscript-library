@@ -85,6 +85,11 @@ IN.Document.Grep = (function (my) {
         if (doc === undefined) {
             var doc = app.activeDocument;
         }
+        /**
+         * In JavaScript, the backslash is used to escape special characters, such as newlines (\n).
+         * If you want to use a literal backslash, a double backslash has to be used.
+         */
+        //
         my.find_and_change('\\x{0020}{2,}', '\\x{0020}', doc);
     }
 

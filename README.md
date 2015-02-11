@@ -104,11 +104,13 @@ Download precompiled libraries and setup WebStorm by the way described in the se
   
   * [jongware documentation](http://jongware.mit.edu/)
   
-#### resources provided by Adobe
+#### Others ressources
   
   * [InDesign scripting forum](https://forums.adobe.com/community/indesign/indesign_scripting)
   
   * [InDesign sdk](http://www.adobe.com/devnet/indesign/sdk.html)
+
+  * [Read more about Module Pattern](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html)
   
 ## Grateful
 ### Contributors

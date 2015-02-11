@@ -155,7 +155,7 @@ function UI (title, bounds, properties) {
      * Function to display the user interface
      */
     this.show = function () {
-        that.window.show();
+        return that.window.show();
     }
 
 
