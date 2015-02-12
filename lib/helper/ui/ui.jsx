@@ -55,7 +55,11 @@ function GroupContainer (panel, title, bounds, properties) {
         var properties = properties || {};
         var bounds = bounds || undefined;
 
-        var element = that.group.add(type, bounds, title);
+        var element = that.group.add(type, bounds, title, properties);
+        /**
+         * fix the bug with properties: name property must be init during creation of the object,
+         * orientation has to been added after creation, so merge those properties
+         */
         element = element.merge(properties);
 
         // if the parameter events exist, add 1 or n event if it is an array
