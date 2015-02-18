@@ -87,6 +87,17 @@ function GroupContainer (panel, title, bounds, properties) {
         return that;
     }
 
+    /**
+     * Function to add a element to a group
+     * @param {string}
+     * @param {array}
+     * @param {string}
+     * @param {object}
+     * @return {UI ELement} return the ui element added to the group
+     */
+    this.add = function (type, bounds, text, properties) {
+        return that.group.add(type, bounds, text, properties);
+    }
 
 }
 

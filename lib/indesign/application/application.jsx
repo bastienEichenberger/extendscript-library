@@ -32,6 +32,15 @@ IN.Application = (function (my) {
     }
 
     /**
+     * Function to activ all dialog
+     * @function talk
+     * @memberOf IN.Application
+     */
+    my.talk = function () {
+        app.scriptPreferences.userInteractionLevel = UserInteractionLevels.INTERACT_WITH_ALL;
+    }
+
+    /**
      * Function to restore the preferences when the script is finished
      * @function restore
      * @memberOf IN.Application

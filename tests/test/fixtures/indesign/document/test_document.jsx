@@ -1,4 +1,4 @@
-(function (results_folder) {
+(function (results_folder, expected_folder) {
 
     try {
         //@include "../../../../../lib/indesign/indesign-lib.jsx"
@@ -12,7 +12,19 @@
 
         IN.Document.export_as_JPG(results_folder + '/test_jpg_indesign.jpg', JPEGOptionsQuality.MEDIUM, 72);
 
-        IN.Document.close(SaveOptions.NO, source);
+        IN.Document.package(results_folder);
+
+        IN.Document.close(SaveOptions.NO);
+
+        IN.Document.open(expected_folder + '/test/test.indd');
+
+        IN.Document.copy(results_folder + '/document_copy.indd');
+
+        IN.Document.fonts(results_folder + '/document fonts');
+
+        IN.Document.links(results_folder + '/links');
+
+        IN.Document.close(SaveOptions.NO);
 
     }
     catch (ex) {

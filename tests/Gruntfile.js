@@ -91,7 +91,7 @@ module.exports = function (grunt) {
             },
             test_document: {
                 options: {
-                    args: [path.resolve('test/results')]
+                    args: [path.resolve('test/results'), path.resolve('test/expected')]
                 },
                 src: 'test/fixtures/indesign/document/test_document.jsx'
             },
