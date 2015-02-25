@@ -99,6 +99,17 @@ function GroupContainer (panel, title, bounds, properties) {
         return that.group.add(type, bounds, text, properties);
     }
 
+    /**
+     * Function to add a Panel
+     * @param title
+     * @param properties
+     * @param bounds
+     * @return {PanelContainer}
+     */
+    this.panel = function (title, properties, bounds) {
+        return new PanelContainer(that.group, title, bounds, properties);
+    }
+
 }
 
 /**
@@ -140,17 +151,17 @@ function PanelContainer (window, title, bounds, properties) {
  * @param {Object} [properties] an object with properties { key : value, key : value }
  * @constructor
  */
-function UI (title, bounds, properties) {
+function UI (title, properties, bounds) {
 
     // check if the optionals parameters are corrects
     var properties = properties || {};
     var bounds = bounds || undefined;
 
     /**
-     * create a new window, merge the properties after creation
-     * (not every property can be add during creation of object
+     * fix the bug with properties: name property must be init during creation of the object,
+     * orientation has to been added after creation, so merge those properties
      */
-    this.window = new Window('dialog', title, bounds);
+    this.window = new Window('dialog', title, bounds, properties);
     this.window = this.window.merge(properties);
 
     var that = this;
@@ -166,9 +177,17 @@ function UI (title, bounds, properties) {
         return new PanelContainer(that.window, title, bounds, properties);
     }
 
+    /**
+     * Function to add a group
+     * @param title
+     * @param properties
+     * @param bounds
+     * @return {GroupContainer}
+     */
     this.group = function (title, properties, bounds) {
         return new GroupContainer(that.window, title, bounds, properties);
     }
+
 
     /**
      * Function to display the user interface
