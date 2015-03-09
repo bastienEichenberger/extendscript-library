@@ -56,3 +56,11 @@ Object.prototype.dump = function (name, indent, depth, maximum_dump_depth) {
         return this;
     }
 }
+
+Object.prototype.find = function (prop_name, value) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i][prop_name] === value) {
+            return this[i];
+        }
+    }
+}
