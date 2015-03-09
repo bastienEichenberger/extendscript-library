@@ -40,21 +40,7 @@ function GroupContainer (panel, title, bounds, properties) {
         return element;
     }
 
-    /**
-     * Function to add an element to a group. This function return the current object himself.
-     * So you can make chain: group.control('button', 'title').control('edittext', 'title2');
-     * @param {string} type the element type [button, checkbox, radiobutton, statictext, edittext]
-     * @param {string} title the title of the element
-     * @param {Object|array} [events] array with event object { name : 'eventName', fn : function}
-     * @param {Object) [properties] object with properties key : value
-     * @param {array} [bounds] array of coordinates [x, y, width, height]
-     * @return {GroupContainer}
-     */
-    this.control = function (type, title, events, properties, bounds) {
-        // check if the optionals parameters are corrects
-        var properties = properties || {};
-        var bounds = bounds || undefined;
-
+    function add_element (type, title, events, properties, bounds) {
         var element = that.group.add(type, bounds, title, properties);
         /**
          * fix the bug with properties: name property must be init during creation of the object,
@@ -83,24 +69,53 @@ function GroupContainer (panel, title, bounds, properties) {
                 };
             }
         }
+        return element;
+    }
+
+    /**
+     * Function to add an element to a group. This function return the current object himself.
+     * So you can make chain: group.control('button', 'title').control('edittext', 'title2');
+     * @param {string} type the element type [button, checkbox, radiobutton, statictext, edittext]
+     * @param {string} title the title of the element
+     * @param {Object|array} [events] array with event object { name : 'eventName', fn : function}
+     * @param {Object) [properties] object with properties key : value
+     * @param {array} [bounds] array of coordinates [x, y, width, height]
+     * @return {GroupContainer}
+     */
+    this.control = function (type, title, events, properties, bounds) {
+        // check if the optionals parameters are corrects
+        var properties = properties || {};
+        var bounds = bounds || undefined;
+
+        add_element(type, title, events, properties, bounds);
 
         return that;
     }
 
     /**
-     * Function to add a element to a group
-     * @param {string}
-     * @param {array}
-     * @param {string}
-     * @param {object}
-     * @return {UI ELement} return the ui element added to the group
+     * Function to add an element to a group. This function return the element
+     * So you can make chain: group.control('button', 'title').control('edittext', 'title2');
+     * @param {string} type the element type [button, checkbox, radiobutton, statictext, edittext]
+     * @param {string} title the title of the element
+     * @param {Object|array} [events] array with event object { name : 'eventName', fn : function}
+     * @param {Object) [properties] object with properties key : value
+     * @param {array} [bounds] array of coordinates [x, y, width, height]
+     * @return {GroupContainer}
      */
-    this.add = function (type, bounds, text, properties) {
-        return that.group.add(type, bounds, text, properties);
+    this.add = function (type, title, events, properties, bounds) {
+
+        // check if the optionals parameters are corrects
+        var properties = properties || {};
+        var bounds = bounds || undefined;
+
+        var element = add_element(type, title, events, properties, bounds);
+
+        return element;
     }
 
+
     /**
-     * Function to add a Panel
+     *
      * @param title
      * @param properties
      * @param bounds
@@ -177,13 +192,6 @@ function UI (title, properties, bounds) {
         return new PanelContainer(that.window, title, bounds, properties);
     }
 
-    /**
-     * Function to add a group
-     * @param title
-     * @param properties
-     * @param bounds
-     * @return {GroupContainer}
-     */
     this.group = function (title, properties, bounds) {
         return new GroupContainer(that.window, title, bounds, properties);
     }
