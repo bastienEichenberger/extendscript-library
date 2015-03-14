@@ -12,7 +12,7 @@ H.Shell = (function (my) {
      * @supported for the moment this function works only on mac with InDesign
      * @todo add support for windows, Photoshop, Illustrator using batch files
      * @param shell_function
-     * @returns {*|null}
+     * @returns {*|undefined}
      */
     my.execute = function (shell_function) {
         var result, apple_script;
@@ -26,21 +26,7 @@ H.Shell = (function (my) {
             };
         }
 
-        if (app.name.toLowerCase().contains('indesign')) {
-            apple_script = 'do shell script "' + shell_function + '"';
-            try {
-                result = app.doScript(apple_script, ScriptLanguage.applescriptLanguage);
-            }
-            catch (ex) {
-                throw {
-                    name: 'Error',
-                    message: 'the shell function '+ shell_function + ' contains an error: ' + ex.message,
-                    fileName: $.fileName,
-                    line: $.line
-                };
-            }
-        }
-        else {
+        if (!app.name.toLowerCase().contains('indesign')) {
             throw {
                 name: 'UnimplementedMethodError',
                 message: 'this function works only with InDesign',
@@ -49,8 +35,23 @@ H.Shell = (function (my) {
             };
         }
 
-        return result || null;
+
+        apple_script = 'do shell script "' + shell_function + '"';
+        try {
+            result = app.doScript(apple_script, ScriptLanguage.applescriptLanguage);
+        }
+        catch (ex) {
+            throw {
+                name: 'Error',
+                message: 'the shell function ' + shell_function + ' contains an error: ' + ex.message,
+                fileName: $.fileName,
+                line: $.line
+            };
+        }
+
+        return result;
     }
+
 
     return my;
 
