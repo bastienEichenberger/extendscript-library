@@ -25,6 +25,14 @@ Object.prototype.merge = function (obj) {
     return this;
 }
 
+/**
+ * Function to debug an object in the console
+ * @param {string} name the name of the test
+ * @param {string} indent the indentation
+ * @param {number} depth where to start the dump
+ * @param {number} maximum_dump_depth where to stop the dump
+ * @return {*}
+ */
 Object.prototype.dump = function (name, indent, depth, maximum_dump_depth) {
 
     var depth = depth || 1;
@@ -57,6 +65,12 @@ Object.prototype.dump = function (name, indent, depth, maximum_dump_depth) {
     }
 }
 
+/**
+ * Function to find if a value exist in a Collection
+ * @param {string} prop_name the property to test
+ * @param {*} value the value to find
+ * @return {*} the value or undefined
+ */
 Object.prototype.find = function (prop_name, value) {
     for (var i = 0; i < this.length; i++) {
         if (this[i][prop_name] === value) {
