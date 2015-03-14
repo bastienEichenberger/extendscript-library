@@ -2,7 +2,7 @@
   "name": "extendscript-library",
   "version": "1.0",
   "homepage": "http://www.extendscript-library.org",
-  "main": "lib"
+  "main": "lib",
   "authors": [
     "Bastien Eichenberger"
   ],
