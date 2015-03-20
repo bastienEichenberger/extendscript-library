@@ -1,11 +1,13 @@
 /**
- * Node module to execute a jsx file
+ * Node module to execute a jsx files
+ *
+ * @supported Mac OS X and Windows
+ *
  * This module is inspired by:
  * grunt-extendscript
  * https://github.com/hanamura/grunt-extendscript
  * Copyright (c) 2013 Taro Hanamura
  * Licensed under the MIT license.
- * @supported Mac OS X and Windows
  * @author Taro Hanamura
  * @author Bastien Eichenberger (add some modifications)
  */
@@ -16,11 +18,11 @@
 module.exports = function (grunt) {
 
     var config = require('../config.js');
-    var exec = require('child_process').exec;
-    var path = require('path');
+
+    var exec = require('child_process').exec,
+        path = require('path');
     var os = require('os');
     var fs = require('fs');
-
     /**
      * Function to execute all jsx file of a task
      * For more information see the Gruntfile.js file
@@ -30,35 +32,36 @@ module.exports = function (grunt) {
      */
     var step = function (srcs, options, done) {
         if (srcs.length) {
-            var src;
-            var args;
-            var app;
-            var shellcommand;
+            var src,
+                args,
+                app,
+                shellcommand;
 
             // src
             src = srcs[0];
             src = path.resolve(src);
+            src = src.replace(/("|\\)/g, '\\$1'); // escape /("|\\)
 
             // args
             args = options.args;
             args = args.map(function (arg) {
                 arg = String(arg);
+                arg = arg.replace(/("|\\)/g, '\\$1'); // escape /("|\\)
                 arg = '"' + arg + '"';
                 return arg;
             });
             args = args.join(',');
+            args = '{' + args + '}';
 
             // app
             app = options.app;
+            app = app.replace(/("|\\)/g, '\\$1');
 
             if (os.platform() === 'darwin') {
-                var apple_script_array = '{' + args + '}';
-                shellcommand = do_apple_script(app, src, apple_script_array);
+                shellcommand = do_apple_script(app, src, args);
             }
             else if (os.platform() === 'win32' || os.platform() === 'win64') {
-                // build the Visual Basic Array
-                var vbs_array = 'Array(' + args + ')';
-                shellcommand = do_visual_basic(app, src, vbs_array);
+                shellcommand = do_visual_basic(app, src, args);
             }
             else {
                 throw new Error('your system is not supported yet. This function works only on Mac OS X and Windows');
@@ -72,46 +75,35 @@ module.exports = function (grunt) {
         } else {
             done();
         }
-
     };
 
-    /**
-     * Function to generate an Visual Basic string
-     * this script execute ExtendScript in Adobe Creative Suite Software's
-     * @param {string} app the target app
-     * @param {string} src the ExtendScript (JSX) file
-     * @param {string} args a Visual Basic array Array( "arg1", "arg2", "arg3" )
-     * @returns {string} shellcommand a shell command to run the script
-     */
     function do_visual_basic (app, src, args) {
-
-        var visualBasicScript;
-        var shellcommand;
-
+        var vbs_args_array = 'Array(' + args.toString().replace(/[{}]/g, "") + ')';
+        var visualBasicScript,
+            shellcommand;
         // the program InDesign has not a DoJavaScriptFile method
         if (app.toLowerCase().indexOf('indesign') > -1) {
             visualBasicScript = 'Dim myInDesign \n' +
-                'Dim myJavaScript \n' +
-                'Set myInDesign = CreateObject("%s") \n' +
-                'myJavaScript = "%s" \n' +
-                'myInDesign.DoScript myJavaScript, 1246973031, %s \n';
+            'Dim myJavaScript \n' +
+            'Set myInDesign = CreateObject("%s") \n' +
+            'myJavaScript = "%s" \n' +
+            'myInDesign.DoScript myJavaScript, 1246973031, %s \n';
         }
         else {
             visualBasicScript = 'Dim app \n' +
-                'Dim myJavaScript \n' +
-                'Set app = CreateObject("%s") \n' +
-                'myJavaScript = "%s" \n' +
-                'call app.DoJavaScriptFile(myJavaScript, %s, 1)';
+            'Dim myJavaScript \n' +
+            'Set app = CreateObject("%s") \n' +
+            'myJavaScript = "%s" \n' +
+            'call app.DoJavaScriptFile(myJavaScript, %s, 1)';
         }
-        visualBasicScript = visualBasicScript.printf(app, src, args);
-        visualBasicScript = visualBasicScript.replace(/("|\\)/g, '\\$1'); // escape /("|\\)
+        visualBasicScript = visualBasicScript.printf(app, src, vbs_args_array);
         // to run vbs with windows a temp file is required
         fs.writeFile(path.resolve('test/temp/execute.vbs'), visualBasicScript, function (err) {
             if (err) {
-                throw new Error("Error during vbs file writting");
+                throw new Error("Error during vbs file writing");
             }
             else {
-                grunt.log.writeln("vbs file is ok");
+                grunt.log.writeln("vbs file writting ok");
             }
         });
         // run cscript with the temp/execute.vbs file
@@ -120,14 +112,6 @@ module.exports = function (grunt) {
         return shellcommand;
     }
 
-    /**
-     * Function to generate an AppleScript string
-     * this script execute ExtendScript in Adobe Creative Suite Software's
-     * @param {string} app the target app
-     * @param {string} src the ExtendScript (JSX) file
-     * @param {array} args the array with arguments
-     * @returns {string} shellcommand a shell command to run the script
-     */
     function do_apple_script (app, src, args) {
         var applescript,
             shellcommand;
@@ -135,15 +119,15 @@ module.exports = function (grunt) {
         // fix the bug with appleScript if the app is indesign use do script instead do javascript
         if (app.toLowerCase().indexOf('indesign') > -1) {
             applescript = 'tell application "%s" \n' +
-                'activate \n' +
-                'do script "%s" with arguments %s language javascript \n' +
-                'end tell';
+            'activate \n' +
+            'do script "%s" with arguments %s language javascript \n' +
+            'end tell';
         }
         else {
             applescript = 'tell application "%s"    \n' +
-                'activate \n' +
-                'do javascript file "%s" with arguments %s \n' +
-                'end tell';
+            'activate \n' +
+            'do javascript file "%s" with arguments %s \n' +
+            'end tell';
         }
 
         applescript = applescript.printf(app, src, args);
@@ -155,17 +139,19 @@ module.exports = function (grunt) {
         return shellcommand;
     }
 
+    // run jsx file in illustrator
     grunt.registerMultiTask('illustrator', 'Execute ExtendScript in illustrator', function () {
-        step(this.filesSrc, this.options({ app: config.apps.illustrator, args: [] }), this.async() );
+        step(this.filesSrc, this.options({ app: config.apps.illustrator, args: [] }), this.async());
     });
-
+    // run jsx file in photohsop
     grunt.registerMultiTask('photoshop', 'Execute ExtendScript in photoshop', function () {
-        step(this.filesSrc, this.options({ app: config.apps.photoshop, args: [] }), this.async() );
+        step(this.filesSrc, this.options({ app: config.apps.photoshop, args: [] }), this.async());
+    });
+    // run jsx file in indesign
+    grunt.registerMultiTask('indesign', 'Execute ExtendScript in indesign', function () {
+        step(this.filesSrc, this.options({ app: config.apps.indesign, args: [] }), this.async());
     });
 
-    grunt.registerMultiTask('indesign', 'Execute ExtendScript in indesign', function () {
-        step(this.filesSrc, this.options({ app: config.apps.indesign, args: [] }), this.async() );
-    });
 
 };
 
