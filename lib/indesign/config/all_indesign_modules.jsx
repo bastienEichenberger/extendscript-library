@@ -8,6 +8,8 @@
 
 //@include "../application/application.jsx"
 
+//@include "../book/book.jsx"
+
 //@include "../document/document.jsx"
 //@include "../document/grep.jsx"
 

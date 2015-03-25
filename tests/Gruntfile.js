@@ -106,6 +106,12 @@ module.exports = function (grunt) {
                     args: [path.resolve('test/results/tests.xml'), path.resolve('test/results')]
                 },
                 src: ['test/fixtures/helper/shell/test_shell.jsx']
+            },
+            test_book: {
+                options: {
+                    args: [path.resolve('test/results')]
+                },
+                src: ['test/fixtures/indesign/book/test_book.jsx']
             }
         },
 
