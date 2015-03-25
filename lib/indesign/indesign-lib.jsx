@@ -10,4 +10,4 @@ var IN = {};
 
 //@include "config/all_indesign_modules.jsx"
 
-IN.Config.init();
+
