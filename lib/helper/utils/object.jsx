@@ -27,13 +27,14 @@ Object.prototype.merge = function (obj) {
 
 /**
  * Function to debug an object in the console
- * @param {string} name the name of the test
- * @param {string} indent the indentation
- * @param {number} depth where to start the dump
- * @param {number} maximum_dump_depth where to stop the dump
+ * @param {number} [depth] where to start the dump by default 1
+ * @param {number} [maximum_dump_depth] where to stop the dump by default 10
  * @return {*}
  */
-Object.prototype.dump = function (name, indent, depth, maximum_dump_depth) {
+Object.prototype.dump = function (depth, maximum_dump_depth) {
+    
+    var name = 'dump';
+    var indent = '    ';
 
     var depth = depth || 1;
     var maximum_dump_depth = maximum_dump_depth || 10;
