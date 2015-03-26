@@ -8,3 +8,5 @@
 /tests/.npmignore
 
 [Ll]ogs/
+
+public-scripts/SampleApp/log
