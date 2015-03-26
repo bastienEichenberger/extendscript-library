@@ -79,3 +79,26 @@ Object.prototype.find = function (prop_name, value) {
         }
     }
 }
+
+/**
+ * Function to delete all duplicated item of a collection by key
+ * @param {string} key the key to check
+ * @return {Array} the new array
+ */
+Object.prototype.unique_by = function (key) {
+
+    var a = [];
+    var l = this.length;
+
+    for (var i = 0; i < l; i++) {
+
+        for (var j = i + 1; j < l; j++) {
+            if (this[i][key] === this[j][key]) {
+                j = ++i;
+            }
+        }
+
+        a.push(this[i]);
+    }
+    return a;
+};
