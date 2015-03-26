@@ -32,7 +32,7 @@ Object.prototype.merge = function (obj) {
  * @return {*}
  */
 Object.prototype.dump = function (depth, maximum_dump_depth) {
-    
+
     var name = 'dump';
     var indent = '    ';
 
