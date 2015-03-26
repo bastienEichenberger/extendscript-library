@@ -86,12 +86,22 @@ var controller = function (view) {
                 set_proportional_link_to_100(current_link);
                 H.Log.info('the link ' + current_link.name + 'was correctly cropped');
             }
+            // update progress bar
+            update_pbar(i + 1);
         }
     }
 
     /***********************************************
      * PRIVATE
      ***********************************************/
+
+    /**
+     * Function to update the progress bar
+     * @param value
+     */
+    function update_pbar (value) {
+        that.view.ui.pbar.value = value;
+    }
 
     /**
      * Function to check if a link is valid, only [TIFF, JPEG, PNG, PSD] are edited
@@ -142,6 +152,7 @@ var controller = function (view) {
      * @param resolution
      * @param resample_method
      * @requires {@link PS}
+     * @todo the gateway module do not support if the function content comments
      */
     function crop_in_photoshop (script_folder, file_path, bounds,
                                 horizontal_scale, vertical_scale, resolution, resample_method) {

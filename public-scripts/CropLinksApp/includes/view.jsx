@@ -12,7 +12,8 @@ var view = function () {
 
     // progress bar
     that.ui = new Window('palette');
-    that.ui.pbar = that.ui.add('progressbar', undefined, 0, 100);
+    // pbar lenght = document links length
+    that.ui.pbar = that.ui.add('progressbar', undefined, 0, GLOBALS.doc.links.length);
     that.ui.pbar.preferredSize.width = 300;
 
 
