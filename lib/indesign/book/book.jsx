@@ -99,6 +99,82 @@ IN.Book = (function (my) {
 
     }
 
+    /**
+     * Function to make a package of a book
+     * @param directories_path_str
+     * @param book
+     * @param options
+     * @return {string}
+     */
+    my.package = function (directories_path_str, book, options) {
+
+        if (book === undefined) {
+            try {
+                var book = app.activeBook;
+            }
+            catch (ex) {
+                throw {
+                    name: 'InvalidArgumentError',
+                    message: 'No book were found, the parameter book is not correct',
+                    fileName: $.fileName,
+                    line: $.line
+                };
+            }
+        }
+
+        var current_date = new Date();
+        var folder_package = new Folder(directories_path_str);
+
+        if (folder_package.exists === false) {
+            folder_package.create();
+        }
+
+        var current_folder = new Folder(folder_package + "/" + current_date.year_month_day() + "_" + current_date.hours_minutes_seconds());
+        current_folder.create();
+
+        var options = options || {
+                to: current_folder,
+                copyingFonts: true,
+                copyingLinkedGraphics: true,
+                copyingProfiles: false,
+                updatingGraphics: true,
+                includingHiddenLayers: false,
+                ignorePreflightErrors: true,
+                creatingReport: true,
+                versionComments: undefined,
+                forceSave: true
+            };
+
+        /**
+         *  bool packageForPrint (to: File, copyingFonts: bool, copyingLinkedGraphics: bool, copyingProfiles: bool, updatingGraphics: bool,
+         *  includingHiddenLayers: bool, ignorePreflightErrors: bool, creatingReport: bool[, versionComments: string][, forceSave: bool=false])
+         */
+        book.packageForPrint(
+            options.to,
+            options.copyingFonts,
+            options.copyingLinkedGraphics,
+            options.copyingProfiles,
+            options.updatingGraphics,
+            options.includingHiddenLayers,
+            options.ignorePreflightErrors,
+            options.creatingReport,
+            options.versionComments,
+            options.forceSave
+        );
+
+        if (!File(current_folder + "/" + book.name).exists) {
+            throw {
+                name: 'Error',
+                message: 'Something has gone wrong and the package for print file do not exist \n' +
+                'Please check if the document is saved before. The document cannot used uninstalled external modules',
+                fileName: $.fileName,
+                line: $.line
+            };
+        }
+
+        return current_folder + "/" + book.name;
+    }
+
 
     /**
      * Function to export a book as PDF
