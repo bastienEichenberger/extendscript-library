@@ -3,6 +3,7 @@
  * @namespace Book
  * @memberOf IN
  * @author Bastien Eichenberger
+ * @requires {@link IN.Document}
  */
 IN.Book = (function (my) {
 
@@ -22,9 +23,6 @@ IN.Book = (function (my) {
             };
         }
 
-        /**
-         * @todo add check if the book is already open do not open it a second time
-         */
         return app.open(my_file);
 
     }
@@ -94,6 +92,10 @@ IN.Book = (function (my) {
 
         // open all doc
         for (var i = 0; i < book.bookContents.length; i++) {
+            /**
+             * @todo find a way to limit inter module dependency with a sandbox
+             * check if the module existe or load it
+             */
             IN.Document.open(book.bookContents[i].fullName);
         }
 
