@@ -30,6 +30,40 @@ IN.Book = (function (my) {
     }
 
     /**
+     * Function to close a book
+     * @param save_options
+     * @param document
+     */
+    my.close = function (save_options, book) {
+
+        if (book === undefined) {
+            try {
+                var book = app.activeBook;
+            }
+            catch (ex) {
+                throw {
+                    name: 'InvalidArgumentError',
+                    message: 'No book were found, the parameter book is not correct',
+                    fileName: $.fileName,
+                    line: $.line
+                };
+            }
+        }
+
+        if (save_options !== SaveOptions.NO
+            && save_options !== SaveOptions.ASK
+            && save_options !== SaveOptions.YES) {
+            throw {
+                name: 'InvalidArgumentError',
+                message: 'you must enter a valid value for the param save_option [NO, ASK, YES]',
+                fileName: $.fileName,
+                lineNumber: $.line
+            };
+        }
+        book.close(save_options);
+    }
+
+    /**
      * Function to open all documents of a book
      * @param book
      */
