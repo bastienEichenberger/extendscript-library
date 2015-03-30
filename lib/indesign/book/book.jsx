@@ -151,18 +151,39 @@ IN.Book = (function (my) {
          *  bool packageForPrint (to: File, copyingFonts: bool, copyingLinkedGraphics: bool, copyingProfiles: bool, updatingGraphics: bool,
          *  includingHiddenLayers: bool, ignorePreflightErrors: bool, creatingReport: bool[, versionComments: string][, forceSave: bool=false])
          */
-        book.packageForPrint(
-            options.to,
-            options.copyingFonts,
-            options.copyingLinkedGraphics,
-            options.copyingProfiles,
-            options.updatingGraphics,
-            options.includingHiddenLayers,
-            options.ignorePreflightErrors,
-            options.creatingReport,
-            options.versionComments,
-            options.forceSave
-        );
+
+        // There is 3 new parameters in CC
+        if (app.version >= 10){
+            book.packageForPrint(
+                options.to,
+                options.copyingFonts,
+                options.copyingLinkedGraphics,
+                options.copyingProfiles,
+                options.updatingGraphics,
+                options.includingHiddenLayers,
+                options.ignorePreflightErrors,
+                options.creatingReport,
+                options.includeIdml,
+                options.includePdf,
+                options.pdfStyle,
+                options.versionComments,
+                options.forceSave
+            );
+        }
+        else {
+            book.packageForPrint(
+                options.to,
+                options.copyingFonts,
+                options.copyingLinkedGraphics,
+                options.copyingProfiles,
+                options.updatingGraphics,
+                options.includingHiddenLayers,
+                options.ignorePreflightErrors,
+                options.creatingReport,
+                options.versionComments,
+                options.forceSave
+            );
+        }
 
         if (!File(current_folder + "/" + book.name).exists) {
             throw {
