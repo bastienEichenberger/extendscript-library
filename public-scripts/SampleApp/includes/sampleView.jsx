@@ -2,7 +2,7 @@
  * Function to build the view
  * @return {Object} the view object with all ui elements
  */
-var view = function () {
+var sampleView = function () {
 
     /***********************************************
      * Public
@@ -29,6 +29,13 @@ var view = function () {
     that.grps.controls = that.ui.group('control-grp', {orientation: 'row', alignment: 'right'});
     that.grps.delete_add = that.pans.options.group('delete_add', {orientation: 'row'});
 
+    // buttons
+    that.delete = that.grps.delete_add.add('button', 'delete');
+    that.add = that.grps.delete_add.add('button', 'add');
+    that.stop = that.grps.controls.add('button', 'stop', undefined, {name: 'cancel'});
+    that.run = that.grps.controls.add('button', 'run', undefined, {name: 'ok'});
+    that.hello = that.grps.presets.add('radiobutton', 'radiobuttonTitle');
+
     // listbox
     that.grps.options.control('statictext', 'title');
     that.sections = that.grps.options.add('listbox', 'title of listbox', undefined, undefined, [0, 0, 500, 100]);
@@ -41,74 +48,6 @@ var view = function () {
      * PRIVATE
      ***********************************************/
 
-    // Listeners
-    var listeners = {};
-
-    /**
-     * Event to remove an element of the list
-     */
-    listeners.remove = {
-        name: 'click',
-        fn: function () {
-            if (that.sections.selection !== null) {
-                that.sections.remove(that.sections.selection);
-            }
-            else {
-                alert('select a document to remove from the list');
-            }
-        }
-    }
-
-    /**
-     * Event to add an element to the list
-     */
-    listeners.add = {
-        name: 'click',
-        fn: function () {
-            var array_of_sections = [];
-            var section = prompt('please add an element \n' +
-                'use only letters',
-                'placeholder text');
-
-            if (section && array_of_sections) {
-
-                if (is_section_valid(section)) {
-                    that.sections.add('item', section);
-                }
-                else {
-                    alert('the value for section is not valid');
-                }
-            }
-        }
-    }
-
-    /**
-     * Event to radiobutton
-     */
-    listeners.helloWorld = {
-        name: 'click',
-        fn: function () {
-            alert('hello radio button');
-        }
-    }
-
-
-    /**
-     * Function to valid a section
-     * @param {string} str the section to valid
-     * @return {boolean} true if the section is valid
-     */
-    function is_section_valid (str) {
-
-        var regex = /[a-z]+/;
-
-        if (regex.test(str)) {
-            return true
-        }
-        else {
-            return false;
-        }
-    }
 
     /**
      * Function to init ui components
@@ -140,8 +79,7 @@ var view = function () {
             .control('checkbox', 'checkbox6')
         ;
 
-        // add radiobutton
-        var button = that.grps.presets.add('radiobutton', 'radiobuttonTitle', listeners.helloWorld);
+
 
         // add all presets to the dropdown
         var items = ['item1', 'item2', 'item3', 'item4', 'item5'];
@@ -149,16 +87,6 @@ var view = function () {
         for (var i = 0; i < items.length; i++) {
             that.dropdown.add('item', items[i]);
         }
-
-        that.grps.delete_add
-            .control('button', 'delete', listeners.remove)
-            .control('button', 'add', listeners.add)
-        ;
-
-        that.grps.controls
-            .control('button', 'stop', undefined, {name: 'cancel'})
-            .control('button', 'run', undefined, {name: 'ok'})
-        ;
 
     }
 

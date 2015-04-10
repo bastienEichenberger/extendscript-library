@@ -115,7 +115,7 @@ function GroupContainer (panel, title, bounds, properties) {
 
 
     /**
-     *
+     * Function to create a new panel
      * @param title
      * @param properties
      * @param bounds
@@ -162,21 +162,23 @@ function PanelContainer (window, title, bounds, properties) {
 /**
  * @class UI class to build a new user interface a window object can contain n panel
  * @param {string} title the title of the window
- * @param {Array} [bounds] an array with coordinates [x, y, width, height]
  * @param {Object} [properties] an object with properties { key : value, key : value }
+ * @param {Array} [bounds] an array with coordinates [x, y, width, height]
+ * @param {string} [type] type the type of the Window (dialog or palette) by default: dialog
  * @constructor
  */
-function UI (title, properties, bounds) {
+function UI (title, properties, bounds, type) {
 
     // check if the optionals parameters are corrects
     var properties = properties || {};
     var bounds = bounds || undefined;
+    var type = type || 'dialog';
 
     /**
      * fix the bug with properties: name property must be init during creation of the object,
      * orientation has to been added after creation, so merge those properties
      */
-    this.window = new Window('dialog', title, bounds, properties);
+    this.window = new Window(type, title, bounds, properties);
     this.window = this.window.merge(properties);
 
     var that = this;
@@ -188,20 +190,45 @@ function UI (title, properties, bounds) {
      * @param {Array} [bounds] an array with coordinates [x, y, width, height]
      * @return {PanelContainer}
      */
-    this.panel = function (title, properties, bounds) {
+    that.panel = function (title, properties, bounds) {
         return new PanelContainer(that.window, title, bounds, properties);
     }
 
-    this.group = function (title, properties, bounds) {
+    /**
+     * Function to create a new group
+     * @param title
+     * @param properties
+     * @param bounds
+     * @return {GroupContainer}
+     */
+    that.group = function (title, properties, bounds) {
         return new GroupContainer(that.window, title, bounds, properties);
     }
 
+    /**
+     * Function to create a progress bar
+     * @param {number} length the max lenght of the progress bar
+     * @return {Progressbar}
+     */
+    that.progress_bar = function (length) {
+        return that.window.add('progressbar', undefined, 0, length);
+    }
 
     /**
-     * Function to display the user interface
+     * Function to display the UI
+     * @return {boolean} true if the user click on the button OK,
+     * false if the user click on the button cancel
      */
-    this.show = function () {
+    that.show = function () {
         return that.window.show();
+    }
+
+    /**
+     * Function to close the UI
+     * @return {*}
+     */
+    that.close = function () {
+        return that.window.close();
     }
 
 

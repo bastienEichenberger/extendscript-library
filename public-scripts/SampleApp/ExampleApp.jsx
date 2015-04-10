@@ -42,8 +42,9 @@ try {
     // set the logger to debug
     H.Log.init(CONSTANTS.FOLDER_LOG, 0);
 
-    //@include "includes/controller.jsx"
-    //@include "includes/view.jsx"
+    //@include "includes/sampleController.jsx"
+    //@include "includes/pbarView.jsx"
+    //@include "includes/sampleView.jsx"
 
 
     if (!app.documents.length > 0) {
@@ -51,6 +52,9 @@ try {
         exit();
     }
 
+    /**
+     * add this part to the library
+     */
     // this script run on InDesign version CS5-CS6
     if (!(parseFloat(app.version) >= 7 && parseFloat(app.version) < 9)) {
         alert('This script works on InDesign 8.0 (CS6), 7.5 (CS5.5), 7.0 (CS5) \n' +
@@ -73,35 +77,21 @@ try {
      */
     var GLOBALS = {};
 
-    GLOBALS.doc = app.activeDocument;
+    GLOBALS.DOC = app.activeDocument;
 
 
 
     /***********************************************
-     * Controller
+     * MVC
      ***********************************************/
 
     // generate the view
-    var view = view();
+    var view = sampleView();
 
     // generate the controller
-    var controller = controller(view);
+    var controller = sampleController(view);
 
-    // display the UI
-    if (view.ui.show() === 1) {
-
-        //display the progress bar
-        controller.display_progress_bar();
-
-        // call a function
-        controller.do_something();
-
-        alert('script finished');
-    }
-    else {
-        alert('The Script have been forced to cancel');
-        exit();
-    }
+    view.ui.show();
 
 
 }
