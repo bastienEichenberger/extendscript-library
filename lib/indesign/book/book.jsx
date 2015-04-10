@@ -146,7 +146,7 @@ IN.Book = (function (my) {
                 includeIdml: false, // only in CC
                 includePdf: false, // only in CC
                 pdfStyle: undefined, // only in CC
-                
+
                 creatingReport: true,
                 versionComments: undefined,
                 forceSave: true
