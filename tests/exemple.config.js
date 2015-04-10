@@ -24,4 +24,9 @@ config.apps.illustrator = 'Adobe Illustrator CC 2014';
  * config.apps.illustrator = 'Illustrator.Application';
  */
 
+/**
+ * Targeting an other version on Windows
+ *
+ */
+
 module.exports = config;
