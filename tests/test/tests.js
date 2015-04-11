@@ -82,7 +82,13 @@ exports.indesign_lib = {
 
         test.equal(result.toString(), expected.toString());
         test.done();
+    },
+    book_as_PDF: function (test) {
+        var is_book_pdf = grunt.file.exists('test/results/test_book.pdf');
+        test.ok(is_book_pdf);
+        test.done();
     }
+
 };
 
 
@@ -207,6 +213,21 @@ exports.helper_lib = {
     max_array_from_illustrator: function (test) {
         var res = get_node_value_by_id('max_adobe_illustrator');
         test.equal(res, 7);
+        test.done();
+    },
+    extension_photoshop: function (test) {
+        var res = get_node_value_by_id('extension_adobe_photoshop');
+        test.equal(res, '.tif');
+        test.done();
+    },
+    extension_indesign: function (test) {
+        var res = get_node_value_by_id('extension_adobe_indesign');
+        test.equal(res, '.tif');
+        test.done();
+    },
+    extension_illustrator: function (test) {
+        var res = get_node_value_by_id('extension_adobe_illustrator');
+        test.equal(res, '.tif');
         test.done();
     }
 

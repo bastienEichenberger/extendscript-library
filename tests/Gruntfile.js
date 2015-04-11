@@ -50,11 +50,11 @@ module.exports = function (grunt) {
                 },
                 src: 'test/fixtures/helper/gateway/test_gateway.jsx'
             },
-            test_array: {
+            test_array_file: {
                 options: {
                     args: [path.resolve('test/results/tests.xml')]
                 },
-                src: ['test/fixtures/helper/utils/test_array.jsx']
+                src: ['test/fixtures/helper/utils/test_array.jsx', 'test/fixtures/helper/utils/test_file.jsx']
             },
             test_document_application: {
                 options: {
@@ -77,11 +77,11 @@ module.exports = function (grunt) {
                 },
                 src: 'test/fixtures/helper/gateway/test_gateway.jsx'
             },
-            test_array: {
+            test_array_file: {
                 options: {
                     args: [path.resolve('test/results/tests.xml')]
                 },
-                src: ['test/fixtures/helper/utils/test_array.jsx']
+                src: ['test/fixtures/helper/utils/test_array.jsx', 'test/fixtures/helper/utils/test_file.jsx']
             },
             test_link: {
                 options: {
@@ -128,11 +128,11 @@ module.exports = function (grunt) {
                 },
                 src: 'test/fixtures/helper/gateway/test_gateway.jsx'
             },
-            test_array: {
+            test_array_file: {
                 options: {
                     args: [path.resolve('test/results/tests.xml')]
                 },
-                src: ['test/fixtures/helper/utils/test_array.jsx']
+                src: ['test/fixtures/helper/utils/test_array.jsx', 'test/fixtures/helper/utils/test_file.jsx']
             }
         },
 
