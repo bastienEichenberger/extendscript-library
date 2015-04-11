@@ -13,7 +13,9 @@ IN.Book = (function (my) {
      * @return {Book} book
      */
     my.open = function (file_path) {
+
         var my_file = new File(file_path);
+
         if (!my_file.exists) {
             throw {
                 name: 'InvalidArgumentError',
@@ -23,7 +25,19 @@ IN.Book = (function (my) {
             };
         }
 
-        return app.open(my_file);
+        try {
+            return app.open(my_file);
+        }
+        catch  (ex) {
+            throw {
+                name: 'InvalidArgumentError',
+                message: 'The Book is already open',
+                fileName: $.fileName,
+                lineNumber: $.line
+            };
+        }
+
+
 
     }
 
@@ -51,6 +65,7 @@ IN.Book = (function (my) {
         if (save_options !== SaveOptions.NO
             && save_options !== SaveOptions.ASK
             && save_options !== SaveOptions.YES) {
+
             throw {
                 name: 'InvalidArgumentError',
                 message: 'you must enter a valid value for the param save_option [NO, ASK, YES]',
