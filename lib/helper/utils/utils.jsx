@@ -77,37 +77,50 @@ H.Utils = (function (my) {
     my.get_file_filter = function get_file_filter (array_of_ext) {
 
         if ($.os.toLowerCase().contains('windows')) {
-            /*for(var i = 0; i < array_of_ext.length; i++) {
-                return filter = 'select a file' + "*" + _ext;
-            }*/
+
             throw {
                 name: 'UnimplementedMethodError',
                 message: 'this function do not work on Windows',
                 fileName: $.fileName,
                 line: $.line
             };
+
+            for (var i = 0; i < array_of_ext.length; i++) {
+                /**
+                 * @todo add support of array of extension
+                 */
+                return filter = 'select a file' + "*" + _ext;
+            }
         }
         else {
             function return_filter (file) {
                 var is_valid = false;
                 var index = 0;
+
                 while (!is_valid) {
+
                     while (file.alias) {
                         file = file.resolve();
                         if (file == null) {
                             is_valid = false
                         }
                     }
-                    if (file.constructor.name == "Folder") {
+
+                    if (file.constructor.name === 'Folder') {
                         is_valid = true;
                     }
+
                     else {
-                        var extension = file.name.toLowerCase().slice(file.name.lastIndexOf("."));
-                        if (extension.indexOf(array_of_ext[index]) > -1) {
+
+                        var ext = my.get_extension(file.name);
+
+                        if (ext.indexOf(array_of_ext[index]) > -1) {
                             is_valid = true;
                         }
                     }
+
                     index++;
+
                     if (index >= array_of_ext.length) {
                         break;
                     }
