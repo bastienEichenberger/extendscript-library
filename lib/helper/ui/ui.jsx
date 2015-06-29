@@ -93,6 +93,7 @@ function GroupContainer (panel, title, bounds, properties) {
     }
 
     /**
+     * @todo swtich events and properties parameters
      * Function to add an element to a group. This function return the element
      * So you can make chain: group.control('button', 'title').control('edittext', 'title2');
      * @param {string} type the element type [button, checkbox, radiobutton, statictext, edittext]
@@ -236,10 +237,11 @@ function UI (title, properties, bounds, type) {
 
     /**
      * Function to close the UI
+     * @param {boolean} status
      * @return {*}
      */
-    this.close = function () {
-        return that.my_window.close();
+    this.close = function (status) {
+        return that.my_window.close(status);
     }
 
 
