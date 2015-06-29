@@ -84,13 +84,13 @@ H.Utils = (function (my) {
                 fileName: $.fileName,
                 line: $.line
             };
+            // ["Files:*.doc;*.docx;*.rtf"]
 
+            var filter = "Files:";
             for (var i = 0; i < array_of_ext.length; i++) {
-                /**
-                 * @todo add support of array of extension
-                 */
-                return filter = 'select a file' + "*" + _ext;
+                 filter = filter + '*' + array_of_ext[i] + ';';
             }
+            return filter;
         }
         else {
             function return_filter (file) {
