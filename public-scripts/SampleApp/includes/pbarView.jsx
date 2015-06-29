@@ -1,10 +1,11 @@
 var pbarView = function (max) {
 
+
+    var that = {};
+
     /***********************************************
      * Public
      ***********************************************/
-
-    var that = {};
 
     that.ui = new UI('progress', undefined, undefined, 'palette');
 
@@ -14,12 +15,7 @@ var pbarView = function (max) {
      * PRIVATE
      ***********************************************/
 
-    function init () {
 
-    }
-
-
-    init();
     return that;
 
 }

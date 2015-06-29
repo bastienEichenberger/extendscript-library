@@ -5,44 +5,21 @@
  */
 var sampleController = function (view) {
 
+
+    var that = {};
+
     /***********************************************
      * Public
      ***********************************************/
 
-    var that = {};
 
-    // views
-    that.sampleView = view;
-
-    /**
-     * Function to display the progress bar
-     */
-    that.display_progress_bar = function () {
-
-        that.pbarView = pbarView(that.sampleView.sections.items.length);
-
-        that.pbarView.ui.show();
-    }
-
-    /**
-     * Function to active only the selected layers
-     */
-    that.do_something = function () {
-
-        for (var i = 0; i < that.sampleView.sections.items.length; i++) {
-
-            // make something
-            $.sleep(1000);
-
-            // update the progress bar
-            that.pbarView.pbar.value = i + 1;
-        }
-    }
 
     /***********************************************
      * PRIVATE
      ***********************************************/
 
+    // views
+    var sampleView = view;
 
     /**
      * Function to valid a section
@@ -60,19 +37,15 @@ var sampleController = function (view) {
         return false;
     }
 
-    /**
-     * Function to init the controller
-     */
 
     // Listeners
-    var listeners = {};
 
     /**
      * Event to remove an element of the list
      */
-    listeners.remove = function () {
-        if (that.sampleView.sections.selection !== null) {
-            that.sampleView.sections.remove(that.sampleView.sections.selection);
+    function remove() {
+        if (sampleView.sections.selection !== null) {
+            sampleView.sections.remove(sampleView.sections.selection);
         }
         else {
             alert('select a document to remove from the list');
@@ -82,7 +55,7 @@ var sampleController = function (view) {
     /**
      * Event to add an element to the list
      */
-    listeners.add = function () {
+    function add() {
 
         var section = prompt('please add an element \n' +
             'use only letters',
@@ -91,7 +64,7 @@ var sampleController = function (view) {
         if (section) {
 
             if (is_section_valid(section)) {
-                that.sampleView.sections.add('item', section);
+                sampleView.sections.add('item', section);
             }
             else {
                 alert('the value for section is not valid');
@@ -100,22 +73,22 @@ var sampleController = function (view) {
     }
 
 
-    listeners.helloWorld = function () {
+    function helloWorld() {
         alert('hello radio button');
     }
 
-    listeners.run = function () {
+    function run() {
 
-        that.sampleView.ui.close();
+        sampleView.ui.close();
 
-        that.display_progress_bar();
+        display_progress_bar();
 
-        that.do_something()
+        do_something();
 
         alert('script finished');
     }
 
-    listeners.stop = function () {
+    function stop() {
 
         that.sampleView.ui.close();
 
@@ -124,18 +97,38 @@ var sampleController = function (view) {
     }
 
 
-    function init () {
+    /**
+     * Function to display the progress bar
+     */
+    function display_progress_bar() {
 
-        // add events listeners
-        that.sampleView.delete.addEventListener('click', listeners.remove);
-        that.sampleView.add.addEventListener('click', listeners.add);
-        that.sampleView.run.addEventListener('click', listeners.run);
-        that.sampleView.stop.addEventListener('click', listeners.stop);
-        that.sampleView.hello.addEventListener('click', listeners.helloWorld);
+        that.pbarView = pbarView(sampleView.sections.items.length);
 
+        that.pbarView.ui.show();
     }
 
-    init();
+    /**
+     * Function to active only the selected layers
+     */
+    function do_something() {
+
+        for (var i = 0; i < sampleView.sections.items.length; i++) {
+
+            // make something
+            $.sleep(1000);
+
+            // update the progress bar
+            that.pbarView.pbar.value = i + 1;
+        }
+    }
+
+    // add events listeners
+    sampleView.delete.addEventListener('click', remove);
+    sampleView.add.addEventListener('click', add);
+    sampleView.run.addEventListener('click', run);
+    sampleView.stop.addEventListener('click', stop);
+    sampleView.hello.addEventListener('click', helloWorld);
+
     return that;
 
 }

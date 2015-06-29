@@ -4,11 +4,13 @@
  */
 var sampleView = function () {
 
+
+    var that = {};
+
+
     /***********************************************
      * Public
      ***********************************************/
-
-    var that = {};
 
     // UI Elements
     that.ui = new UI('Sample', {alignChildren: 'left', resizeable: true});

@@ -1,11 +1,9 @@
 ﻿(function (log_folder) {
 
     try {
-        /**
-         * @todo the result log folder to results/log
-         */
 
         //@include "../../../../../lib/helper/helper-lib.jsx"
+
         H.Config.init();
         var LOG_FOLDER = new Folder(log_folder);
 

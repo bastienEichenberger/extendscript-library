@@ -133,6 +133,12 @@ module.exports = function (grunt) {
                     args: [path.resolve('test/results/tests.xml')]
                 },
                 src: ['test/fixtures/helper/utils/test_array.jsx', 'test/fixtures/helper/utils/test_file.jsx']
+            },
+            test_document: {
+                options: {
+                    args: [path.resolve('test/results')]
+                },
+                src: 'test/fixtures/illustrator/document/test_document.jsx'
             }
         },
 

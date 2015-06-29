@@ -52,6 +52,7 @@ function get_node_value_by_id (value) {
 
 
 exports.indesign_lib = {
+
     setUp: function (done) {
         done();
     },
@@ -129,6 +130,21 @@ exports.photoshop_lib = {
 
 
 };
+
+exports.illustrator_lib = {
+
+    setUp: function (done) {
+        done();
+    },
+
+    export_svg_document: function (test) {
+        var is_export_as_svg = grunt.file.exists('test/results/test_SVG.svg');
+        test.ok(is_export_as_svg);
+        test.done();
+    }
+
+};
+
 
 /**
  * helper-lib.jsx tests
@@ -232,3 +248,4 @@ exports.helper_lib = {
     }
 
 };
+
