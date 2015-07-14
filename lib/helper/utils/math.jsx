@@ -10,10 +10,8 @@
  */
 Number.prototype.roundTo = function (precision) {
 
-    var round = Math.pow(this, precision);
+    var precision = precision || 2;
+    var tmp = Math.pow(10, precision);
 
-    round = Math.round(round);
-    round = round / precision;
-
-    return round;
+    return Math.round( this * tmp )/tmp;
 }
