@@ -12,9 +12,8 @@
 
 //@include "../utils/array.jsx"
 //@include "../utils/date.jsx"
-
 //@include "../utils/file.jsx"
-
+//@include "../utils/math.jsx"
 //@include "../utils/object.jsx"
 //@include "../utils/string.jsx"
 //@include "../utils/utils.jsx"
