@@ -9,7 +9,8 @@ For more information go to our website
 
 ### packages
 1. lib
-  * common (modules with functionality that could be use in other apps)
+  * helper (modules with functionality that could be use in other apps)
+  * illustrator (modules for illustrator including the common packages)
   * indesign (modules for indesign including the common packages)
   * photoshop (modules for photoshop including the common packages)
 
@@ -89,8 +90,15 @@ First download WebStorm IDE [here](https://www.jetbrains.com/webstorm/download/)
 If you would like to add the autocompletion in WebStorm you can follow this [projet](https://github.com/yearbookmachine/extendscript-api-documentation).
 Download precompiled libraries and setup WebStorm by the way described in the section "Documentation and autocomplete in IDEs"
                                                                                       
-### Useful Resources 
-#### extendScript documentation
+### Useful Resources
+
+#### Tutorials
+  * [tutorial about extendscript (in french)](https://openclassrooms.com/courses/ecrivez-des-scripts-en-extendscript)
+
+  * [for more samples go to the section public-script](public-scripts)
+
+
+#### ExtendScript documentation
   * [yearbookmachine documentation](http://yearbookmachine.github.io/esdocs/#/)
   
   * [jongware documentation](http://jongware.mit.edu/)
@@ -105,6 +113,7 @@ Download precompiled libraries and setup WebStorm by the way described in the se
   
 ## Grateful
 ### Contributors
-  * Jonas Oesch
+  * [Jonas Oesch](https://github.com/jonasoesch)
+  * [Maya Jeanmonod](https://github.com/may0u)
 
 

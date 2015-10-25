@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>ExtendScript-library.org Namespace: Utils</title>
+	<title>ExtendScript-library.org Class: GroupContainer</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -224,15 +224,15 @@
 					
 
 
-	<h1 class="page-title">Namespace: Utils</h1>
+	<h1 class="page-title">Class: GroupContainer</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="H.html">H</a>.</span>
-    
-    Utils
+    GroupContainer
     </h2>
+    
+        <div class="class-description">GroupContainer class to build a new group, a group contains n control element</div>
     
 </header>
 
@@ -242,10 +242,178 @@
 
     
         
-            <div class="description">Module with Utils functions</div>
+<dt>
+    <h4 class="name" id="GroupContainer"><span class="type-signature"></span>new GroupContainer<span class="signature">(panel, title, <span class="optional">bounds</span>, <span class="optional">properties</span>)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
         
 
-        
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>panel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="PanelContainer.html">PanelContainer</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>bounds</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Array.html">Array</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">an array with coordinates [x, y, width, height]</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>properties</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">an object with properties { key : value, key : value }</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
 <dl class="details">
 	
 
@@ -257,13 +425,6 @@
 
 	
 
-	
-	<dt class="tag-author">Author:</dt>
-	<dd class="tag-author">
-		<ul>
-			<li>Bastien Eichenberger</li>
-			</ul>
-	</dd>
 	
 
 	
@@ -283,8 +444,20 @@
 	
 </dl>
 
+    
+    
 
-        
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
     
     </div>
 
@@ -292,6 +465,12 @@
 
     
 
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li><a href="H.Utils.html"><code>H.Utils</code></a></li>
+        </ul>
     
 
     
@@ -306,16 +485,12 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="file_exist"><span class="type-signature">&lt;static> </span>file_exist<span class="signature">(file_path)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="add"><span class="type-signature"></span>add<span class="signature">(type, title, <span class="optional">events</span>, {Object), <span class="optional">bounds</span>)</span><span class="type-signature"> &rarr; {<a href="GroupContainer.html">GroupContainer</a>}</span></h4>
     
     
 </dt>
 <dd>
     
-    
-    <div class="description">
-        Function to check if a file exist
-    </div>
     
 
     
@@ -336,6 +511,8 @@
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
 		
 
@@ -348,7 +525,7 @@
 
         <tr>
             
-                <td class="name"><code>file_path</code></td>
+                <td class="name"><code>type</code></td>
             
 
             <td class="type">
@@ -361,132 +538,25 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">the element type [button, checkbox, radiobutton, statictext, edittext]</td>
         </tr>
 
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    true if the file exist or false
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">boolean</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="get_extension"><span class="type-signature">&lt;static> </span>get_extension<span class="signature">(filename)</span><span class="type-signature"> &rarr; {*}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Function to get the extension in lowercase
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
 	
 
         <tr>
             
-                <td class="name"><code>filename</code></td>
+                <td class="name"><code>title</code></td>
             
 
             <td class="type">
@@ -499,247 +569,61 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">the file name</td>
+            <td class="description last">the title of the element</td>
         </tr>
 
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    return a string with the extension in lowercase or null
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">*</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="get_file_filter"><span class="type-signature">&lt;static> </span>get_file_filter<span class="signature">(array_of_ext)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        This function get a file filter function for mac os x
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
 	
 
         <tr>
             
-                <td class="name"><code>array_of_ext</code></td>
+                <td class="name"><code>events</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Array.html">Array</a></span>
+<span class="param-type"><a href="Object.html">Object</a></span>
+|
+
+<span class="param-type">array</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">an array of extension [.tif, .pdf, .jpg]</td>
+            <td class="description last">array with event object { name : 'eventName', fn : function}</td>
         </tr>
 
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="is_array"><span class="type-signature">&lt;static> </span>is_array<span class="signature">(array)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Function to check if the param is an array
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
 	
 
         <tr>
             
-                <td class="name"><code>array</code></td>
+                <td class="name"><code>{Object)</code></td>
             
 
             <td class="type">
@@ -747,144 +631,51 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">[properties] object with properties key : value</td>
         </tr>
 
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">boolean</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="is_file"><span class="type-signature">&lt;static> </span>is_file<span class="signature">(file)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Function to check if the object is a File
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
 	
 
         <tr>
             
-                <td class="name"><code>file</code></td>
+                <td class="name"><code>bounds</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="File.html">File</a></span>
+<span class="param-type">array</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">the file to check</td>
+            <td class="description last">array of coordinates [x, y, width, height]</td>
         </tr>
 
 	
@@ -922,142 +713,54 @@
 	
 
 	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    true if the parameter is a valid File
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">boolean</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        </dl>
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
-
-	<h1 class="page-title">Namespace: Utils</h1>
-<section>
-
-<header>
-    <h2>
-        <span class="ancestors"><a href="H.html">H</a>.</span>
-    
-    Utils
-    </h2>
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-
-    
-        
-            <div class="description">Module with Utils functions</div>
-        
-
-        
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	<dt class="tag-author">Author:</dt>
-	<dd class="tag-author">
+	<dt class="tag-todo">To Do:</dt>
+	<dd class="tag-todo">
 		<ul>
-			<li>Bastien Eichenberger</li>
+			<li>swtich events and properties parameters
+Function to add an element to a group. This function return the element
+So you can make chain: group.control('button', 'title').control('edittext', 'title2');</li>
 			</ul>
 	</dd>
 	
+</dl>
 
-	
+    
+    
 
-	
+    
 
-	
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
 
 
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="GroupContainer.html">GroupContainer</a></span>
 
-	
 
-	
-
-	
-
-	
+	</dd>
 </dl>
 
 
         
     
-    </div>
-
     
+</dd>
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
+        
             
 <dt>
-    <h4 class="name" id="file_exist"><span class="type-signature">&lt;static> </span>file_exist<span class="signature">(file_path)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="control"><span class="type-signature"></span>control<span class="signature">(type, title, <span class="optional">events</span>, {Object), <span class="optional">bounds</span>)</span><span class="type-signature"> &rarr; {<a href="GroupContainer.html">GroupContainer</a>}</span></h4>
     
     
 </dt>
@@ -1065,7 +768,8 @@
     
     
     <div class="description">
-        Function to check if a file exist
+        Function to add an element to a group. This function return the current object himself.
+So you can make chain: group.control('button', 'title').control('edittext', 'title2');
     </div>
     
 
@@ -1087,6 +791,8 @@
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
 		
 
@@ -1099,7 +805,7 @@
 
         <tr>
             
-                <td class="name"><code>file_path</code></td>
+                <td class="name"><code>type</code></td>
             
 
             <td class="type">
@@ -1111,6 +817,284 @@
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the element type [button, checkbox, radiobutton, statictext, edittext]</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the title of the element</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>events</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
+|
+
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">array with event object { name : 'eventName', fn : function}</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>{Object)</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">[properties] object with properties key : value</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>bounds</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">array of coordinates [x, y, width, height]</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="GroupContainer.html">GroupContainer</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="group"><span class="type-signature"></span>group<span class="signature">(title, <span class="optional">properties</span>, <span class="optional">bounds</span>)</span><span class="type-signature"> &rarr; {<a href="GroupContainer.html">GroupContainer</a>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Function to create a group
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1119,263 +1103,43 @@
         </tr>
 
 	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    true if the file exist or false
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">boolean</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="get_extension"><span class="type-signature">&lt;static> </span>get_extension<span class="signature">(filename)</span><span class="type-signature"> &rarr; {*}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Function to get the extension in lowercase
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
 
         <tr>
             
-                <td class="name"><code>filename</code></td>
+                <td class="name"><code>properties</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><a href="Object.html">Object</a></span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">the file name</td>
+            <td class="description last">an object with properties { key : value }</td>
         </tr>
 
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    return a string with the extension in lowercase or null
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">*</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="get_file_filter"><span class="type-signature">&lt;static> </span>get_file_filter<span class="signature">(array_of_ext)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        This function get a file filter function for mac os x
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
 	
 
         <tr>
             
-                <td class="name"><code>array_of_ext</code></td>
+                <td class="name"><code>bounds</code></td>
             
 
             <td class="type">
@@ -1388,10 +1152,20 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">an array of extension [.tif, .pdf, .jpg]</td>
+            <td class="description last">an array with coordinates [x, y, width, height]</td>
         </tr>
 
 	
@@ -1441,6 +1215,25 @@
     
     
     
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="GroupContainer.html">GroupContainer</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
     
     
 </dd>
@@ -1448,7 +1241,7 @@
         
             
 <dt>
-    <h4 class="name" id="is_array"><span class="type-signature">&lt;static> </span>is_array<span class="signature">(array)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="panel"><span class="type-signature"></span>panel<span class="signature">(title, properties, bounds)</span><span class="type-signature"> &rarr; {<a href="PanelContainer.html">PanelContainer</a>}</span></h4>
     
     
 </dt>
@@ -1456,7 +1249,7 @@
     
     
     <div class="description">
-        Function to check if the param is an array
+        Function to create a new panel
     </div>
     
 
@@ -1490,7 +1283,43 @@
 
         <tr>
             
-                <td class="name"><code>array</code></td>
+                <td class="name"><code>title</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>properties</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>bounds</code></td>
             
 
             <td class="type">
@@ -1562,7 +1391,7 @@
 	</dt>
 	<dd>
 		
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="PanelContainer.html">PanelContainer</a></span>
 
 
 	</dd>
@@ -1577,7 +1406,7 @@
         
             
 <dt>
-    <h4 class="name" id="is_file"><span class="type-signature">&lt;static> </span>is_file<span class="signature">(file)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="add_event"><span class="type-signature">&lt;private, inner> </span>add_event<span class="signature">(element, event_obj)</span><span class="type-signature"> &rarr; {<a href="Object.html">Object</a>}</span></h4>
     
     
 </dt>
@@ -1585,7 +1414,7 @@
     
     
     <div class="description">
-        Function to check if the object is a File
+        Function to add an event
     </div>
     
 
@@ -1619,13 +1448,13 @@
 
         <tr>
             
-                <td class="name"><code>file</code></td>
+                <td class="name"><code>element</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="File.html">File</a></span>
+<span class="param-type"><a href="Object.html">Object</a></span>
 
 
             
@@ -1635,7 +1464,30 @@
 
             
 
-            <td class="description last">the file to check</td>
+            <td class="description last">an ui element</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>event_obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">and object with property { name : 'eventName', fn : function}</td>
         </tr>
 
 	
@@ -1689,7 +1541,7 @@
     
             
 <div class="param-desc">
-    true if the parameter is a valid File
+    element the element
 </div>
 
 
@@ -1700,7 +1552,7 @@
 	</dt>
 	<dd>
 		
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="Object.html">Object</a></span>
 
 
 	</dd>

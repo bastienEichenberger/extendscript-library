@@ -37,6 +37,7 @@ H.Shell = (function (my) {
 
 
         apple_script = 'do shell script "' + shell_function + '"';
+
         try {
             result = app.doScript(apple_script, ScriptLanguage.applescriptLanguage);
         }

@@ -126,7 +126,12 @@ exports.photoshop_lib = {
         var res = get_node_value_by_id('open_image');
         test.equal(res, 'test.psd');
         test.done();
-    }
+    },
+    convert_to_profile: function (test) {
+        var is_convert_to_profile = grunt.file.exists('test/results/testProfileConvertion.tif');
+        test.ok(is_convert_to_profile);
+        test.done();
+    },
 
 
 };

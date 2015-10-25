@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>ExtendScript-library.org Namespace: Gateway</title>
+	<title>ExtendScript-library.org Class: Object</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -224,14 +224,12 @@
 					
 
 
-	<h1 class="page-title">Namespace: Gateway</h1>
+	<h1 class="page-title">Class: Object</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="H.html">H</a>.</span>
-    
-    Gateway
+    Object
     </h2>
     
 </header>
@@ -242,10 +240,22 @@
 
     
         
-            <div class="description">Module to dialog between the apps of the Creative Suite. <br>This module allow you to execute a function in Photoshop from InDesign</div>
-        
+<dt>
+    <h4 class="name" id="Object"><span class="type-signature"></span>new Object<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
 
-        
+    
+    
+    
+    
+    
+    
+    
 <dl class="details">
 	
 
@@ -257,13 +267,6 @@
 
 	
 
-	
-	<dt class="tag-author">Author:</dt>
-	<dd class="tag-author">
-		<ul>
-			<li>Bastien Eichenberger</li>
-			</ul>
-	</dd>
 	
 
 	
@@ -283,8 +286,20 @@
 	
 </dl>
 
+    
+    
 
-        
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
     
     </div>
 
@@ -306,7 +321,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="call_app"><span class="type-signature">&lt;static> </span>call_app<span class="signature">(app, function_to_execute, args, timeout)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <h4 class="name" id="dump"><span class="type-signature"></span>dump<span class="signature">(<span class="optional">depth</span>, <span class="optional">maximum_dump_depth</span>)</span><span class="type-signature"> &rarr; {*}</span></h4>
     
     
 </dt>
@@ -314,7 +329,7 @@
     
     
     <div class="description">
-        Function to execute a script in an other software of the Creative Suite
+        Function to debug an object in the console
     </div>
     
 
@@ -336,6 +351,8 @@
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
 		
 
@@ -348,92 +365,66 @@
 
         <tr>
             
-                <td class="name"><code>app</code></td>
+                <td class="name"><code>depth</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="String.html">String</a></span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">the name of the application [photoshop, illustrator, indesign, … ]</td>
+            <td class="description last">where to start the dump by default 1</td>
         </tr>
 
 	
 
         <tr>
             
-                <td class="name"><code>function_to_execute</code></td>
+                <td class="name"><code>maximum_dump_depth</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type">number</span>
 
 
             
             </td>
 
             
-
-            
-
-            <td class="description last">the function to process</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>args</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type"><a href="Array.html">Array</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">an array of arguments</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>timeout</code></td>
-            
-
-            <td class="type">
-            
+                    &lt;optional><br>
                 
-<span class="param-type"><a href="Number.html">Number</a></span>
 
+                
 
-            
-            </td>
-
-            
-
+                
+                </td>
             
 
-            <td class="description last">the timeout in millisecond</td>
+            
+
+            <td class="description last">where to stop the dump by default 10</td>
         </tr>
 
 	
@@ -471,12 +462,162 @@
 	
 
 	
-	<dt class="tag-todo">To Do:</dt>
-	<dd class="tag-todo">
-		<ul>
-			<li>fix the bug when the user insert a comment in parameter the function_to_execute</li>
-			</ul>
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">*</span>
+
+
 	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="find"><span class="type-signature"></span>find<span class="signature">(prop_name, value)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Function to find if a value exist in a Collection
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>prop_name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the property to test</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the value to find</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
 	
 </dl>
 
@@ -488,40 +629,13 @@
     
     
     
-    <h5>Throws:</h5>
-    
-            
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        if an error occurred in the function passed as parameter or if the time exceeded without result
-        </div>
-    </dt>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">Error</span>
-
-
-            </dd>
-        </dl>
-    </dt>
-</dl>
-
-
-        
     
     
     <h5>Returns:</h5>
     
             
 <div class="param-desc">
-    the value returned by the function passed as parameter or null
+    the value or undefined
 </div>
 
 
@@ -542,11 +656,277 @@
         
     
     
-        <h5>Example</h5>
+</dd>
+
         
-    <pre class="sunlight-highlight-javascript">With parametersH.Gateway.call_app(     &#x27;photoshop&#x27;,     function(a, b) {         alert(a + b);     },     [&#x27;hello&#x27;, &#x27;world&#x27;]);Without parametersH.Gateway.call_app(     &#x27;photoshop&#x27;,     function() {         alert(&#x27;function without parameter&#x27;);     });</pre>
+            
+<dt>
+    <h4 class="name" id="merge"><span class="type-signature"></span>merge<span class="signature">(obj)</span><span class="type-signature"> &rarr; {<a href="Object.html">Object</a>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Function to merge 2 objects
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
 
 
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the object to merge</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="unique_by"><span class="type-signature"></span>unique_by<span class="signature">(key)</span><span class="type-signature"> &rarr; {<a href="Array.html">Array</a>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Function to delete all duplicated item of a collection by key
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the key to check</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the new array
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="Array.html">Array</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
     
 </dd>
 

@@ -60,11 +60,35 @@
 						</li>
 						
 						<li>
+							<a href="IL.html">IL</a>
+						</li>
+						
+						<li>
+							<a href="IL.Config.html">IL.Config</a>
+						</li>
+						
+						<li>
+							<a href="IL.Constants.html">IL.Constants</a>
+						</li>
+						
+						<li>
+							<a href="IL.Document.html">IL.Document</a>
+						</li>
+						
+						<li>
+							<a href="IL.Globals.html">IL.Globals</a>
+						</li>
+						
+						<li>
 							<a href="IN.html">IN</a>
 						</li>
 						
 						<li>
 							<a href="IN.Application.html">IN.Application</a>
+						</li>
+						
+						<li>
+							<a href="IN.Book.html">IN.Book</a>
 						</li>
 						
 						<li>
@@ -80,11 +104,19 @@
 						</li>
 						
 						<li>
+							<a href="IN.Document.Grep.html">IN.Document.Grep</a>
+						</li>
+						
+						<li>
 							<a href="IN.Globals.html">IN.Globals</a>
 						</li>
 						
 						<li>
 							<a href="IN.Link.html">IN.Link</a>
+						</li>
+						
+						<li>
+							<a href="IN.PageItem.html">IN.PageItem</a>
 						</li>
 						
 						<li>
@@ -138,7 +170,41 @@
 						</li>
 						
 						<li>
+							<a href="GroupContainer.html">GroupContainer</a>
+						</li>
+						
+						<li>
+							<a href="Number.html">Number</a>
+						</li>
+						
+						<li>
+							<a href="Object.html">Object</a>
+						</li>
+						
+						<li>
+							<a href="PanelContainer.html">PanelContainer</a>
+						</li>
+						
+						<li>
 							<a href="String.html">String</a>
+						</li>
+						
+						<li>
+							<a href="UI.html">UI</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="global.html#is_font_uninstalled">is_font_uninstalled</a>
 						</li>
 						
 
@@ -231,6 +297,13 @@
     
 
     
+        <h3 class="subsection-title">Namespaces</h3>
+
+        <dl>
+            <dt><a href="namespaces.html#IN.Document.Grep"><a href="IN.Document.Grep.html">Grep</a></a></dt>
+            <dd></dd>
+        </dl>
+    
 
     
 
@@ -240,7 +313,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="is_link_used_many_time"><span class="type-signature">&lt;static> </span>is_link_used_many_time<span class="signature">(document, link_item)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+    <h4 class="name" id="close"><span class="type-signature">&lt;static> </span>close<span class="signature">(save_options)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -248,7 +321,7 @@
     
     
     <div class="description">
-        Function to check if the same file is used many times (image, PDF)
+        Function to close the active InDesign document or the document passed as parameter
     </div>
     
 
@@ -282,13 +355,13 @@
 
         <tr>
             
-                <td class="name"><code>document</code></td>
+                <td class="name"><code>save_options</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Document</span>
+<span class="param-type">SaveOptions</span>
 
 
             
@@ -298,22 +371,17 @@
 
             
 
-            <td class="description last">the indesign document</td>
+            <td class="description last">NO, ASK, YES</td>
         </tr>
 
 	
 
         <tr>
             
-                <td class="name"><code>link_item</code></td>
+                <td class="name"><code></code></td>
             
 
             <td class="type">
-            
-                
-<span class="param-type">Link</span>
-
-
             
             </td>
 
@@ -321,7 +389,7 @@
 
             
 
-            <td class="description last">the link item</td>
+            <td class="description last"></td>
         </tr>
 
 	
@@ -371,30 +439,467 @@
     
     
     
-    <h5>Returns:</h5>
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="export_as_JPG"><span class="type-signature">&lt;static> </span>export_as_JPG<span class="signature">(file_path, quality, resolution)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Function to export an InDesign document as PDF
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>file_path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the file path of the PDF</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>quality</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">JPEGOptionsQuality</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">[HIGH, LOW, MEDIUM, MAXIMUM]</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>resolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the resolution of the JPEG</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code></code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+	<dt class="tag-todo">To Do:</dt>
+	<dd class="tag-todo">
+		<ul>
+			<li>add export page range function!</li>
+			</ul>
+	</dd>
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="export_as_PDF"><span class="type-signature">&lt;static> </span>export_as_PDF<span class="signature">(document, file_path, preset_name, <span class="optional">page_range</span>)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Function to export an InDesign document as PDF
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>document</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Document</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the document to export</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>file_path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the file path of the PDF</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>preset_name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the name of the PDF export preset</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>page_range</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the page range</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code></code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+	<dt class="tag-todo">To Do:</dt>
+	<dd class="tag-todo">
+		<ul>
+			<li>if the parameter page_range is not correct the function export all pages of the PDF,it would be better to inform the user and throw an exeption</li>
+			</ul>
+	</dd>
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    <h5>Throws:</h5>
     
             
-<div class="param-desc">
-    The number of time that the link is used
-</div>
+
+    <div class="param-desc">
+    
+        
+<span class="param-type">InvalidArgumentError</span>
 
 
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">Number</span>
-
-
-	</dd>
-</dl>
+    
+    </div>
 
 
         
     
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">export page from 1-10 -&gt; &#x27;1-10&#x27;export page from 1-2, 4-6 -&gt; &#x27;1-2, 4-6&#x27;export all pages -&gt; PageRange.ALL_PAGES</pre>
+
+
     
 </dd>
 
@@ -525,6 +1030,187 @@
 	<dd>
 		
 <span class="param-type">Boolean</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="is_used"><span class="type-signature">&lt;static> </span>is_used<span class="signature">(link_item, <span class="optional">document</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Function to check if the same file is used many times (image, PDF)
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>link_item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Link</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the link item</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>document</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Document</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the indesign document</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    number the number of time that this link is used
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
 
 
 	</dd>
@@ -677,7 +1363,7 @@
         
             
 <dt>
-    <h4 class="name" id="save_with_package"><span class="type-signature">&lt;static> </span>save_with_package<span class="signature">(document, directories_path_str)</span><span class="type-signature"> &rarr; {<a href="String.html">String</a>}</span></h4>
+    <h4 class="name" id="package"><span class="type-signature">&lt;static> </span>package<span class="signature">(directories_path_str, <span class="optional">document</span>, <span class="optional">options</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
     
 </dt>
@@ -685,7 +1371,7 @@
     
     
     <div class="description">
-        Function who package a document and its links
+        Function to package document, links, fonts
     </div>
     
 
@@ -707,6 +1393,8 @@
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
 		
 
@@ -715,6 +1403,37 @@
 	</thead>
 
 	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>directories_path_str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the path where to store the new document</td>
+        </tr>
+
 	
 
         <tr>
@@ -732,6 +1451,16 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -742,23 +1471,33 @@
 
         <tr>
             
-                <td class="name"><code>directories_path_str</code></td>
+                <td class="name"><code>options</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="String.html">String</a></span>
+<span class="param-type">object</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">the path where to store the new document</td>
+            <td class="description last">object with package options</td>
         </tr>
 
 	
@@ -850,7 +1589,7 @@
 	</dt>
 	<dd>
 		
-<span class="param-type"><a href="String.html">String</a></span>
+<span class="param-type">string</span>
 
 
 	</dd>
@@ -859,6 +1598,12 @@
 
         
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">{    to: current_folder,    copyingFonts: true,    copyingLinkedGraphics: true,    copyingProfiles: false,    updatingGraphics: true,    includingHiddenLayers: false,    ignorePreflightErrors: true,    creatingReport: true,    versionComments: undefined,    forceSave: true};</pre>
+
+
     
 </dd>
 
@@ -891,7 +1636,7 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a>
-		on 2014-12-19T16:03:22+01:00 using the <a
+		on 2015-09-06T12:21:52+02:00 using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
