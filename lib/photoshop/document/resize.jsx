@@ -16,7 +16,7 @@ PS.Document.Resize = (function (my) {
      * @param {Number} horizontal_scale
      * @param {Number} vertical_scale
      * @param {Number} [resolution] if the ResampleMethod is NONE the resolution is not required
-     * @param {ResampleMethod} resample_method
+     * @param {ResampleMethod} resample_method BICUBIC, BICUBICSHARPER, BICUBICSMOOTHER, BILINEAR, NEARESTNEIGHBOR, NONE
      */
     my.resampling = function (ps_doc, horizontal_scale, vertical_scale, resolution, resample_method) {
 
@@ -31,6 +31,7 @@ PS.Document.Resize = (function (my) {
         else{
             ps_doc.resizeImage(doc_width, doc_height, resolution, resample_method);
         }
+
     }
 
     return my;

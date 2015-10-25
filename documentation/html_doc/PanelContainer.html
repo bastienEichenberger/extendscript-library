@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>ExtendScript-library.org Namespace: Gateway</title>
+	<title>ExtendScript-library.org Class: PanelContainer</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -224,15 +224,15 @@
 					
 
 
-	<h1 class="page-title">Namespace: Gateway</h1>
+	<h1 class="page-title">Class: PanelContainer</h1>
 <section>
 
 <header>
     <h2>
-        <span class="ancestors"><a href="H.html">H</a>.</span>
-    
-    Gateway
+    PanelContainer
     </h2>
+    
+        <div class="class-description">PanelContainer class to build a panel a panel can contains n group</div>
     
 </header>
 
@@ -242,80 +242,13 @@
 
     
         
-            <div class="description">Module to dialog between the apps of the Creative Suite. <br>This module allow you to execute a function in Photoshop from InDesign</div>
-        
-
-        
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	<dt class="tag-author">Author:</dt>
-	<dd class="tag-author">
-		<ul>
-			<li>Bastien Eichenberger</li>
-			</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
 <dt>
-    <h4 class="name" id="call_app"><span class="type-signature">&lt;static> </span>call_app<span class="signature">(app, function_to_execute, args, timeout)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <h4 class="name" id="PanelContainer"><span class="type-signature"></span>new PanelContainer<span class="signature">(window, title, <span class="optional">bounds</span>, <span class="optional">properties</span>)</span><span class="type-signature"></span></h4>
     
     
 </dt>
 <dd>
     
-    
-    <div class="description">
-        Function to execute a script in an other software of the Creative Suite
-    </div>
     
 
     
@@ -336,6 +269,8 @@
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
 		
 
@@ -348,53 +283,69 @@
 
         <tr>
             
-                <td class="name"><code>app</code></td>
+                <td class="name"><code>window</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="String.html">String</a></span>
+<span class="param-type">Window</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">the name of the application [photoshop, illustrator, indesign, … ]</td>
+            <td class="description last">a window object</td>
         </tr>
 
 	
 
         <tr>
             
-                <td class="name"><code>function_to_execute</code></td>
+                <td class="name"><code>title</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type">string</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">the function to process</td>
+            <td class="description last">the title of the panel</td>
         </tr>
 
 	
 
         <tr>
             
-                <td class="name"><code>args</code></td>
+                <td class="name"><code>bounds</code></td>
             
 
             <td class="type">
@@ -407,33 +358,53 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">an array of arguments</td>
+            <td class="description last">an array with coordinates [x, y, width, height]</td>
         </tr>
 
 	
 
         <tr>
             
-                <td class="name"><code>timeout</code></td>
+                <td class="name"><code>properties</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Number.html">Number</a></span>
+<span class="param-type"><a href="Object.html">Object</a></span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">the timeout in millisecond</td>
+            <td class="description last">an object with properties { key : value, key : value }</td>
         </tr>
 
 	
@@ -471,12 +442,214 @@
 	
 
 	
-	<dt class="tag-todo">To Do:</dt>
-	<dd class="tag-todo">
-		<ul>
-			<li>fix the bug when the user insert a comment in parameter the function_to_execute</li>
-			</ul>
-	</dd>
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name" id="group"><span class="type-signature"></span>group<span class="signature">(title, <span class="optional">properties</span>, <span class="optional">bounds</span>)</span><span class="type-signature"> &rarr; {<a href="GroupContainer.html">GroupContainer</a>}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Function to create a group
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>properties</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">an object with properties { key : value }</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>bounds</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Array.html">Array</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">an array with coordinates [x, y, width, height]</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
 	
 </dl>
 
@@ -488,42 +661,11 @@
     
     
     
-    <h5>Throws:</h5>
-    
-            
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        if an error occurred in the function passed as parameter or if the time exceeded without result
-        </div>
-    </dt>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">Error</span>
-
-
-            </dd>
-        </dl>
-    </dt>
-</dl>
-
-
-        
     
     
     <h5>Returns:</h5>
     
             
-<div class="param-desc">
-    the value returned by the function passed as parameter or null
-</div>
-
 
 
 <dl>
@@ -532,7 +674,7 @@
 	</dt>
 	<dd>
 		
-<span class="param-type">*</span>
+<span class="param-type"><a href="GroupContainer.html">GroupContainer</a></span>
 
 
 	</dd>
@@ -541,12 +683,6 @@
 
         
     
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">With parametersH.Gateway.call_app(     &#x27;photoshop&#x27;,     function(a, b) {         alert(a + b);     },     [&#x27;hello&#x27;, &#x27;world&#x27;]);Without parametersH.Gateway.call_app(     &#x27;photoshop&#x27;,     function() {         alert(&#x27;function without parameter&#x27;);     });</pre>
-
-
     
 </dd>
 
