@@ -5,6 +5,8 @@
         //@include "../../../../../lib/photoshop/photoshop-lib.jsx"
         PS.Config.init();
 
+        SCRIPT_FOLDER = new File($.fileName).parent;
+
         // create a new document
         PS.Document.create(100, 100, 72, 'document_to_test', NewDocumentMode.CMYK);
 
@@ -30,6 +32,24 @@
         var name_of_document = app.activeDocument.name;
 
         // close the document
+        PS.Document.close(SaveOptions.DONOTSAVECHANGES);
+
+        // convert s'RGB document to ECI RGB v2
+        var doc_to_convert = PS.Document.open(SCRIPT_FOLDER + '/testProfileConvertion.psd');
+
+        PS.Document.convert_to_profile('eciRGB v2', doc_to_convert);
+
+        PS.Document.save_to_TIFF(results_folder + '/testProfileConvertion.tif');
+
+        PS.Document.close(SaveOptions.DONOTSAVECHANGES);
+
+        // convert the number of bits per channel
+        var doc_bits = PS.Document.open(SCRIPT_FOLDER + '/testNumberOfBits.psd');
+
+        PS.Document.set_bits_per_channel(BitsPerChannelType.EIGHT, doc_bits);
+
+        PS.Document.save_to_TIFF(results_folder + '/testNumberOfBits.tif');
+
         PS.Document.close(SaveOptions.DONOTSAVECHANGES);
 
 
