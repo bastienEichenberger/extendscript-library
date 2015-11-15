@@ -61,6 +61,18 @@ module.exports = function (grunt) {
                     args: [path.resolve('test/results/tests.xml'), path.resolve('test/results')]
                 },
                 src: ['test/fixtures/photoshop/document/test_document.jsx', 'test/fixtures/photoshop/application/test_application.jsx']
+            },
+            test_path: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml'), path.resolve('test/results')]
+                },
+                src: ['test/fixtures/photoshop/path/test_path.jsx']
+            },
+            test_artlayer: {
+                options: {
+                    args: [path.resolve('test/results/tests.xml'), path.resolve('test/results')]
+                },
+                src: ['test/fixtures/photoshop/artlayer/test_artlayer.jsx']
             }
         },
 

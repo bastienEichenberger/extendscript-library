@@ -98,7 +98,6 @@ exports.photoshop_lib = {
     setUp: function (done) {
         done();
     },
-
     save_to_psd: function (test) {
         // check if a psd file exist in test/result
         var is_save_to_psd = grunt.file.exists('test/results/test.psd');
@@ -132,7 +131,21 @@ exports.photoshop_lib = {
         test.ok(is_convert_to_profile);
         test.done();
     },
-
+    set_bits_channels: function (test) {
+        var is_convert_to_profile = grunt.file.exists('test/results/testNumberOfBits.tif');
+        test.ok(is_convert_to_profile);
+        test.done();
+    },
+    set_remove_path: function (test) {
+        var is_remove_path = grunt.file.exists('test/results/testPath.tif');
+        test.ok(is_remove_path);
+        test.done();
+    },
+    set_artLayer: function (test) {
+        var is_layerset = grunt.file.exists('test/results/testArtLayer.tif');
+        test.ok(is_layerset);
+        test.done();
+    }
 
 };
 
