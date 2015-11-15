@@ -9,6 +9,17 @@
 
 //@include "../application/application.jsx"
 
+//@include "../channel/channel.jsx"
+
 //@include "../document/document.jsx"
 //@include "../document/resize.jsx"
+
+//@include "../layer/layer.jsx"
+//@include "../layer/artlayer.jsx"
+
+//@include "../layerset/layerset.jsx"
+
+//@include "../path/path.jsx"
+
+
 
