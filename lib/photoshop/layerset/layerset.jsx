@@ -4,7 +4,7 @@
  * @memberOf PS
  * @author Bastien Eichenberger
  */
-PS.LayerSet = (function (my) {
+PS.Layerset = (function (my) {
 
     /**
      * Function to add a layerset
@@ -63,4 +63,4 @@ PS.LayerSet = (function (my) {
 
     return my;
 
-})(PS.Layer || {});
+})(PS.Layerset || {});

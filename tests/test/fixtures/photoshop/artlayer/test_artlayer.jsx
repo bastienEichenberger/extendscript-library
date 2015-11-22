@@ -11,13 +11,17 @@
         var doc = PS.Document.open(SCRIPT_FOLDER + '/testArtLayer.psd');
 
         // add a curves to document
-        var info = PS.Layer.ArtLayer.get_ajustment('CURVES');
+        var to = PS.Layerset.add('fieldset1', doc);
+        var curves = PS.Layer.ArtLayer.get_adjustment('CURVES');
+        var levels = PS.Layer.ArtLayer.get_adjustment('LEVELS');
 
-        PS.Layer.ArtLayer.add_adjustment_layer(info);
+        PS.Layer.ArtLayer.add_adjustment_layer('contraste', levels, to);
+        PS.Layer.ArtLayer.add_adjustment_layer('gradation', curves, to);
+        PS.Layer.ArtLayer.add_adjustment_layer('dominante', curves, to);
 
         PS.Document.save_to_TIFF(results_folder + '/testArtLayer.tif');
 
-        //PS.Document.close(SaveOptions.DONOTSAVECHANGES, doc);
+        PS.Document.close(SaveOptions.DONOTSAVECHANGES, doc);
 
     }
 

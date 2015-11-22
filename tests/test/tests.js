@@ -136,14 +136,24 @@ exports.photoshop_lib = {
         test.ok(is_convert_to_profile);
         test.done();
     },
-    set_remove_path: function (test) {
-        var is_remove_path = grunt.file.exists('test/results/testPath.tif');
-        test.ok(is_remove_path);
-        test.done();
-    },
     set_artLayer: function (test) {
         var is_layerset = grunt.file.exists('test/results/testArtLayer.tif');
         test.ok(is_layerset);
+        test.done();
+    },
+    add_remove_layers: function (test) {
+        var is_layer = grunt.file.exists('test/results/testLayer.tif');
+        test.ok(is_layer);
+        test.done();
+    },
+    add_merge_layersets: function (test) {
+        var is_layerset = grunt.file.exists('test/results/testLayerset.tif');
+        test.ok(is_layerset);
+        test.done();
+    },
+    set_remove_path: function (test) {
+        var is_remove_path = grunt.file.exists('test/results/testPath.tif');
+        test.ok(is_remove_path);
         test.done();
     }
 

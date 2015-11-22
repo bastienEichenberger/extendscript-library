@@ -6,55 +6,101 @@
  */
 PS.Layer.ArtLayer = (function (my) {
 
-    var AJUSTMENT_LAYERS = {
-        LEVELS: {name: "levels", id: 'Lvls'},
-        CURVES: {name: "curves", id: 'Crvs'},
-        COLOR_BALANCE: {name: "colorBalance", id: 'ClrB'},
-        BRIGHTNESS_CONTRAST: {name: "brightnessContrast", id: 'BrgC'},
-        HUE_SATURATION: {name: "hueSaturation", id: 'HStr'},
-        SELRECTIVE_COLOR: {name: "selectiveColor", id: 'SlcC'},
-        CHANNEL_MIXER: {name: "channelMixer", id: 'ChnM'},
-        GRADIENT_MAP: {name: "gradientMap", id: 'GdMp'},
-        PHOTO_FILTER: {name: "photoFilter", id: 'photoFilter'},
-        INVERT: {name: "invert", id: 'Invr'},
-        THRESHOLD: {name: "threshold", id: 'Thrs'},
-        POSTERIZE: {name: "posterize", id: 'Pstr'}
+    /**
+     * Type of adjustment
+     * @type
+     * {{
+     * LEVELS: {id: string},
+     * CURVES: {id: string},
+     * COLOR_BALANCE: {id: string},
+     * BRIGHTNESS_CONTRAST: {id: string},
+     * HUE_SATURATION: {id: string},
+     * SELECTIVE_COLOR: {id: string},
+     * CHANNEL_MIXER: {id: string},
+     * GRADIENT_MAP: {id: string},
+     * PHOTO_FILTER: {id: string},
+     * INVERT: {id: s
+     * tring},
+     * THRESHOLD: {id: string},
+     * POSTERIZE: {id: string}
+     * }}
+     */
+    var ADJUSTMENT_TYPE = {
+        LEVELS: {id: 'Lvls'},
+        CURVES: {id: 'Crvs'},
+        COLOR_BALANCE: {id: 'ClrB'},
+        BRIGHTNESS_CONTRAST: {id: 'BrgC'},
+        HUE_SATURATION: {id: 'HStr'},
+        SELECTIVE_COLOR: {id: 'SlcC'},
+        CHANNEL_MIXER: {id: 'ChnM'},
+        GRADIENT_MAP: {id: 'GdMp'},
+        PHOTO_FILTER: {id: 'photoFilter'},
+        INVERT: {id: 'Invr'},
+        THRESHOLD: {id: 'Thrs'},
+        POSTERIZE: {id: 'Pstr'}
     };
 
-    function create_descriptor (info) {
-
-        var desc = new ActionDescriptor();
-        var ref = new ActionReference();
-
-        ref.putClass(cTID('AdjL'));
-        desc.putReference(cTID('null'), ref);
-
-        var adesc = new ActionDescriptor();
-        var id = (info.id.length == 4 ? cTID(info.id) : sTID(info.id));
-
-        adesc.putClass(cTID('Type'), id);
-        desc.putObject(cTID('Usng'), cTID('AdjL'), adesc);
-
-        return desc;
-
-    }
-
-    my.get_ajustment = function (name) {
-        return AJUSTMENT_LAYERS[name];
-    }
     /**
-     *
-     * @param {AJUSTMENT_LAYERS} info
-     * @param aldesc
-     * @return {*}
+     * Function to create an adjustment layer in Photoshop
+     * This function has been build with a Photoshop Listener plugin
+     * @param {ADJUSTMENT_TYPE} type
+     * @return {boolean} true if the layer has been added
+     * @todo rewrite variables to make it readable
      */
-    my.add_adjustment_layer = function (info, aldesc) {
+    function create_adjustment_layer (type) {
 
-        var desc = create_descriptor(info);
+        var idMk = charIDToTypeID("Mk  ");
+        var descriptor = new ActionDescriptor();
+
+        var idnull = charIDToTypeID("null");
+        var ref1 = new ActionReference();
+        var idAdjL = charIDToTypeID("AdjL");
+        ref1.putClass(idAdjL);
+
+        descriptor.putReference(idnull, ref1);
+
+        var idUsng = charIDToTypeID("Usng");
+        var desc4 = new ActionDescriptor();
+        var idType = charIDToTypeID("Type");
+        var desc5 = new ActionDescriptor();
+        var idpresetKind = stringIDToTypeID("presetKind");
+        var idpresetKindType = stringIDToTypeID("presetKindType");
+        var idpresetKindDefault = stringIDToTypeID("presetKindDefault");
+        desc5.putEnumerated(idpresetKind, idpresetKindType, idpresetKindDefault);
+
+        var idCrvs = charIDToTypeID(type.id);
+
+        desc4.putObject(idType, idCrvs, desc5);
+        var idAdjL = charIDToTypeID("AdjL");
+        descriptor.putObject(idUsng, idAdjL, desc4);
+        return executeAction(idMk, descriptor, DialogModes.NO);
+
+
+    }
+
+    // ---------------------------- PUBLIC FUNCTIONS ----------------------------
+
+    /**
+     * Function to add an adjustment layer
+     * @param {string} name
+     * @param {ADJUSTMENT_TYPE} type
+     * @param {LayerSet} to
+     */
+    my.add_adjustment_layer = function (name, type, to) {
+
 
         try {
+            // add the layer
+            create_adjustment_layer(type);
 
-            return executeAction(cTID('Mk  '), desc, DialogModes.NO);
+            // layer layer added is the new layer
+            var my_layer = app.activeDocument.activeLayer;
+
+            my_layer.name = name;
+
+            if (to !== undefined) {
+                my_layer.moveToEnd(to);
+            }
 
         } catch (ex) {
 
@@ -66,39 +112,6 @@ PS.Layer.ArtLayer = (function (my) {
             };
         }
     }
-
-    /**
-     * Function to add a layer to a Document
-     * @param {LayerKind} layer_kind, the type of the layer (TEXT, NORMAL)
-     * @param {Document|LayerSet} [obj = app.activeDocument] the obj which contains the new layer
-     * @return {ArtLayer} layer the added layer
-     * @toto add control the layer is background or not
-     */
-    my.add_layer = function (name, layer_kind, obj) {
-
-        if (obj === undefined) {
-            var obj = app.activeDocument;
-        }
-
-        if (layer_kind !== LayerKind.TEXT
-            && layer_kind !== LayerKind.NORMAL) {
-            throw {
-                name: 'InvalidArgumentError',
-                message: 'you must enter a valid value for the param layer_kind [TEXT]',
-                fileName: $.fileName,
-                lineNumber: $.line
-            };
-        }
-
-        var layer = obj.artLayers.add();
-
-        layer.kind = layer_kind;
-        layer.name = name;
-
-        return layer;
-
-    }
-
 
     /**
      * @todo
@@ -135,6 +148,28 @@ PS.Layer.ArtLayer = (function (my) {
             }
 
         }
+    }
+
+
+    /**
+     * Function to get an adjustment type
+     * @param {string} type [LEVELS, CURVES, COLOR_BALANCE, BRIGHTNESS_CONTRAST, HUE_SATURATION
+     * SELECTIVE_COLOR, CHANNEL_MIXER, GRADIENT_MAP, PHOTO_FILTER, PHOTO_FILTER, INVERT, THRESHOLD, POSTERIZE]
+     */
+    my.get_adjustment = function (type) {
+
+        if (!ADJUSTMENT_TYPE.hasOwnProperty(type)) {
+
+            throw {
+                name: 'InvalidArgumentError',
+                message: 'The property ' + type + 'do not exist',
+                fileName: $.fileName,
+                lineNumber: $.line
+            };
+
+        }
+
+        return ADJUSTMENT_TYPE[type];
     }
 
 
