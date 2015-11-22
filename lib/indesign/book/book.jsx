@@ -254,6 +254,17 @@ IN.Book = (function (my) {
         }
 
         book.exportFile(ExportFormat.pdfType, my_file, false, export_preset, documents);
+
+        if (!my_file.exists) {
+            throw {
+                name: 'Error',
+                message: 'Something has gone wrong and the export book file do not exist \n' +
+                'Please check if the book is in the correct version',
+                fileName: $.fileName,
+                line: $.line
+            };
+        }
+
     }
 
     return my;

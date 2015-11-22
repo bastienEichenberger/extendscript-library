@@ -12,7 +12,7 @@
             book_path = 'exportBookCS6/test_book_cs6.indb';
         }
         else {
-            book_path = 'exportBookCC/test_book_cc.indb';
+            book_path = 'exportBookCC2015/test_book_cc.indb';
         }
 
         var book = IN.Book.open(SCRIPT_FOLDER + '/' + book_path);
