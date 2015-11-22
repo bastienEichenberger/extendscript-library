@@ -9,7 +9,14 @@
 
         SCRIPT_FOLDER = new File($.fileName).parent;
 
-        source = IN.Document.open(SCRIPT_FOLDER + '/grep_document.indd');
+        if (app.version < 9) {
+            grep_doc_path = 'grepCS6/grep_document.indd';
+        }
+        else {
+            grep_doc_path = 'grepCC2015/grep_document.indd';
+        }
+
+        source = IN.Document.open(SCRIPT_FOLDER + grep_doc_path);
 
         IN.Document.Grep.delete_double_standard_spaces();
 
