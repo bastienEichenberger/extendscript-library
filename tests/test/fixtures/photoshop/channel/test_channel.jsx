@@ -7,7 +7,21 @@
 
         SCRIPT_FOLDER = new File($.fileName).parent;
 
-        // write tests
+        // open a document
+        var doc = PS.Document.open(SCRIPT_FOLDER + '/testChannel.psd');
+
+        // remove paths
+        PS.Channel.remove_by(function (channel) {
+            if (!channel.visible) {
+                return true;
+            }
+        });
+
+
+        PS.Document.save_to_TIFF(results_folder + '/testChannel.tif');
+
+        PS.Document.close(SaveOptions.DONOTSAVECHANGES, doc);
+
 
     }
 
