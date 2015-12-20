@@ -151,9 +151,20 @@ exports.photoshop_lib = {
         test.ok(is_layerset);
         test.done();
     },
-    set_remove_path: function (test) {
+    remove_path: function (test) {
         var is_remove_path = grunt.file.exists('test/results/testPath.tif');
         test.ok(is_remove_path);
+        test.done();
+    },
+    remove_channel: function (test) {
+        var is_remove_channel = grunt.file.exists('test/results/testChannel.tif');
+        test.ok(is_remove_channel);
+        test.done();
+    },
+    has_background: function (test) {
+        // check the tests.xml file contains the value 72 dpi
+        var res = get_node_value_by_id('has-background');
+        test.equal(res, 'true');
         test.done();
     }
 

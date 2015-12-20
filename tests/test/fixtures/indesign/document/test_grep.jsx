@@ -10,10 +10,10 @@
         SCRIPT_FOLDER = new File($.fileName).parent;
 
         if (app.version < 9) {
-            grep_doc_path = 'grepCS6/grep_document.indd';
+            grep_doc_path = '/grepCS6/grep_document.indd';
         }
         else {
-            grep_doc_path = 'grepCC2015/grep_document.indd';
+            grep_doc_path = '/grepCC2015/grep_document.indd';
         }
 
         source = IN.Document.open(SCRIPT_FOLDER + grep_doc_path);
@@ -23,7 +23,7 @@
         var doc = app.activeDocument;
         var txt_file = new File(results_folder + '/grep.txt');
 
-        for(var index = 0; index < doc.stories.length; index++){
+        for (var index = 0; index < doc.stories.length; index++) {
 
             current_story = doc.stories.item(index);
             current_story.exportFile(ExportFormat.taggedText, txt_file);

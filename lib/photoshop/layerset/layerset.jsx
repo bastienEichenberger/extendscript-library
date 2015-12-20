@@ -1,13 +1,33 @@
 /**
- * Module with Photoshop functions deal with layersets</br>
- * @namespace LayerSet
+ * Module with Photoshop functions deal with Layersets</br>
+ * @namespace Layerset
  * @memberOf PS
  * @author Bastien Eichenberger
  */
 PS.Layerset = (function (my) {
 
+
+    /**
+     * Function to get a layerset by name, return the first element of the collection with the provided name
+     * @param {string} name the name of the layerset
+     * @param {Document} [document = app.activeDocument]
+     * @return {Layerset} layerset the layerset object
+     * @throws {Error} throw an Exception if the layerset do not exist
+     */
+    my.get = function (name, document) {
+
+        if (document === undefined) {
+            var document = app.activeDocument;
+        }
+
+        return document.layerSets.getByName(name);
+
+    }
+
     /**
      * Function to add a layerset
+     * @function add
+     * @memberOf PS.Layerset
      * @param {string} name
      * @param {Document|LayerSet} [obj = app.activeDocument] the object which contains the new layerset
      * @return {LayerSet} layerset the new layerset
@@ -25,7 +45,9 @@ PS.Layerset = (function (my) {
     }
 
     /**
-     * Function to merge a layerSet
+     * Function to merge a layerset
+     * @function merge
+     * @memberOf PS.Layerset
      * @param {string} location the location of the layerset to merge separated by slash (group1/group2/group3)
      * @param {Document} [document = app.activeDocument] the photoshop document
      */

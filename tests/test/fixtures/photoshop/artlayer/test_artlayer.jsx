@@ -15,9 +15,9 @@
         var curves = PS.Layer.ArtLayer.get_adjustment('CURVES');
         var levels = PS.Layer.ArtLayer.get_adjustment('LEVELS');
 
-        PS.Layer.ArtLayer.add_adjustment_layer('contraste', levels, to);
-        PS.Layer.ArtLayer.add_adjustment_layer('gradation', curves, to);
-        PS.Layer.ArtLayer.add_adjustment_layer('dominante', curves, to);
+        PS.Layer.ArtLayer.add_adjustment('contraste', levels, to);
+        PS.Layer.ArtLayer.add_adjustment('gradation', curves, to);
+        PS.Layer.ArtLayer.add_adjustment('dominante', curves, to);
 
         PS.Document.save_to_TIFF(results_folder + '/testArtLayer.tif');
 

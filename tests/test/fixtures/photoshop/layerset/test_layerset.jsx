@@ -15,7 +15,9 @@
         PS.Layerset.add('group2', my_layerset);
 
         // add a text layer
-        var to_merge = PS.Layerset.add('group3');
+        PS.Layerset.add('group3');
+
+        var to_merge = PS.Layerset.get('group3');
 
         PS.Layer.add('myLayer', LayerKind.TEXT, to_merge);
 

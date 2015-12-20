@@ -1,4 +1,4 @@
-(function (results_folder, expected_folder) {
+    (function (results_folder, expected_folder) {
 
     try {
         //@include "../../../../../lib/indesign/indesign-lib.jsx"

@@ -11,7 +11,12 @@
         var doc = PS.Document.open(SCRIPT_FOLDER + '/testPath.psd');
 
         // remove paths
-        PS.Path.remove_by_kind([PathKind.NORMALPATH, PathKind.WORKPATH], doc);
+        PS.Path.remove_by(function (path) {
+            if (path === PathKind.NORMALPATH || path === PathKind.WORKPATH) {
+                return true;
+            }
+        });
+
 
         PS.Document.save_to_TIFF(results_folder + '/testPath.tif');
 

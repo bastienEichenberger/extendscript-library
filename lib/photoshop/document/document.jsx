@@ -7,6 +7,62 @@
  */
 PS.Document = (function (my) {
 
+
+    /**
+     * Function to create a new photoshop document
+     * @function create
+     * @memberOf PS.Document
+     * @param {Number} width
+     * @param {Number} height
+     * @param {Number} resolution
+     * @param {String} name
+     * @param {NewDocumentMode} mode
+     */
+    my.create = function (width, height, resolution, name, mode) {
+        var doc = app.documents.add(width, height, resolution, name, mode);
+    }
+
+    /**
+     * Function to open a file with Photoshop
+     * @function open
+     * @memberOf PS.Document
+     * @param {String} file_path the file_path of the file
+     */
+    my.open = function (file_path) {
+
+        var img_file = new File(file_path);
+        var ps_doc = app.open(img_file);
+
+        return ps_doc;
+    }
+
+    /**
+     * Function to close the active photoshop document
+     * @function close
+     * @memberOf PS.Document
+     * @param {SaveOptions} save_options SAVECHANGES, DONOTSAVECHANGES, PROMPTTOSAVECHANGES
+     * @param {Photoshop Document} [document] the document to save
+     */
+    my.close = function (save_options, document) {
+
+        if (document === undefined) {
+            var document = app.activeDocument;
+        }
+
+        if (save_options !== SaveOptions.SAVECHANGES
+            && save_options !== SaveOptions.DONOTSAVECHANGES
+            && save_options !== SaveOptions.PROMPTTOSAVECHANGES) {
+            throw {
+                name: 'InvalidArgumentError',
+                message: 'you must enter a valid value for the param save_option [SAVECHANGES, DONOTSAVECHANGES, PROMPTTOSAVECHANGES]',
+                fileName: $.fileName,
+                lineNumber: $.line
+            };
+        }
+
+        document.close(save_options);
+    }
+
     /**
      * Function to save the active document as PSD
      * @function save_to_PSD
@@ -91,34 +147,6 @@ PS.Document = (function (my) {
         document.exportDocument(new File(file_path), ExportType.SAVEFORWEB, save_for_web_options);
     }
 
-
-    /**
-     * Function to close the active photoshop document
-     * @function close
-     * @memberOf PS.Document
-     * @param {SaveOptions} save_options SAVECHANGES, DONOTSAVECHANGES, PROMPTTOSAVECHANGES
-     * @param {Photoshop Document} [document] the document to save
-     */
-    my.close = function (save_options, document) {
-
-        if (document === undefined) {
-            var document = app.activeDocument;
-        }
-
-        if (save_options !== SaveOptions.SAVECHANGES
-            && save_options !== SaveOptions.DONOTSAVECHANGES
-            && save_options !== SaveOptions.PROMPTTOSAVECHANGES) {
-            throw {
-                name: 'InvalidArgumentError',
-                message: 'you must enter a valid value for the param save_option [SAVECHANGES, DONOTSAVECHANGES, PROMPTTOSAVECHANGES]',
-                fileName: $.fileName,
-                lineNumber: $.line
-            };
-        }
-
-        document.close(save_options);
-    }
-
     /**
      * Function to get the resolution of the active Photoshop document
      * @function get_resolution
@@ -137,44 +165,24 @@ PS.Document = (function (my) {
         return resolution;
     }
 
-    /**
-     * Function to create a new photoshop document
-     * @function create
-     * @memberOf PS.Application
-     * @param {Number} width
-     * @param {Number} height
-     * @param {Number} resolution
-     * @param {String} name
-     * @param {NewDocumentMode} mode
-     */
-    my.create = function (width, height, resolution, name, mode) {
-        var doc = app.documents.add(width, height, resolution, name, mode);
-    }
-
-    /**
-     * Function to open a file with Photoshop
-     * @function open
-     * @memberOf PS.Application
-     * @param {String} file_path the file_path of the file
-     */
-    my.open = function (file_path) {
-
-        var img_file = new File(file_path);
-        var ps_doc = app.open(img_file);
-
-        return ps_doc;
-    }
 
     /**
      * Function to convert a document to an other ICC Profile
-     * @param {string} profile, the name of the ICC profile
+     * @function convert_to_profile
+     * @memberOf PS.Document
+     * @param {string} destination_profile, the name of the ICC profile
      * @param {boolean} [is_profile_required = true], true if the original document have to embedded an ICC profile
      * @param {Intent} [intent = Intent.RELATIVECOLORIMETRIC] the colorimetric intent (ABSOLUTECOLORIMETRIC, PERCEPTUAL, RELATIVECOLORIMETRIC, SATURATION)
+     * @param {boolean} [flatten = false]
      * @param {boolean} [black_point_compensation = true] true to activate the black point compensation
      * @param {boolean} [dither = true] true to activate the simulation
-     * @param document
+     * @param {Document} [document = app.activeDocument]
      */
-    my.convert_to_profile = function (profile, document, is_profile_required, intent, black_point_compensation, dither) {
+    my.convert_to_profile = function (destination_profile, document, is_profile_required, intent,
+                                      flatten, black_point_compensation, dither) {
+        if (flatten === undefined) {
+            var flatten = false;
+        }
 
         if (document === undefined) {
             var document = app.activeDocument;
@@ -253,9 +261,13 @@ PS.Document = (function (my) {
 
         }
 
+        if (flatten) {
+            document.flatten();
+        }
+
         // if something is wrong throw an exception (profile name incorrect, wrong parameter)
         try {
-            document.convertProfile(profile, intent, black_point_compensation, dither);
+            document.convertProfile(destination_profile, intent, black_point_compensation, dither);
         }
         catch (ex) {
             throw {
@@ -269,6 +281,8 @@ PS.Document = (function (my) {
 
     /**
      * Function to convert the number of bits per channel
+     * @function set_bits_per_channel
+     * @memberOf PS.Document
      * @param {BitsPerChannelType} bits_per_channel, the number of bit per channel (ONE, SIXTEEN, THIRTYTWO, EIGHT)
      * @param {Document} [document] the Photoshop document
      */
@@ -294,4 +308,5 @@ PS.Document = (function (my) {
     }
 
     return my;
+
 })(PS.Document || {});

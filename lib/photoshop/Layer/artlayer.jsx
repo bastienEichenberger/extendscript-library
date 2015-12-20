@@ -25,7 +25,7 @@ PS.Layer.ArtLayer = (function (my) {
      * POSTERIZE: {id: string}
      * }}
      */
-    var ADJUSTMENT_TYPE = {
+    var _ADJUSTMENT_TYPE = {
         LEVELS: {id: 'Lvls'},
         CURVES: {id: 'Crvs'},
         COLOR_BALANCE: {id: 'ClrB'},
@@ -43,6 +43,8 @@ PS.Layer.ArtLayer = (function (my) {
     /**
      * Function to create an adjustment layer in Photoshop
      * This function has been build with a Photoshop Listener plugin
+     * @function create_adjustment_layer
+     * @memberOf PS.Layer.ArtLayer
      * @param {ADJUSTMENT_TYPE} type
      * @return {boolean} true if the layer has been added
      * @todo rewrite variables to make it readable
@@ -82,12 +84,13 @@ PS.Layer.ArtLayer = (function (my) {
 
     /**
      * Function to add an adjustment layer
+     * @function add_adjustment
+     * @memberOf PS.Layer.ArtLayer
      * @param {string} name
      * @param {ADJUSTMENT_TYPE} type
      * @param {LayerSet} to
      */
-    my.add_adjustment_layer = function (name, type, to) {
-
+    my.add_adjustment = function (name, type, to) {
 
         try {
             // add the layer
@@ -114,51 +117,15 @@ PS.Layer.ArtLayer = (function (my) {
     }
 
     /**
-     * @todo
-     */
-    my.merge = function () {
-        var root = H.XML.read(xml_file_path);
-        var fieldsets = root.child(CONSTANTS.XML_NODE_MERGE).children();
-
-        for (var i = 0; i < fieldsets.length(); i++) {
-
-            // get the location as URI (group1/group2)
-            var location = fieldsets[i].toString();
-
-            // build an array with each layerset name
-            var layersets = location.split('/');
-
-            try {
-
-                var current_grp = doc.layerSets.getByName(layersets[0]);
-                var index = 1;
-
-                // select the last group to merge
-                while (index < layersets.length) {
-                    current_grp = current_grp.layerSets.getByName(layersets[index]);
-                    index++;
-                }
-
-                current_grp.merge();
-            }
-            catch (ex) {
-                /**
-                 * @todo log that the file do not follow the layerset pattern
-                 */
-            }
-
-        }
-    }
-
-
-    /**
      * Function to get an adjustment type
+     * @function get_adjustment
+     * @memberOf PS.Layer.ArtLayer
      * @param {string} type [LEVELS, CURVES, COLOR_BALANCE, BRIGHTNESS_CONTRAST, HUE_SATURATION
      * SELECTIVE_COLOR, CHANNEL_MIXER, GRADIENT_MAP, PHOTO_FILTER, PHOTO_FILTER, INVERT, THRESHOLD, POSTERIZE]
      */
     my.get_adjustment = function (type) {
 
-        if (!ADJUSTMENT_TYPE.hasOwnProperty(type)) {
+        if (!_ADJUSTMENT_TYPE.hasOwnProperty(type)) {
 
             throw {
                 name: 'InvalidArgumentError',
@@ -169,9 +136,8 @@ PS.Layer.ArtLayer = (function (my) {
 
         }
 
-        return ADJUSTMENT_TYPE[type];
+        return _ADJUSTMENT_TYPE[type];
     }
-
 
     return my;
 
