@@ -9,6 +9,8 @@ H.Shell = (function (my) {
 
     /**
      * Function to execute a shell string
+     * @function execute
+     * @memberOf H.Shell
      * @supported for the moment this function works only on mac with InDesign
      * @todo add support for windows, Photoshop, Illustrator using batch files
      * @param shell_function

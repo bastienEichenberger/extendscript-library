@@ -107,10 +107,6 @@ IN.Book = (function (my) {
 
         // open all doc
         for (var i = 0; i < book.bookContents.length; i++) {
-            /**
-             * @todo find a way to limit inter module dependency with a sandbox
-             * check if the module existe or load it
-             */
             IN.Document.open(book.bookContents[i].fullName);
         }
 
