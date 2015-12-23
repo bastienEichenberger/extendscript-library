@@ -109,13 +109,21 @@ H.Utils = (function (my) {
                     if (file.constructor.name === 'Folder') {
                         is_valid = true;
                     }
-
-                    else {
+                    else
+                    {
 
                         var ext = my.get_extension(file.name);
 
-                        if (ext.indexOf(array_of_ext[index]) > -1) {
-                            is_valid = true;
+                        // if the file do not have an extension, it's not valid
+                        try {
+
+                            if (ext.indexOf(array_of_ext[index]) > -1) {
+                                is_valid = true;
+                            }
+
+                        }
+                        catch (ex) {
+                            is_valid = false;
                         }
                     }
 
