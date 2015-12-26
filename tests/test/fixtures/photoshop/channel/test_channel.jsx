@@ -10,7 +10,7 @@
         // open a document
         var doc = PS.Document.open(SCRIPT_FOLDER + '/testChannel.psd');
 
-        // remove paths
+        // remove channels
         PS.Channel.remove_by(function (channel) {
             if (!channel.visible) {
                 return true;
