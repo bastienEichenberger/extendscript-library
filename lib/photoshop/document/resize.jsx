@@ -9,30 +9,44 @@ PS.Document.Resize = (function (my) {
 
 
     /**
-     * Function to resize an image in photoshop
+     * Function to resize an image in Photoshop
      * @function resampling
      * @memberOf PS.Document.Resize
-     * @param {Photoshop Document} ps_doc
-     * @param {Number} horizontal_scale
-     * @param {Number} vertical_scale
-     * @param {Number} [resolution] if the ResampleMethod is NONE the resolution is not required
-     * @param {ResampleMethod} resample_method BICUBIC, BICUBICSHARPER, BICUBICSMOOTHER, BILINEAR, NEARESTNEIGHBOR, NONE
+     * @param {Object} options
+     * @param {number} options.resolution
+     * @param {ResampleMethod} options.resample_method [ResampleMethod.BICUBIC, ResampleMethod.BICUBICSHARPER,
+     * ResampleMethod.BICUBICSMOOTHER,ResampleMethod.BILINEAR, ResampleMethod.NEARESTNEIGHBOR, ResampleMethod.NONE]
+     * @param {number} options.horizontal_scale
+     * @param {number} options.vertical_scale
+     * @param {Photoshop Document} [doc = app.activeDocument]
+     * @example
+     * {
+     *     resolution: number,
+     *     resample_method: ResampleMethod.BICUBICSHARPER,
+     *     horizontal_scale: number,
+     *     vertical_scale: number
+     * }
      */
-    my.resampling = function (ps_doc, horizontal_scale, vertical_scale, resolution, resample_method) {
+    my.resampling = function (options, document) {
 
-        var doc_width = ps_doc.width * (horizontal_scale / 100);
-        var doc_height = ps_doc.height * (vertical_scale / 100);
+        var width, height;
 
-        var resample_method = eval(resample_method);
-
-        if (resample_method === ResampleMethod.NONE) {
-            ps_doc.resizeImage(undefined, undefined, resolution, resample_method);
+        if (document === undefined) {
+            var document = app.activeDocument;
         }
-        else{
-            ps_doc.resizeImage(doc_width, doc_height, resolution, resample_method);
+
+        if (options.resample_method !== ResampleMethod.NONE) {
+
+            width = document.width * (options.horizontal_scale / 100);
+            height = document.height * (options.vertical_scale / 100);
+
+            return document.resizeImage(width, height, options.resolution, options.resample_method);
         }
+
+        return document.resizeImage(undefined, undefined, options.resolution, options.resample_method);
 
     }
 
     return my;
+
 })(PS.Document.Resize || {});
