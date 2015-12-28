@@ -71,12 +71,21 @@ PS.Layerset = (function (my) {
                 index++;
             }
 
+            if (!current_grp) {
+                throw {
+                    name: 'GroupNotExist',
+                    message: 'The layerset path is not correct. The layer cannot bee merged',
+                    fileName: $.fileName,
+                    lineNumber: $.line
+                };
+            }
+
             current_grp.merge();
         }
         catch (ex) {
             throw {
-                name: 'InvalidArgumentError',
-                message: 'The layerset path is not correct. The layer cannot bee merged',
+                name: 'GroupEmpty',
+                message: 'The layerset is empty. We cannot merge an empty layerset',
                 fileName: $.fileName,
                 lineNumber: $.line
             };
