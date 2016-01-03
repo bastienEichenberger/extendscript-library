@@ -43,6 +43,15 @@
 
         PS.Document.close(SaveOptions.DONOTSAVECHANGES);
 
+        // test attribute profile
+        var doc_to_attribute = PS.Document.open(SCRIPT_FOLDER + '/testProfileAttribution.psd');
+
+        PS.Document.attribute_profile('eciRGB v2', doc_to_attribute);
+
+        PS.Document.save_to_TIFF(results_folder + '/testProfileAttribution.tif');
+
+        PS.Document.close(SaveOptions.DONOTSAVECHANGES);
+
         // convert the number of bits per channel
         var doc_bits = PS.Document.open(SCRIPT_FOLDER + '/testNumberOfBits.psd');
 

@@ -281,6 +281,35 @@ PS.Document = (function (my) {
     }
 
     /**
+     * Function to add an ICC profile
+     * @param {string} profile_name
+     * @param {Document} [document = app.activeDocument]
+     */
+    my.attribute_profile = function (profile_name, document) {
+
+        if (document === undefined) {
+            var document = app.activeDocument;
+        }
+
+        try{
+
+            document.colorProfileName = profile_name;
+
+        } catch (ex) {
+
+            throw {
+                name: 'InvalidArgumentError',
+                message: 'The specified profile is not installed correctly',
+                fileName: $.fileName,
+                lineNumber: $.line
+            };
+
+        }
+
+
+    }
+
+    /**
      * Function to convert the number of bits per channel
      * @function set_bits_per_channel
      * @memberOf PS.Document

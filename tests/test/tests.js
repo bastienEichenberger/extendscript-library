@@ -166,6 +166,11 @@ exports.photoshop_lib = {
         var res = get_node_value_by_id('has-background');
         test.equal(res, 'true');
         test.done();
+    },
+    attribute_profile: function(test) {
+        var is_attribute_profile = grunt.file.exists('test/results/testProfileAttribution.tif');
+        test.ok(is_attribute_profile);
+        test.done();
     }
 
 };
