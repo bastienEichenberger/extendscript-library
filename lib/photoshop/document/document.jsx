@@ -291,11 +291,11 @@ PS.Document = (function (my) {
             var document = app.activeDocument;
         }
 
-        try{
+        try {
 
             document.colorProfileName = profile_name;
 
-        } catch (ex) {
+        }catch (ex) {
 
             throw {
                 name: 'InvalidArgumentError',
