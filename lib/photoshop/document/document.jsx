@@ -310,6 +310,30 @@ PS.Document = (function (my) {
     }
 
     /**
+     * Function to get the profile icc of the Document
+     * @param {Document} [document = app.activeDocument]
+     * @return {string|undefined} return the profile name as a string or undefined
+     */
+    my.get_profile_icc = function (document) {
+
+        if (document === undefined) {
+            var document = app.activeDocument;
+        }
+
+        try {
+
+            return document.colorProfileName;
+
+        }
+        catch (ex) {
+
+            return;
+
+        }
+
+    }
+
+    /**
      * Function to convert the number of bits per channel
      * @function set_bits_per_channel
      * @memberOf PS.Document
