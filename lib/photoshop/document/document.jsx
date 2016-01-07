@@ -41,7 +41,7 @@ PS.Document = (function (my) {
      * @function close
      * @memberOf PS.Document
      * @param {SaveOptions} save_options SAVECHANGES, DONOTSAVECHANGES, PROMPTTOSAVECHANGES
-     * @param {Photoshop Document} [document] the document to save
+     * @param {Document} [document] the document to save
      */
     my.close = function (save_options, document) {
 
@@ -68,7 +68,7 @@ PS.Document = (function (my) {
      * @function save_to_PSD
      * @memberOf PS.Document
      * @param {string} file_path the new document path
-     * @param {Photoshop Document} [document] the document to save
+     * @param {Document} [document] the document to save
      * @todo add try catch to make an error if the destination path do not exist
      */
     my.save_to_PSD = function (file_path, document) {
@@ -88,18 +88,25 @@ PS.Document = (function (my) {
      * @function save_to_TIFF
      * @memberOf PS.Document
      * @param {string} file_path the new document path
+     * @param {TiffSaveOptions} [options] the tiff save options settings,
+     * by default this function embedded the icc profile and add an lzw compression
      * @param {Photoshop Document} [document] the document to save
      */
-    my.save_to_TIFF = function (file_path, document) {
+    my.save_to_TIFF = function (file_path, options, document) {
 
         if (document === undefined) {
             var document = app.activeDocument;
         }
 
-        tiffSaveOption = new TiffSaveOptions();
-        tiffSaveOption.embedColorProfile = true;
+        if (options === undefined) {
 
-        document.saveAs(new File(file_path), tiffSaveOption, true, Extension.LOWERCASE);
+            var options = new TiffSaveOptions();
+            options.embedColorProfile = true;
+            options.imageCompression = TIFFEncoding.TIFFLZW;
+
+        }
+
+        document.saveAs(new File(file_path), options, true, Extension.LOWERCASE);
     }
 
     /**
@@ -111,7 +118,7 @@ PS.Document = (function (my) {
      * @param {string} file_path the document path
      * @param {number} quality the quality of the JPG between 0-100
      * @param {boolean} [is_color_profile_embedded] false to not include ICC profile, by default true
-     * @param {Photoshop Document} [document] the document to save, by default the activeDocument is used
+     * @param {Document} [document] the document to save, by default the activeDocument is used
      */
     my.save_for_web_JPG = function (file_path, quality, is_color_profile_embedded, document) {
 
@@ -152,7 +159,7 @@ PS.Document = (function (my) {
      * Function to get the resolution of the active Photoshop document
      * @function get_resolution
      * @memberOf PS.Document
-     * @param {Photoshop Document} [document] the document to save
+     * @param {Document} [document] the document to save
      * @returns {Number} the resolution of the document
      */
     my.get_resolution = function (document) {
@@ -359,6 +366,34 @@ PS.Document = (function (my) {
         }
 
         document.bitsPerChannel = bits_per_channel;
+    }
+
+    /**
+     * Function to flatten the Document
+     * @param {Document} [document = app.activeDocument]
+     */
+    my.flatten = function (document) {
+
+        if (document === undefined) {
+            var document = app.activeDocument;
+        }
+
+        document.flatten();
+
+    }
+
+    /**
+     * Function to delete all guides of a Document
+     * @param {Document} [document = app.activeDocument]
+     */
+    my.remove_all_guides = function (document) {
+
+        if (document === undefined) {
+            var document = app.activeDocument;
+        }
+
+        document.guides.removeAll();
+
     }
 
     return my;
