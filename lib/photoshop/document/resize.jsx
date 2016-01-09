@@ -13,7 +13,7 @@ PS.Document.Resize = (function (my) {
      * @function resampling
      * @memberOf PS.Document.Resize
      * @param {Object} options
-     * @param {number} options.resolution
+     * @param {number} options.resolution, the resolution in pixcel per inch
      * @param {ResampleMethod} options.resample_method [ResampleMethod.BICUBIC, ResampleMethod.BICUBICSHARPER,
      * ResampleMethod.BICUBICSMOOTHER,ResampleMethod.BILINEAR, ResampleMethod.NEARESTNEIGHBOR, ResampleMethod.NONE]
      * @param {number} options.horizontal_scale
@@ -36,6 +36,15 @@ PS.Document.Resize = (function (my) {
         }
 
         if (options.resample_method !== ResampleMethod.NONE) {
+
+            if (!options.horizontal_scale || !options.vertical_scale) {
+                throw {
+                    name: 'InvalidArgumentError',
+                    message: 'you must enter a valid value for the parameters horizontal_scale and vertical_scale',
+                    fileName: $.fileName,
+                    lineNumber: $.line
+                };
+            }
 
             width = document.width * (options.horizontal_scale / 100);
             height = document.height * (options.vertical_scale / 100);
