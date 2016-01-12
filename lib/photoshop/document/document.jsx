@@ -261,7 +261,7 @@ PS.Document = (function (my) {
                 throw {
                     name: 'ColorError',
                     message: 'the Document do not contains an ICC Profile. \n' +
-                    'Set the parameter is_profile_required to false is the profile is not required',
+                    'Set the parameter is_profile_required to false if the profile is not required',
                     fileName: $.fileName,
                     lineNumber: $.line
                 };
@@ -275,15 +275,19 @@ PS.Document = (function (my) {
 
         // if something is wrong throw an exception (profile name incorrect, wrong parameter)
         try {
+
             document.convertProfile(destination_profile, intent, black_point_compensation, dither);
+
         }
         catch (ex) {
+
             throw {
                 name: 'InvalidArgumentError',
                 message: 'One argument is invalid. Please make sure that the ICC profile used is correctly installed',
                 fileName: $.fileName,
                 lineNumber: $.line
             };
+
         }
     }
 
@@ -292,7 +296,7 @@ PS.Document = (function (my) {
      * @param {string} profile_name
      * @param {Document} [document = app.activeDocument]
      */
-    my.attribute_profile = function (profile_name, document) {
+    my.assign_profile = function (profile_name, document) {
 
         if (document === undefined) {
             var document = app.activeDocument;
