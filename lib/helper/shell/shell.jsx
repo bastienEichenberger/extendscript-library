@@ -41,15 +41,19 @@ H.Shell = (function (my) {
         apple_script = 'do shell script "' + shell_function + '"';
 
         try {
+
             result = app.doScript(apple_script, ScriptLanguage.applescriptLanguage);
+
         }
         catch (ex) {
+
             throw {
                 name: 'Error',
                 message: 'the shell function ' + shell_function + ' contains an error: ' + ex.message,
                 fileName: $.fileName,
                 line: $.line
             };
+
         }
 
         return result;

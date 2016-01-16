@@ -8,6 +8,7 @@
  * @return {Object}
  */
 Object.prototype.merge = function (obj) {
+
     if (!obj) {
         throw {
             name: 'InvalidArgumentError',
@@ -18,10 +19,13 @@ Object.prototype.merge = function (obj) {
     }
 
     for (var key in obj) {
-        if (obj.hasOwnProperty(key)) { // do not check in the prototype chain
+
+        if (obj.hasOwnProperty(key)) {
             this[key] = obj[key];
         }
+
     }
+
     return this;
 }
 

@@ -5,13 +5,19 @@
 /**
  * Function to round a number
  * @param {number} number
- * @param {number} precision, the precision to round in centième
+ * @param {number} [precision = 2], the precision to round in cm
  * @return {number}
  */
 Number.prototype.roundTo = function (precision) {
 
-    var precision = precision || 2;
-    var tmp = Math.pow(10, precision);
+    var tmp;
 
-    return Math.round( this * tmp )/tmp;
+    if (precision === undefined) {
+        var precision = 2;
+    }
+
+    tmp = Math.pow(10, precision);
+
+    return Math.round(this * tmp) / tmp;
+
 }

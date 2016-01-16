@@ -34,11 +34,13 @@ PS.Layerset = (function (my) {
      */
     my.add = function (name, obj) {
 
+        var layerset;
+
         if (obj === undefined) {
             var obj = app.activeDocument;
         }
 
-        var layerset = obj.layerSets.add();
+        layerset = obj.layerSets.add();
         layerset.name = name;
 
         return layerset;
@@ -53,42 +55,50 @@ PS.Layerset = (function (my) {
      */
     my.merge = function (location, document) {
 
+        var layersets, current_grp, index;
+
         if (document === undefined) {
             var document = app.activeDocument;
         }
 
         // build an array with each layerset name
-        var layersets = location.split('/');
+        layersets = location.split('/');
 
         try {
 
-            var current_grp = document.layerSets.getByName(layersets[0]);
-            var index = 1;
+            current_grp = document.layerSets.getByName(layersets[0]);
+            index = 1;
 
             // select the last group to merge
             while (index < layersets.length) {
+
                 current_grp = current_grp.layerSets.getByName(layersets[index]);
                 index++;
+
             }
 
             if (!current_grp) {
+
                 throw {
                     name: 'GroupNotExist',
                     message: 'The layerset path is not correct. The layer cannot bee merged',
                     fileName: $.fileName,
                     lineNumber: $.line
                 };
+
             }
 
             current_grp.merge();
         }
         catch (ex) {
+
             throw {
                 name: 'GroupEmpty',
                 message: 'The layerset is empty. We cannot merge an empty layerset',
                 fileName: $.fileName,
                 lineNumber: $.line
             };
+
         }
     }
 
