@@ -115,8 +115,8 @@ IN.Book = (function (my) {
     /**
      * Function to make a package of a book
      * @param directories_path_str
-     * @param book
-     * @param options
+     * @param [book]
+     * @param [options]
      * @return {string}
      */
     my.package = function (directories_path_str, book, options) {
@@ -169,7 +169,8 @@ IN.Book = (function (my) {
          */
 
         // There is 3 new parameters in CC
-        if (app.version >= 10){
+        if (parseFloat(app.version) >= 10){
+
             book.packageForPrint(
                 options.to,
                 options.copyingFonts,
@@ -185,8 +186,10 @@ IN.Book = (function (my) {
                 options.versionComments,
                 options.forceSave
             );
+
         }
         else {
+
             book.packageForPrint(
                 options.to,
                 options.copyingFonts,
@@ -199,6 +202,7 @@ IN.Book = (function (my) {
                 options.versionComments,
                 options.forceSave
             );
+
         }
 
         if (!File(current_folder + "/" + book.name).exists) {

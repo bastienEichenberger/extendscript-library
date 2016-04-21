@@ -39,7 +39,6 @@ PS.Application = (function (my) {
      */
     my.restore = function () {
         app.preferences = user_preferences;
-
     }
 
 

@@ -46,7 +46,7 @@
         // test attribute profile
         var doc_to_attribute = PS.Document.open(SCRIPT_FOLDER + '/testProfileAttribution.psd');
 
-        PS.Document.attribute_profile('eciRGB v2', doc_to_attribute);
+        PS.Document.assign_profile('eciRGB v2', doc_to_attribute);
 
         PS.Document.save_to_TIFF(results_folder + '/testProfileAttribution.tif');
 

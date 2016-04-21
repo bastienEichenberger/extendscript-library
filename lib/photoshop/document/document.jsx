@@ -69,7 +69,6 @@ PS.Document = (function (my) {
      * @memberOf PS.Document
      * @param {string} file_path the new document path
      * @param {Document} [document] the document to save
-     * @todo add try catch to make an error if the destination path do not exist
      */
     my.save_to_PSD = function (file_path, document) {
 
