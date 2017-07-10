@@ -1,0 +1,15 @@
+{
+  "name": "extendscript-library",
+  "version": "2.0",
+  "homepage": "http://www.extendscript-library.org",
+  "main": "lib",
+  "authors": [
+    "Bastien Eichenberger"
+  ],
+  "description": "ExtendScript-library is a JavaScript library. This library has been created in order to support people who'd like write automation scripts for Adobe Creative Suite",
+  "license": "BSD",
+  "ignore": [
+    "/*",
+    "!lib/*"
+  ]
+}
