@@ -4,7 +4,7 @@ var TRANS = {
         SUPPORT: "Ce script fonctionne sur InDesign 13.0 (CS6) ou supérieur \n" +
         "Installer une autre version et réessayer",
         CANCEL: "Le script a été forcé a quitté",
-        OPEN: "Please close all documents"
+        OPEN: "Have exactly one document open to run the script successfully."
     },
 
     VIEW: {
