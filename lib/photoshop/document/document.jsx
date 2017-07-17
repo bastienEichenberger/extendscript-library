@@ -23,7 +23,7 @@ PS.Document = (function (my) {
     }
 
     /**
-     * Function to open a file with Photoshop
+     * Function to open a file in Photoshop
      * @function open
      * @memberOf PS.Document
      * @param {String} file_path the file_path of the file
