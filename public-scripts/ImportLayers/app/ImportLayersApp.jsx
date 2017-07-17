@@ -49,7 +49,7 @@ try {
     //@include "includes/mainView.jsx"
 
     if (app.documents.length === 0 || app.documents.length > 1) {
-        alert('Please open the source document before you run this script');
+        alert(TRANS.INIT.OPEN);
         exit();
     }
 

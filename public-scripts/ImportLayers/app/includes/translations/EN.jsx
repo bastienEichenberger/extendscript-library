@@ -4,7 +4,7 @@ var TRANS = {
         SUPPORT: "This script works on Photoshop 13.0 (CS6) \n" +
         "Install the correct version and try again",
         CANCEL: "The Script has been forced to cancel",
-        OPEN: "Please close all documents"
+        OPEN: "Have exactly one document open to run the script successfully."
     },
 
     VIEW: {
