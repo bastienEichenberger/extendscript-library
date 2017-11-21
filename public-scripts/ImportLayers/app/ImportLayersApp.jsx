@@ -5,7 +5,7 @@
  */
 
 
-//@include "../dependencies/extendscript-library/lib/indesign/indesign-lib.jsx"
+//@include "../../lib/indesign/indesign-lib.jsx"
 
 
 try {

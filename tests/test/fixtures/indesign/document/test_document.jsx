@@ -4,7 +4,7 @@
         //@include "../../../../../lib/indesign/indesign-lib.jsx"
         IN.Config.init();
 
-        IN.Document.create(100, 200);
+        var doc = IN.Document.create(100, 200);
 
         var source = IN.Document.save(results_folder + '/document_result.indd');
 
@@ -12,7 +12,13 @@
 
         IN.Document.export_as_JPG(results_folder + '/test_jpg_indesign.jpg', JPEGOptionsQuality.MEDIUM, 72);
 
-        IN.Document.package(results_folder);
+
+        // edit just one default option
+        var options = {
+            creatingReport : true
+        }
+
+        IN.Document.package(results_folder, doc, options);
 
         IN.Document.close(SaveOptions.NO);
 

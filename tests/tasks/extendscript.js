@@ -136,6 +136,7 @@ module.exports = function (grunt) {
 
         shellcommand = 'osascript -e "%s"';
         shellcommand = shellcommand.printf(applescript);
+
         return shellcommand;
     }
 

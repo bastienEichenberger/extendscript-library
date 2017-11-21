@@ -20,20 +20,15 @@
             100
         );
 
-
         // read the xml file
-        var content = H.XML.read(xml_file_path);
-
-        // add the node
-        var root = new XML(content);
+        var root = H.XML.read(xml_file_path);
 
         // the id and the name of the current app
         var app_name = app.name;
         app_name = app_name.replace(/\s+/g, '_').toLowerCase(); // replace all spaces by _
 
-        // add the node
-        var root = new XML(content);
         var unit_test_gateway = <unit-test id={ 'gateway_' + app_name }>{photoshop_hello}</unit-test>;
+
         root.appendChild(unit_test_gateway);
 
         // update xml file

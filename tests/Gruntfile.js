@@ -170,7 +170,9 @@ module.exports = function (grunt) {
                 },
                 src: 'test/fixtures/illustrator/document/test_document.jsx'
             }
+
         },
+
 
         // Units tests.
         nodeunit: {
