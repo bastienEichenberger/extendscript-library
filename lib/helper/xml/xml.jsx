@@ -16,9 +16,15 @@ H.XML = (function (my) {
      * @returns {XML} xml an xml file
      */
     my.read = function (xml_file_path) {
-        var file = new File(xml_file_path);
-        var str = file.read()
+
+        var file, str;
+
+        file = new File(xml_file_path);
+        file.open('r');
+        str = file.read();
+
         return new XML(str);
+
     };
 
     /**
