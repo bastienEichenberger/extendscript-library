@@ -50,6 +50,33 @@ IN.Application = (function (my) {
 
     }
 
+    /**
+     * Function to check if a joboption is correctly installed
+     * @function is_joboption_defined
+     * @memberOf IN.Application
+     * @param name
+     * @return the joboption object or false if the job option isn't installed
+     */
+    my.is_joboption_defined = function (name) {
+
+        var my_joboption = app.pdfExportPresets.itemByName(name);
+
+        try {
+
+            if (my_joboption.name) {
+
+                return my_joboption;
+
+            }
+
+        } catch(ex) {
+
+            return false;
+
+        }
+
+    }
+
 
     return my;
 })(IN.Application || {});
