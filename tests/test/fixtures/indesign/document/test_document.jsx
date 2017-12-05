@@ -6,7 +6,7 @@
 
         var doc = IN.Document.create(100, 200);
 
-        var source = IN.Document.save(results_folder + '/document_result.indd');
+        var source = IN.Document.save({file_path : results_folder + '/document_result.indd'});
 
         IN.Document.export_as_PDF(results_folder + '/test.pdf', '[PDF/X-4:2008]', '1-1');
 
