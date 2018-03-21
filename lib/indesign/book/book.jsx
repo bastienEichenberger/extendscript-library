@@ -119,9 +119,10 @@ IN.Book = (function (my) {
      * @param [options]
      * @return {string}
      */
-    my.package = function (directories_path_str, book, options) {
+my.package = function (directories_path_str, book, options) {
 
         if (book === undefined) {
+            
             try {
                 var book = app.activeBook;
             }
@@ -135,72 +136,126 @@ IN.Book = (function (my) {
             }
         }
 
-        var current_date = new Date();
-        var folder_package = new Folder(directories_path_str);
+        var current_date;
+        var folder_package;
+        var current_folder;
+        var app_version;
+        var default_options;
+        var my_file;
+        var options = options || {};
 
-        if (folder_package.exists === false) {
-            folder_package.create();
+        current_date = new Date();
+        app_version = parseFloat(app.version);
+        folder_package = new Folder(directories_path_str);
+
+        if (!options.to) {
+
+            current_date = new Date();
+            folder_package = new Folder(directories_path_str);
+
+            if (folder_package.exists === false) {
+                folder_package.create();
+            }
+
+            current_folder = new Folder(folder_package + "/" + current_date.year_month_day() + "_" + current_date.hours_minutes_seconds());
+            current_folder.create();
+
         }
 
-        var current_folder = new Folder(folder_package + "/" + current_date.year_month_day() + "_" + current_date.hours_minutes_seconds());
-        current_folder.create();
 
-        var options = options || {
-                to: current_folder,
-                copyingFonts: true,
-                copyingLinkedGraphics: true,
-                copyingProfiles: false,
-                updatingGraphics: true,
-                includingHiddenLayers: false,
-                ignorePreflightErrors: true,
+        // set default options
+        default_options = {
+            to: current_folder,
+            copyingFonts: true,
+            copyingLinkedGraphics: true,
+            copyingProfiles: false,
+            updatingGraphics: true,
+            includingHiddenLayers: false,
+            ignorePreflightErrors: true,
 
-                includeIdml: false, // only in CC
-                includePdf: false, // only in CC
-                pdfStyle: undefined, // only in CC
+            includeIdml: false, // only in CC
+            includePdf: false, // only in CC
+            pdfStyle: undefined, // only in CC
+            useDocumentHyphenationExceptionsOnly: false, // only in CC 2018
 
-                creatingReport: true,
-                versionComments: undefined,
-                forceSave: true
-            };
+            creatingReport: false,
+            versionComments: undefined,
+            forceSave: true
+        };
 
-        /**
-         *  bool packageForPrint (to: File, copyingFonts: bool, copyingLinkedGraphics: bool, copyingProfiles: bool, updatingGraphics: bool,
-         *  includingHiddenLayers: bool, ignorePreflightErrors: bool, creatingReport: bool[, versionComments: string][, forceSave: bool=false])
-         */
+        // if an object options is provided, replace each key by the new one
+        if (options !== undefined) {
 
-        // There is 3 new parameters in CC
-        if (parseFloat(app.version) >= 10){
+            for (var key in options) {
+
+                if (default_options.hasOwnProperty(key)) {
+
+                    default_options[key] = options[key];
+
+                }
+
+            }
+
+        }
+
+        // Some parameters change between versions
+        // before CC
+        if (app_version < 10) {
 
             book.packageForPrint(
-                options.to,
-                options.copyingFonts,
-                options.copyingLinkedGraphics,
-                options.copyingProfiles,
-                options.updatingGraphics,
-                options.includingHiddenLayers,
-                options.ignorePreflightErrors,
-                options.creatingReport,
-                options.includeIdml,
-                options.includePdf,
-                options.pdfStyle,
-                options.versionComments,
-                options.forceSave
+                default_options.to,
+                default_options.copyingFonts,
+                default_options.copyingLinkedGraphics,
+                default_options.copyingProfiles,
+                default_options.updatingGraphics,
+                default_options.includingHiddenLayers,
+                default_options.ignorePreflightErrors,
+                default_options.creatingReport,
+                default_options.versionComments,
+                default_options.forceSave
             );
 
         }
-        else {
+
+        // CC 2017
+        if (app_version >= 10 && app_version <= 12) {
 
             book.packageForPrint(
-                options.to,
-                options.copyingFonts,
-                options.copyingLinkedGraphics,
-                options.copyingProfiles,
-                options.updatingGraphics,
-                options.includingHiddenLayers,
-                options.ignorePreflightErrors,
-                options.creatingReport,
-                options.versionComments,
-                options.forceSave
+                default_options.to,
+                default_options.copyingFonts,
+                default_options.copyingLinkedGraphics,
+                default_options.copyingProfiles,
+                default_options.updatingGraphics,
+                default_options.includingHiddenLayers,
+                default_options.ignorePreflightErrors,
+                default_options.creatingReport,
+                default_options.includeIdml,
+                default_options.includePdf,
+                default_options.pdfStyle,
+                default_options.versionComments,
+                default_options.forceSave
+            );
+
+        }
+
+        // CC 2018
+        if (app_version >= 13) {
+
+            book.packageForPrint(
+                default_options.to,
+                default_options.copyingFonts,
+                default_options.copyingLinkedGraphics,
+                default_options.copyingProfiles,
+                default_options.updatingGraphics,
+                default_options.includingHiddenLayers,
+                default_options.ignorePreflightErrors,
+                default_options.creatingReport,
+                default_options.includeIdml,
+                default_options.includePdf,
+                default_options.pdfStyle,
+                default_options.useDocumentHyphenationExceptionsOnly,
+                default_options.versionComments,
+                default_options.forceSave
             );
 
         }
