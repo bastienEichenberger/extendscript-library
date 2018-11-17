@@ -102,7 +102,9 @@ Download precompiled libraries and setup WebStorm by the way described in the se
   * [yearbookmachine documentation](http://yearbookmachine.github.io/esdocs/#/)
   
   * [jongware documentation](http://jongware.mit.edu/)
-  
+
+  * [indesignjs.de](https://www.indesignjs.de/extendscriptAPI/indesign-latest/#about.html)
+
 #### Others ressources
   
   * [InDesign scripting forum](https://forums.adobe.com/community/indesign/indesign_scripting)

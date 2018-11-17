@@ -114,45 +114,70 @@ PS.Document = (function (my) {
      * The color profile is by default embedded
      * @function save_for_web_JPG
      * @memberOf PS.Document
-     * @param {string} file_path the document path
-     * @param {number} quality the quality of the JPG between 0-100
-     * @param {boolean} [is_color_profile_embedded] false to not include ICC profile, by default true
+     * @param {options} object with options {
+     *      options.includeProfile;
+     *      options.interlaced;
+     *      options.optimized;
+     *      options.quality;
+     *  }
      * @param {Document} [document] the document to save, by default the activeDocument is used
      */
-    my.save_for_web_JPG = function (file_path, quality, is_color_profile_embedded, document) {
+    my.save_for_web_JPG = function (file_path, options, document) {
 
-        if (quality < 0 || quality > 100) {
-            throw {
-                name: 'InvalidArgumentError',
-                message: 'The argument quality has do be from 0-100',
-                fileName: $.fileName,
-                lineNumber: $.line
-            };
-        }
-
-        if (is_color_profile_embedded === undefined) {
-            var is_color_profile_embedded = true;
-        }
+        var default_options;
+        var save_for_web_options;
 
         if (document === undefined) {
+
             var document = app.activeDocument;
+
         }
 
         // we have to convert the file in s'RGB before because other color mode than RGB do not embedded the ICC profile
         if (document.mode !== DocumentMode.RGB) {
+
             document.convertProfile("sRGB IEC61966-2.1", Intent.RELATIVECOLORIMETRIC);
+
         }
 
-        var save_for_web_options = new ExportOptionsSaveForWeb();
+        // set default options
+        default_options = {
 
-        save_for_web_options.format = SaveDocumentType.JPEG;
-        save_for_web_options.includeProfile = is_color_profile_embedded;
-        save_for_web_options.interlaced = 0;
-        save_for_web_options.optimized = true;
-        save_for_web_options.quality = quality;
+            format: SaveDocumentType.JPEG,
+            includeProfile : true,
+            interlaced : 0,
+            optimized : true,
+            quality : 60
+
+        };
+
+        // if an object options is provided, replace each key by the new one
+        if (options !== undefined) {
+
+            for (var key in options) {
+
+                if (default_options.hasOwnProperty(key)) {
+
+                    default_options[key] = options[key];
+
+                }
+
+            }
+
+        }
+
+        save_for_web_options = new ExportOptionsSaveForWeb();
+
+        save_for_web_options.format = default_options.format;
+        save_for_web_options.includeProfile = default_options.includeProfile;
+        save_for_web_options.interlaced = default_options.interlaced;
+        save_for_web_options.optimized = default_options.optimized;
+        save_for_web_options.quality = default_options.quality;
 
         document.exportDocument(new File(file_path), ExportType.SAVEFORWEB, save_for_web_options);
+
     }
+
 
     /**
      * Function to get the resolution of the active Photoshop document
